@@ -1,0 +1,118 @@
+.banner {
+    position: relative;
+    height: 100vh;
+    background: linear-gradient(180deg, #FFFBFB 87.5%, #E7E9EE 100%);
+    .banner-img {
+        height: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .banner-content {
+        width: 95%;
+        position: absolute;
+        top: 30%;
+        left: 5%;
+    }
+}
+.banner-content {
+    width: 100%;
+    h2 {
+        font-weight: 400;
+        font-size: 2.5rem;
+        color: $color-blue-0;
+        margin-bottom: 0;
+    }
+    span {
+        font-size: 2.3rem;
+        font-weight: 700;
+        color: $color-blue-0;
+        word-spacing: 5px;
+    }
+    p {
+        color: $color-black-0;
+    }
+    .banner-btn {
+        font-size: 1.2rem;
+        padding: 10px 35px;
+        border-radius: 35px;
+        box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);;
+        border: 0;
+        color: white;
+        font-weight: 600;
+        background-color: $color-green-0;
+        transition: all 0.3s ease;
+        &:hover {
+            color: $color-green-0;
+            background-color: white;
+        }
+    }
+}
+@media screen and(max-width : 1300px) {
+    .banner {
+        .banner-content {
+            top: 10%;
+            h2 {
+                font-size: 2.2rem;
+            }
+            span {
+                font-size: 2rem;
+            }
+            
+        }
+    }
+    
+}
+@media screen and (min-width : 776px) and(max-width : 992px) {
+    .banner {
+        .banner-img {
+            height: 60%;
+        }
+        .banner-content {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 70%;
+            margin: 0 auto;
+            padding-left: 30px;
+            h2 {
+                font-size: 2.8rem;
+            }
+            span {
+                font-size: 2.5rem;
+            }
+            p {
+                font-size: 1.5rem;
+                opacity: 0.7;
+            }
+            .banner-btn {
+                font-size: 1.5rem;
+                padding: 14px 70px;
+            }
+        }
+        
+    }
+}
+@media screen and(max-width : 776px) {
+    .banner {
+        .banner-img {
+            height: 50%;
+            margin-bottom: 20px;
+        }
+        .banner-content {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 70%;
+            margin: 0 auto;
+            padding-left: 30px;
+        }
+    }
+}
+@media screen and(max-width : 500px) {
+    .banner-content {
+        .banner-btn {
+            font-size: 1rem;
+        }
+    }
+}

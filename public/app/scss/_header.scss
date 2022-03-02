@@ -1,0 +1,140 @@
+header {
+    .hapo-headerNavbar {
+        margin: 15px 37px;
+        .hapo-headerTonggle {
+            border: 0;
+        }
+    }
+    .header-hide {
+        display: none;
+    }
+    .header-iconX {
+        font-size: 2rem;
+        border: 0;
+    }
+
+}
+
+.hapo-headerUl {
+    .hapo-headerNavItem {
+        margin: 0 8px;
+        border-radius: 17px;
+        padding: 1px 12px;
+        transition: all 0.3s ease;
+        &.header-active,
+        &:hover {
+            background-color: $color-green-0;
+            a {
+                color: white;
+            }
+        }
+        a {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            font-weight: bold;
+            color: $color-black-0;
+        }
+    }
+}
+
+.hapo-headerNavbarBrand {
+    .navbar-brand {
+        width: 24rem;
+    }
+}
+
+@media screen and (min-width : 992px) and (max-width: 1200px)  {
+    .navbar {
+        &.hapo-headerNavbar {
+            display: block;
+            .hapo-headerNavbarBrand {
+                // padding-left: 11rem;
+                width: 35%;
+                margin: 0 auto;
+                padding-bottom: 21px;
+            }
+        }
+    }
+
+    .ml-auto {
+        &.hapo-headerUl {
+            margin: 0 !important;
+        }
+    }
+    .navbar-expand-lg {
+        .navbar-collapse {
+            &.hapo-headerContent {
+                display: block !important;
+            }
+        }
+    }
+    
+    .hapo-headerContent {
+        .hapo-headerUl {
+            justify-content: space-between;
+        }
+    }
+}
+@media screen and (max-width: 991px) {
+    .hapo-headerUl {
+        height: 100vh;
+    }
+    .hapo-headerTonggle {
+        position: absolute;
+        left: 25px;
+        top: 30px;
+    }
+    .navbar {
+        &.hapo-headerNavbar {
+            .hapo-headerNavbarBrand {
+                width: 35%;
+                margin: 0 auto;
+                padding-bottom: 21px;
+            }
+        }
+    }
+    .hapo-headerUl {
+        .hapo-headerNavItem {
+            border-radius: 5px;
+        }
+    }  
+}
+@media screen and (max-width: 700px) {
+    .hapo-headerNavbarBrand {
+        .navbar-brand {
+            width: 18rem;
+        }
+    }
+    .hapo-headerTonggle {
+        top : 24px;
+    }
+    header {
+        .hapo-headerNavbar {
+            .navbar-toggler {
+                font-size: 1.1rem;
+            }
+        }
+    }
+}
+@media screen and (max-width: 500px) {
+    .hapo-headerTonggle {
+        left: -44px;
+
+    }
+    .navbar {
+        &.hapo-headerNavbar {
+            display: block;
+            .hapo-headerNavbarBrand {
+                // padding-left: 11rem;
+                width: 100%;
+                margin: 0;
+                padding-bottom: 21px;
+            }
+        }
+    }
+    .hapo-headerNavbarBrand {
+        .navbar-brand {
+            margin: 0;
+        }
+    }
+}
