@@ -1,13 +1,13 @@
 $("#header-btnIcon").click(function() {
-    if ($(".hapo-headerContent").hasClass("show")) {
-        setTimeout(function() {
-            $(".navbar-toggler-icon").removeClass("header-hide");
-            $(".fa-times").addClass("header-hide");
-        }, 100);
-    } else {
-        setTimeout(function() {
-            $(".navbar-toggler-icon").addClass("header-hide");
-            $(".fa-times").removeClass("header-hide");
-        }, 40);
-    }
+  if ($(".header-content").hasClass("show")) {
+    setTimeout(function() {
+      $(".navbar-toggler-icon").removeClass("hide");
+      $(".fa-times").addClass("hide");
+    }, 100);
+  } else {
+    setTimeout(function() {
+      $(".navbar-toggler-icon").addClass("hide");
+      $(".fa-times").removeClass("hide");
+    }, 40);
+  }
 });
