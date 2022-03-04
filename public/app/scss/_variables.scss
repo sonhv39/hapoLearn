@@ -1,10 +1,23 @@
-// color 
 $color-green-0 : #B2D235;
 $color-green-1 : #90AB26;
 $color-blue-0 : #11114E;
+$color-blue-1 : #3F6185;
+$color-blue-2 : #556598;
+$color-blue-3 : #24ABE2;
+$color-blue-4 : #1B75BB;
 $color-black-0 : #505353;
 $color-black-1 : #454545;
 $color-yellow-0 : #F2C54F;
-
-// fontsize
+$color-red-0 :#DC594C;
+$color-red-1 : #E14E40;
 $fs-0 : 14px;
+* {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+}
+@font-face {
+    src: url(../font/UTMBryantLG.ttf);
+    font-family: 'UTM BryantLG';
+}
+
