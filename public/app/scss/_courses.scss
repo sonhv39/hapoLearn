@@ -131,7 +131,6 @@
 }
 
 @media screen and (max-width : 1300px) {
-
   .courses-card-body {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
@@ -140,7 +139,6 @@
 }
 
 @media screen and (min-width : 992px) and (max-width : 1200px) {
-
   .courses-card-body {
     padding-left: 1.4rem;
     padding-right: 1.4rem;
@@ -173,7 +171,6 @@
 }
 
 @media screen and (min-width : 776px) and (max-width :992px) {
-
   .card {
     width: 44rem;
     margin: auto;
@@ -209,15 +206,13 @@
 }
 
 @media screen and (max-width : 775px) {
-
   .card {
     width: 33rem;
     margin: auto;
     margin-bottom: 30px;
   }
 
-  .courses-other {
-     
+  .courses-other {  
     p:first-child {
       font-size: 4.5rem;
       left: 22%;
@@ -227,7 +222,6 @@
       }
 
     }
-
   }
 
   .courses-view-courses {
@@ -238,25 +232,20 @@
 }
 
 @media screen and (max-width : 600px) {
-
   .courses-other {
-
     p:first-child {
       left: 18%;
     }
-
   }
 
 }
 
 @media screen and (max-width : 576px) {
-
   .card {
     width: 26rem;
   }
 
   .courses-other {
-
     p:first-child {
       font-size: 3.5rem;
       left: 20%;
@@ -266,7 +255,6 @@
       }
 
     }
-
   }
 
   .courses-view-courses {

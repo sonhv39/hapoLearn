@@ -62,9 +62,7 @@
 }
 
 @media screen and(max-width : 1300px) {
-
   .banner {
-
     .banner-content {
       top: 10%;
 
@@ -77,15 +75,12 @@
       }
 
     }
-
   }
 
 }
 
 @media screen and (min-width: 776px) and(max-width : 992px) {
-
   .banner {
-    
     .banner-img {
       height: 45%;
     }
@@ -117,13 +112,11 @@
       }
 
     }
-
   }
 
 }
 
 @media screen and(max-width : 776px) {
-
   .banner {
     height: 620px;
 
@@ -171,7 +164,6 @@
     }
 
     .banner-content {
-
       p:first-child {
         font-size: 1.6rem;
       }
@@ -187,9 +179,9 @@
       .banner-btn {
         font-size: 0.8rem;
       }
-  
     }
     
   }
 
 }
+
