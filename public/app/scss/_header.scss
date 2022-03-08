@@ -119,8 +119,7 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
-    &.header-navbar {
+  .header-navbar {
       .header-navbar-brand {
         width: 50%;
 
@@ -130,7 +129,6 @@ header {
 
       }
     }
-  }
   
 }
 
@@ -143,15 +141,13 @@ header {
     }
   }
 
-  .navbar {
-    &.header-navbar {
+  .header-navbar {
       .header-navbar-brand {
         .navbar-brand {
           width: 19rem;
         }
       }
     }
-  }
 
 }
 
@@ -182,7 +178,6 @@ header {
         a {
           color: $color-green-0;
         }
-
       }
 
       .nav-link {
@@ -254,4 +249,3 @@ header {
   }
 
 }
-
