@@ -18,7 +18,7 @@
 <body>
     <div class="viewport">
         <header class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-light header-navbar">
+            <nav class="navbar navbar-expand-sm navbar-light header-navbar">
                 <div class="header-navbar-brand">
                     <div class="navbar-brand">
                         <a href="https://haposoft.com/vi"><img src="./img/Hapo_Learn.png" alt="" class="w-100"></a>
@@ -40,9 +40,34 @@
                         <li class="nav-item header-nav-item header-active">
                             <a class="nav-link" href="#">ALL COURSES</a>
                         </li>
-                        <li class="nav-item header-nav-item">
+                        <li class="nav-item header-nav-item" data-toggle="modal" data-target="#login-register-modal">
                             <a class="nav-link" href="#">LOGIN/REGISTER</a>
                         </li>
+                        <div class="modal fade" id="login-register-modal" tabindex="-1"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <form class="form-rl">
+                                <div class="form-rl-header d-flex justify-content-around align-items-center">
+                                    <p>LOGIN</p>
+                                    <P>REGISTER</P>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        aria-describedby="emailHelp">
+                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                        anyone else.</small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1">
+                                </div>
+                                <div class="form-group form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
                         <li class="nav-item header-nav-item">
                             <a class="nav-link" href="#">PROFILE</a>
                         </li>
@@ -57,13 +82,13 @@
                 <div class="banner-content">
                     <p>Learn Anytime, Anywhere</p>
                     <span>at HapoLearn <img src="./img/imgHaposmall.png" alt=""> !</span>
-                    <p>Interactive lessons, "on-the-go" <br>
+                    <p class="banner-tagp">Interactive lessons, "on-the-go" <br>
                         practice, peer support</p>
                     <button class="banner-btn">Start Learning Now!</button>
                 </div>
             </section>
             <section class="courses container-fluid text-center">
-                <div class="courses-list d-lg-flex justify-content-around px-5" style="margin-top: -80px;">
+                <div class="courses-list d-sm-flex justify-content-around px-lg-5">
                     <div class="card">
                         <div class="courses-img courses-hcj">
                             <img src="./img/course1.png" class="card-img-top w-100" alt="course1">
@@ -103,14 +128,15 @@
                 </div>
                 <div class="courses-other">
                     <p class="text-center">Other courses</p>
-                    <div class="courses-other-list d-lg-flex justify-content-around px-5 ">
+                    <div class="courses-other-list d-sm-flex justify-content-around px-lg-5 ">
                         <div class="card">
                             <div class="courses-img courses-css">
                                 <img src="./img/course4.png" class="card-img-top w-100 " alt="course3">
                             </div>
                             <div class="card-body courses-card-body">
                                 <h5 class="card-title">CSS Tutorial</h5>
-                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media,...</p>
+                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                    Media,...</p>
                                 <a href="#" class="btn courses-btn">Take This Course</a>
                             </div>
                         </div>
@@ -120,7 +146,8 @@
                             </div>
                             <div class="card-body courses-card-body">
                                 <h5 class="card-title">Ruby on rails Tutorial</h5>
-                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media,...</p>
+                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                    Media,...</p>
                                 <a href="#" class="btn courses-btn">Take This Course</a>
                             </div>
                         </div>
@@ -130,12 +157,14 @@
                             </div>
                             <div class="card-body courses-card-body">
                                 <h5 class="card-title">Java Tutorial</h5>
-                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New Media,...</p>
+                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                    Media,...</p>
                                 <a href="#" class="btn courses-btn">Take This Course</a>
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="courses-view-courses">View All Our Courses <i class="fa fa-long-arrow-alt-right"></i></a>
+                    <a href="#" class="courses-view-courses">View All Our Courses <i
+                            class="fa fa-long-arrow-alt-right"></i></a>
                 </div>
             </section>
         </main>
