@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/app.css">
@@ -21,7 +22,8 @@
             <nav class="navbar navbar-expand-sm navbar-light header-navbar">
                 <div class="header-navbar-brand">
                     <div class="navbar-brand">
-                        <a href="https://haposoft.com/vi"><img src="./img/Hapo_Learn.png" alt="Hapo_Learn" class="w-100"></a>
+                        <a href="https://haposoft.com/vi"><img src="./img/hapo_learn.png" alt="hapo_learn"
+                                class="w-100"></a>
                     </div>
                 </div>
 
@@ -46,27 +48,58 @@
                         <div class="modal fade" id="login-register-modal" tabindex="-1"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="form-rl-header">
-                                <p class="active">LOGIN</p>
-                                <P>REGISTER</P>
+                                <p class="modal-header-l">LOGIN</p>
+                                <P class="modal-header-r active">REGISTER</P>
+                                <form class="form-r d-none">
+                                    <div class="form-group">
+                                        <label for="username">Username:</label>
+                                        <input type="text" class="form-control" id="username">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email:</label>
+                                        <input type="email" class="form-control" id="email">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Password:</label>
+                                        <input type="password" class="form-control" id="password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="rppassword">Repeat Password:</label>
+                                        <input type="password" class="form-control" id="rppassword">
+                                    </div>
+                                    <button type="submit">REGISTER</button>
+                                </form>
+                                <form class="form-l">
+                                    <div class="form-group">
+                                        <label for="usernamel">Username:</label>
+                                        <input type="text" class="form-control" id="usernamel">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="passwordl">Password:</label>
+                                        <input type="password" class="form-control" id="passwordl">
+                                    </div>
+                                    <div class="form-group form-check">
+                                        <input type="checkbox" class="form-check-input" id="rememberl">
+                                        <label class="form-check-label" for="rememberl">Remember me</label>
+                                        <a href="" class="text-right">Forgot Password</a>
+                                    </div>
+                                    <button type="submit">LOGIN</button>
+                                </form>
+                                <span>Login with</span>
+                                <div class="login-google d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <i class="fab fa-google-plus-g"></i>
+                                        Google
+                                    </div>
+                                </div>
+                                <div class="login-facebook d-flex justify-content-center align-items-center">
+                                    <div>
+                                        <i class="fab fa-facebook-f"></i>
+                                        Facebook
+                                    </div>
+                                </div>
                             </div>
-                            <form class="form-l">
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1"
-                                        aria-describedby="emailHelp">
-                                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with
-                                        anyone else.</small>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword1">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
+
                         </div>
                         <li class="nav-item header-nav-item">
                             <a class="nav-link" href="#">PROFILE</a>
@@ -81,7 +114,7 @@
                 </div>
                 <div class="banner-content">
                     <p>Learn Anytime, Anywhere</p>
-                    <span>at HapoLearn <img src="./img/imgHaposmall.png" alt="imgHaposmall"> !</span>
+                    <span>at HapoLearn <img src="./img/imghaposmall.png" alt="imghaposmall"> !</span>
                     <p class="banner-tagp">Interactive lessons, "on-the-go" <br>
                         practice, peer support</p>
                     <button class="banner-btn">Start Learning Now!</button>
@@ -91,7 +124,7 @@
                 <div class="courses-list d-sm-flex justify-content-around px-lg-5">
                     <div class="card">
                         <div class="courses-img courses-hcj">
-                            <img src="./img/course1.png" class="card-img-top w-100" alt="coursehtmlcss">
+                            <img src="./img/course_html_css.png" class="card-img-top w-100" alt="coursehtmlcss">
                         </div>
                         <div class="card-body courses-card-body">
                             <div class="card-title">HTML/CSS/js Tutorial</div>
@@ -103,7 +136,7 @@
                     </div>
                     <div class="card">
                         <div class="courses-img courses-laravel">
-                            <img src="./img/course2.png" class="card-img-top w-100" alt="courselaravel">
+                            <img src="./img/course_laravel.png" class="card-img-top w-100" alt="courselaravel">
                         </div>
                         <div class="card-body courses-card-body">
                             <div class="card-title">LARAVEL Tutorial</div>
@@ -115,7 +148,7 @@
                     </div>
                     <div class="card">
                         <div class="courses-img courses-php">
-                            <img src="./img/course3.png" class="card-img-top w-100" alt="coursephp">
+                            <img src="./img/course_php.png" class="card-img-top w-100" alt="coursephp">
                         </div>
                         <div class="card-body courses-card-body">
                             <div class="card-title">PHP Tutorial</div>
@@ -131,7 +164,7 @@
                     <div class="courses-other-list d-sm-flex justify-content-around px-lg-5 ">
                         <div class="card">
                             <div class="courses-img courses-css">
-                                <img src="./img/course4.png" class="card-img-top w-100 " alt="coursecss">
+                                <img src="./img/course_css.png" class="card-img-top w-100 " alt="coursecss">
                             </div>
                             <div class="card-body courses-card-body">
                                 <div class="card-title">CSS Tutorial</div>
@@ -142,7 +175,7 @@
                         </div>
                         <div class="card">
                             <div class="courses-img courses-ruby">
-                                <img src="./img/course5.png" class="card-img-top w-100" alt="courseruby">
+                                <img src="./img/course_ruby.png" class="card-img-top w-100" alt="courseruby">
                             </div>
                             <div class="card-body courses-card-body">
                                 <div class="card-title">Ruby on rails Tutorial</div>
@@ -153,7 +186,7 @@
                         </div>
                         <div class="card">
                             <div class="courses-img courses-java">
-                                <img src="./img/course6.png" class="card-img-top w-100 " alt="coursejava">
+                                <img src="./img/course_java.png" class="card-img-top w-100 " alt="coursejava">
                             </div>
                             <div class="card-body courses-card-body">
                                 <div class="card-title">Java Tutorial</div>
@@ -172,6 +205,7 @@
     </div>
     <script src="../..//node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./slick-1.8.1/slick/slick.min.js"></script>
     <script src="../app/js/app.js"></script>
 </body>
 
