@@ -165,14 +165,14 @@ header {
 
 @media screen and (max-width: 768px) {
   .header-navbar {
-      .header-navbar-brand {
-        width: 50%;
+    .header-navbar-brand {
+      width: 50%;
 
-        .navbar-brand {
-          width: 22rem;
-        }
+      .navbar-brand {
+        width: 22rem;
       }
     }
+  }
 }
 
 @media screen and (min-width: 576px) and (max-width: 668px) {
