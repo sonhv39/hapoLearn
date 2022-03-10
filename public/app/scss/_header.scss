@@ -1,6 +1,6 @@
 header {
   .header-navbar {
-    margin: 15px 37px;
+    padding: 15px 35px 15px 50px;
 
     .header-tonggle {
       border: 0;
@@ -21,7 +21,6 @@ header {
   margin-left: auto;
 
   .header-nav-item {
-    margin: 0 8px;
     border-radius: 17px;
     padding: 1px 12px;
     transition: all 0.3s ease;
@@ -73,7 +72,7 @@ header {
 
   .header-content {
     .header-ul {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 }
@@ -101,12 +100,12 @@ header {
 
   .header-content {
     .header-ul {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 }
 
-@media screen and (min-width: 688px) and (max-width: 768px) {
+@media screen and (min-width: 668px) and (max-width: 768px) {
   .header-navbar {
     display: block;
 
@@ -131,7 +130,7 @@ header {
 
   .header-content {
     .header-ul {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 }
@@ -169,7 +168,7 @@ header {
 
   .header-content {
     .header-ul {
-      justify-content: space-around;
+      justify-content: space-between;
     }
   }
 }
@@ -193,6 +192,8 @@ header {
     height: 100vh;
 
     .header-nav-item {
+      padding: 25px 0;
+
       &.header-active,
       &:hover {
         background-color: transparent;
@@ -237,14 +238,14 @@ header {
       .header-navbar-brand {
         width: 100%;
         margin: 0;
-        padding-bottom: 21px;
+        padding-bottom: 0px;
       }
     }
   }
 
   .header-navbar-brand {
     .navbar-brand {
-      margin: 15px 0 0 7rem;
+      margin: 0 0 0 7rem;
       width: 15rem;
     }
   }
@@ -252,24 +253,35 @@ header {
 
 @media screen and (max-width: 460px) {
   .header-navbar-brand {
-    display: flex;
-    justify-content: end;
-    padding-right: 20px;
-    padding-top: 8px;
-
     .navbar-brand {
-      margin-top: 0;
+      margin: 0 0 0 6rem;
+      width: 15rem;
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      margin: 0 0 0 5rem;
+      width: 15rem;
     }
   }
 }
 
 @media screen and (max-width: 400px) {
-  .navbar {
-    &.header-navbar {
-      .header-navbar-brand {
-        padding-top: 15px;
-        padding-bottom: 0;
-      }
+  .header-navbar-brand {
+    .navbar-brand {
+      margin: 0 0 0 4rem;
+      width: 14rem;
+    }
+  }
+}
+@media screen and (max-width: 345px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      margin: 0 0 0 2.5rem;
+      width: 13rem;
     }
   }
 }
