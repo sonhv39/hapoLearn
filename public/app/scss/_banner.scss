@@ -1,0 +1,367 @@
+.banner {
+  position: relative;
+  height: 700px;
+  background: linear-gradient(180deg, #fffbfb 87.5%, #e7e9ee 100%);
+  font-family: 'UTM BryantLG';
+
+  .banner-img {
+    background-image: url("https://s3-alpha-sig.figma.com/img/866b/63ac/1e9eca12ac0612fb7b885045132e08f8?Expires=1647216000&Signature=Dd3dA24utqqoCQm8mAX2vmmaWp2mUSeqFMkPaM3aqJeWy1CzACcHOu~cd0RyNXS7~JtDDXf8kD4Duojl5yO5f1RypjsHfR2TiDScnzCGW~dkq77-CwJ-ZnFddMJ3dBkOZe2QUl4cu0Q2Wht32ENp083CGh83nhWd2B-r2Osn-t0yc-bSKYYG99Mfk5zca4hWjqnWAGsGsQSfqoOk70notxAiM-nD4Mx4UCX46s-qlpXV6z8QqhZHSZPHga3tK~qS1FlMAY5RYUFHWvF5H-TtzD7zxHEoR7A3ejiLPW2-gq1W0gy3cj~bcNFq0mSv5JGeo0GBNfq9inF5kZA6P~As5A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+    height: 75%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 21%;
+    left: 0;
+    padding-left: 70px;
+  }
+}
+
+.banner-content {
+  p:first-child {
+    font-weight: 400;
+    font-size: 3.3rem;
+    color: $color-blue-0;
+    margin-bottom: 0;
+  }
+
+  .banner-content-imgsmall {
+    font-size: 3.1rem;
+    font-weight: bold;
+    color: $color-blue-0;
+    word-spacing: 5px;
+    margin-bottom: 13px;
+  }
+
+  .banner-tagp {
+    font-size: 1.6rem;
+    color: $color-black-0;
+    margin-bottom: 2rem;
+  }
+
+  .banner-btn {
+    font-size: 1.6rem;
+    padding: 13px 55px;
+    border-radius: 35px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 0;
+    color: white;
+    font-weight: 600;
+    background-color: $color-green-0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: $color-green-0;
+      background-color: white;
+    }
+  }
+}
+
+@media screen and(max-width : 1400px) {
+  .banner {
+    .banner-content {
+      p:first-child {
+        font-size: 2.9rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.8rem;
+      }
+
+      .banner-tagp {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 1260px) {
+  .banner {
+    .banner-content {
+      p:first-child {
+        font-size: 2.7rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.6rem;
+      }
+
+      .banner-tagp {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 1100px) {
+  .banner {
+    .banner-content {
+      top: 13%;
+      padding-left: 80px;
+
+      p:first-child {
+        font-size: 3rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.9rem;
+      }
+
+      .banner-tagp {
+        font-size: 1.6rem;
+        opacity: 0.7;
+      }
+
+      .banner-btn {
+        font-size: 1.5rem;
+        padding: 14px 55px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 1000px) {
+  .banner {
+    .banner-content {
+      p:first-child {
+        font-size: 2.5rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.4rem;
+      }
+
+      .banner-tagp {
+        font-size: 1.3rem;
+      }
+
+      .banner-btn {
+        font-size: 1.3rem;
+        padding: 14px 48px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 898px) {
+  .banner {
+    height: 650px;
+
+    .banner-img {
+      height: 85%;
+    }
+
+    .banner-content {
+      p:first-child {
+        font-size: 2.3rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.3rem;
+      }
+
+      .banner-tagp {
+        font-size: 1.1rem;
+      }
+
+      .banner-btn {
+        font-size: 1.1rem;
+        padding: 12px 38px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 768px) {
+  .banner {
+    .banner-content {
+      top: 15%;
+
+      p:first-child {
+        font-size: 2rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 1.8rem;
+        margin-bottom: 8px;
+      }
+
+      .banner-tagp {
+        font-size: 0.9rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 0.9rem;
+        padding: 11px 30px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 668px) {
+  .banner {
+    .banner-content {
+      top: 18%;
+
+      p:first-child {
+        font-size: 1.8rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 1.6rem;
+      }
+
+      .banner-tagp {
+        font-size: 0.85rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 0.85rem;
+        padding: 10px 25px;
+      }
+    }
+  }
+
+  .banner-content-imgsmall {
+    img{
+      width: 6%;
+    }
+  }
+}
+
+@media screen and(max-width : 575px) {
+  .banner {
+    height: 600px;
+
+    .banner-img {
+      height: 45%;
+    }
+
+    .banner-content {
+      position: relative;
+      top: 0%;
+      width: 88%;
+      margin: 0 auto;
+      padding-left: 40px;
+
+      p:first-child {
+        font-size: 2.4rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.4rem;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 1.4rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 1.4rem;
+        padding: 12px 50px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 484px) {
+  .banner {
+    .banner-content{
+      p:first-child {
+        font-size: 2.15rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.1rem;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 1.3rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 1.3rem;
+        padding: 12px 44px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 410px) {
+  .banner {
+    height: 530px;
+
+    .banner-img {
+      height: 45%;
+    }
+
+    .banner-content{
+      width: 91%;
+      
+      p:first-child {
+        font-size: 1.9rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 1.8rem;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 1.1rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 1.1rem;
+        padding: 11px 40px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 354px) {
+  .banner {
+    .banner-content{
+      p:first-child {
+        font-size: 1.68rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 1.4rem;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 1rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 1rem;
+        padding: 11px 40px;
+      }
+    }
+  }
+}

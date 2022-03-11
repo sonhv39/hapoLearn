@@ -1,18 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HapoLearn</title>
-    <link rel="stylesheet" href="./public/css/app.css">
     <link rel="icon" href="../favicon.ico" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./public/css/app.css">
 </head>
+
 <body>
     <div class="viewport">
-        <header></header>
-        <main></main>
+        <header class="container-fluid">
+            <nav class="navbar navbar-expand-sm navbar-light header-navbar">
+                <div class="header-navbar-brand">
+                    <div class="navbar-brand">
+                        <a href="#"><img src="./img/hapo_learn.png" alt="hapo_learn" class="w-100"></a>
+                    </div>
+                </div>
+                <button class="navbar-toggler header-tonggle" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation" id="headerBtnIcon">
+                    <span class="navbar-toggler-icon"></span>
+                    <i class="fa fa-times header-iconx hide"></i>
+                </button>
+                <div class="collapse navbar-collapse header-content" id="navbarSupportedContent">
+                    <ul class="navbar-nav header-ul">
+                        <li class="nav-item header-nav-item">
+                            <a class="nav-link" href="#">HOME</a>
+                        </li>
+                        <li class="nav-item header-nav-item header-active">
+                            <a class="nav-link" href="#">ALL COURSES</a>
+                        </li>
+                        <li class="nav-item header-nav-item" data-toggle="modal" data-target="#login-register-modal">
+                            <a class="nav-link" href="#">LOGIN/REGISTER</a>
+                        </li>
+                        <li class="nav-item header-nav-item">
+                            <a class="nav-link" href="#">PROFILE</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="banner">
+                <div class="banner-img">
+                </div>
+                <div class="banner-content">
+                    <div>
+                        <p class="">Learn Anytime, Anywhere</p>
+                        <div class="banner-content-imgsmall">at HapoLearn <img src="./img/imghaposmall.png"
+                                alt="imghaposmall"> !</div>
+                        <p class="banner-tagp">Interactive lessons, "on-the-go" <br>
+                            practice, peer support</p>
+                        <button class="banner-btn">Start Learning Now!</button>
+                    </div>
+                </div>
+            </section>
+            <section class="courses container-fluid text-center">
+                <div class="courses-list d-sm-flex justify-content-around px-lg-5">
+                    <div class="card">
+                        <div class="courses-img courses-hcj">
+                            <img src="./img/course_html_css.png" class="card-img-top w-100" alt="coursehtmlcss">
+                        </div>
+                        <div class="card-body courses-card-body">
+                            <div class="card-title">HTML/CSS/js Tutorial</div>
+                            <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                Media. I had coded quite a bit, but never touched anything in regards to web
+                                development.</p>
+                            <a href="#" class="btn courses-btn">Take This Course</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="courses-img courses-laravel">
+                            <img src="./img/course_laravel.png" class="card-img-top w-100" alt="courselaravel">
+                        </div>
+                        <div class="card-body courses-card-body">
+                            <div class="card-title">LARAVEL Tutorial</div>
+                            <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                Media. I had coded quite a bit, but never touched anything in regards to web
+                                development.</p>
+                            <a href="#" class="btn courses-btn">Take This Course</a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="courses-img courses-php">
+                            <img src="./img/course_php.png" class="card-img-top w-100" alt="coursephp">
+                        </div>
+                        <div class="card-body courses-card-body">
+                            <div class="card-title">PHP Tutorial</div>
+                            <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                Media. I had coded quite a bit, but never touched anything in regards to web
+                                development.</p>
+                            <a href="#" class="btn courses-btn">Take This Course</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="courses-other">
+                    <p class="text-center">Other courses</p>
+                    <div class="courses-other-list d-sm-flex justify-content-around px-lg-5 ">
+                        <div class="card">
+                            <div class="courses-img courses-css">
+                                <img src="./img/course_css.png" class="card-img-top w-100 " alt="coursecss">
+                            </div>
+                            <div class="card-body courses-card-body">
+                                <div class="card-title">CSS Tutorial</div>
+                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                    Media,...</p>
+                                <a href="#" class="btn courses-btn">Take This Course</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="courses-img courses-ruby">
+                                <img src="./img/course_ruby.png" class="card-img-top w-100" alt="courseruby">
+                            </div>
+                            <div class="card-body courses-card-body">
+                                <div class="card-title">Ruby on rails Tutorial</div>
+                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                    Media,...</p>
+                                <a href="#" class="btn courses-btn">Take This Course</a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="courses-img courses-java">
+                                <img src="./img/course_java.png" class="card-img-top w-100 " alt="coursejava">
+                            </div>
+                            <div class="card-body courses-card-body">
+                                <div class="card-title">Java Tutorial</div>
+                                <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New
+                                    Media,...</p>
+                                <a href="#" class="btn courses-btn">Take This Course</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="courses-view-courses">View All Our Courses <i
+                            class="fa fa-long-arrow-alt-right"></i></a>
+                </div>
+            </section>
+        </main>
         <footer></footer>
     </div>
+    <script src="../..//node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../app/js/app.js"></script>
 </body>
+
 </html>
