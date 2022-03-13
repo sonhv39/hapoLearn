@@ -1,0 +1,360 @@
+.form-rl-header {
+  font-family: 'UTM BryantLG';
+  display: inline-block;
+  position: absolute;
+  left: 35%;
+  top: 13%;
+  
+  p {
+    padding: 10px 50px;
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 1px solid $color-green-0;
+    cursor: pointer;
+    background-color: white;
+    color: $color-green-0;
+  
+    &.modal-active-cus {
+      background-color: $color-green-0;
+      color: white;
+    }
+  }
+  
+  .modal-header-l {
+    padding: 10px 70px;
+  }
+  
+  .modal-header-r {
+    margin-left: -5px;
+  }
+
+  .form-group {
+    margin-bottom: 2rem;
+  }
+
+  .modal-close {
+    width: 45px;
+    height: 45px;
+    line-height: 57px;
+    text-align: center;
+    background-color: $color-green-0;
+    border-radius: 50%;
+    position: absolute;
+    top: -19px;
+    right: -20px;
+    cursor: pointer;
+
+    i {
+      font-size: 30px;
+      color: white;
+    }
+  }
+}
+
+.form-r {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  padding: 31px;
+  color: $color-black-0;
+
+  label {
+    font-size: 1.42rem;
+    font-weight: bold;
+    line-height: 1.78rem;
+  }
+
+  input {
+    padding: 25px 0;
+    background-color: $color-white-0;
+    box-sizing: border-box;
+    border: 1px solid #E1E1E1;
+  }
+
+  button {
+    padding: 10px 60px;
+    background-color: $color-green-0;
+    border-radius: 22px;
+    font-size: 1.28rem;
+    font-weight: bold;
+    font-style: normal;
+    box-shadow: inset 0px 1.5px 2px #6F8710;
+    color: white;
+    border: 0;
+    margin-left: 80px;
+  }
+}
+
+.form-l {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  padding: 31px;
+  color: $color-black-0;
+
+  label {
+    font-size: 1.42rem;
+    font-weight: bold;
+    line-height: 1.78rem;
+  }
+
+  input {
+    padding: 25px 0;
+    background-color: $color-white-0;
+    box-sizing: border-box;
+    border: 1px solid #E1E1E1;
+  }
+
+  button {
+    padding: 10px 60px;
+    background-color: $color-green-0;
+    border-radius: 22px;
+    font-size: 1.28rem;
+    font-weight: bold;
+    font-style: normal;
+    box-shadow: inset 0px 1.5px 2px #6F8710;
+    color: white;
+    border: 0;
+    margin-left: 103px;
+  }
+
+  .form-check {
+    margin-top: -20px;
+
+    .form-check-input {
+      margin-top: 6px;
+
+      &:checked{
+        background: $color-green-0;
+      }
+    }
+
+    .form-check-label {
+      font-size: 18px;
+      line-height: 22.07px;
+    }
+
+    a {
+      display: inline-block;
+      margin-left: 139px;
+      font-size: 18px;
+      color: $color-green-0;
+      font-weight: 500;
+      line-height: 22.07px;
+    }
+  }
+
+  .loginwith-text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: $color-black-0;
+    margin-top: 20px;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 39%;
+      height: 1px;
+      background-color: #DBDBDB;
+      bottom: 189px;
+      right: 0;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      width: 39%;
+      height: 1px;
+      background-color: #DBDBDB;
+      bottom: 189px;
+      left: 0;
+    }
+  }
+
+  .login-google {
+    margin-top: 30px;
+    padding: 10px 40px;
+    background-color: #DC4E41;
+    color: white;
+    cursor: pointer;
+
+    i {
+      font-size: 30px;
+    }
+
+    span {
+      font-size: 20px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  .login-facebook {
+    margin-top: 20px;
+    padding: 10px 40px;
+    background-color: #3B5999;
+    color: white;
+    cursor: pointer;
+
+    i {
+      font-size: 30px;
+    }
+
+    span {
+      font-size: 20px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .form-rl-header {
+    left: 25%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .form-rl-header {
+    left: 20%;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  .form-rl-header {
+    left: 12%;
+  }
+}
+
+@media screen and (max-width: 593px) {
+  .form-rl-header {
+    p {
+      padding: 10px 30px;
+    }
+
+    .modal-header-l {
+      padding: 10px 50px;
+    }
+  }
+
+  .form-l {
+    padding: 10px;
+
+    .form-check {
+      a {
+        margin-left: 100px;
+      }
+    }
+
+    .loginwith-text {
+      &::after {
+        bottom: 168px;
+        width: 36%;
+      }
+
+      &::before {
+        bottom: 168px;
+        width: 36%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 473px) {
+  .form-rl-header {
+    left: 3%;
+  }
+
+  .form-r {
+    button {
+      margin-left: 40px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form-rl-header {
+    left: 3%;
+  }
+
+  .form-rl-header {
+    p {
+      padding: 10px 20px;
+    }
+
+    .modal-header-l {
+      padding: 10px 40px;
+    }
+  }
+
+  .form-l {
+    padding: 5px;
+
+    .form-check {
+      a {
+        margin-left: 63px;
+      }
+    }
+
+    button {
+      margin-left: 62px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .form-rl-header {
+    p {
+      padding: 10px 15px;
+      font-size: 1.6rem;
+    }
+
+    .modal-header-l {
+      padding: 10px 35px;
+    }
+  }
+
+  .form-l {
+    padding: 5px;
+
+    .form-check {
+      a {
+        margin-left: 28px;
+        font-size: 16px;
+      }
+    }
+
+    button {
+      margin-left: 62px;
+    }
+
+    .form-check {
+      .form-check-label {
+        font-size: 16px;
+      }
+    }
+
+    .loginwith-text {
+      &::after {
+        bottom: 168px;
+        width: 33%;
+      }
+
+      &::before {
+        bottom: 168px;
+        width: 33%;
+      }
+    }
+  }
+
+  .form-r {
+    padding: 20px;
+
+    button {
+      margin-left: 20px;
+    }
+  }
+}
