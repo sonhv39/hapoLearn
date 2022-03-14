@@ -8,6 +8,7 @@ $(document).ready(function(){
       $('.fa-times').removeClass('hide');
     }
   });
+
   $('.feedback-content').slick({
     dots: false,
     infinite: true,
@@ -26,17 +27,18 @@ $(document).ready(function(){
       },
     ]
   });
+
   $('.counter').countUp();
+
   if ($(window).width() > 1100) {
-    console.log($(window).width());
     $('.footer-icon').mouseenter(function(){
-      console.log('vao day r');
       $('.footer-right').css({'margin-left' : '10px'});
     });
     $('.footer-icon').mouseleave(function(){
       $('.footer-right').css({'margin-left' : '135px'});
     });
   }
+
   $('.icon-img').click(function(){
     if ($('.mess-content').hasClass('mess-active')){
       $('.mess-content').removeClass('mess-active')
@@ -44,9 +46,11 @@ $(document).ready(function(){
       $('.mess-content').addClass('mess-active')
     }
   });
+
   $('.icon-close').click(function(){
     $('.mess-content').removeClass('mess-active')
   });
+
   // xu ly modal 
   $('.modal-header-l').click(function(){
     $('.modal-header-l').addClass('modal-active-cus');
@@ -56,6 +60,7 @@ $(document).ready(function(){
     $('.form-r').addClass('d-none');
     $('.form-r').removeClass('d-block');
   });
+
   $('.modal-header-r').click(function(){
     $('.modal-header-r').addClass('modal-active-cus');
     $('.modal-header-l').removeClass('modal-active-cus');
@@ -64,6 +69,7 @@ $(document).ready(function(){
     $('.form-l').addClass('d-none');
     $('.form-l').removeClass('d-block');
   });
+
   $('.modal-close').click(function(){
     if ($('.body-cus').hasClass('modal-open')) {
       $('.body-cus').removeClass('modal-open');
@@ -73,6 +79,7 @@ $(document).ready(function(){
       $('.modal-backdrop').css({'display' : 'none'})
     }
   });
+
   $('.header-lr-cus').click(function(){
     $('.body-cus').addClass('modal-open');
     $('.body-cus').css({'padding-right' : '0'});
