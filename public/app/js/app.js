@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  $('#header-btnIcon').click(function() {
+  $('#headerBtnIcon').click(function() {
     if ($('.header-content').hasClass('show')) {
       $('.navbar-toggler-icon').removeClass('hide');
       $('.fa-times').addClass('hide');
