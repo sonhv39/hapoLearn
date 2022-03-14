@@ -125,10 +125,7 @@
 
     .form-check-input {
       margin-top: 6px;
-
-      &:checked{
-        background: $color-green-0;
-      }
+      accent-color: $color-green-0;
     }
 
     .form-check-label {
