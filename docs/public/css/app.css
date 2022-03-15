@@ -220,7 +220,7 @@ header .header-iconx {
   font-family: "UTM BryantLG";
 }
 .banner .banner-img {
-  background-image: url("https://s3-alpha-sig.figma.com/img/866b/63ac/1e9eca12ac0612fb7b885045132e08f8?Expires=1648425600&Signature=A0~4vb1g1X9HTl5MxcDWrp0TAmURTEe-0xzq9jUohNXfg23c1ouwsPCULzpTv~sm7N1sFT4BsZokJBWzFkHb9KeBZ7kXqvmuoe57S0S8wpugBe6kFnd~jW-xlCaUkdwHt-Akzdm4Xw49bBnZFvjlou8jKCsN7A1Tm-gUpY8hyPTu2iDlhjJ3tbrBZPkTYARRyQHQIldlsSd1hw6EpRa2bDML7xj-ZBl~EXX2qmv~j7thomMxqTm-Xb2DyALUhBVRjZRVWTl3ZH65mAkXGlaZNYJ1kEr16oOghRaFR2NBkc2VcpNEILJP2NDcAy5maYSfQrwJdGmLM4OAA0Yg7jKFYw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+  background-image: url("https://s3-alpha-sig.figma.com/img/866b/63ac/1e9eca12ac0612fb7b885045132e08f8?Expires=1647216000&Signature=Dd3dA24utqqoCQm8mAX2vmmaWp2mUSeqFMkPaM3aqJeWy1CzACcHOu~cd0RyNXS7~JtDDXf8kD4Duojl5yO5f1RypjsHfR2TiDScnzCGW~dkq77-CwJ-ZnFddMJ3dBkOZe2QUl4cu0Q2Wht32ENp083CGh83nhWd2B-r2Osn-t0yc-bSKYYG99Mfk5zca4hWjqnWAGsGsQSfqoOk70notxAiM-nD4Mx4UCX46s-qlpXV6z8QqhZHSZPHga3tK~qS1FlMAY5RYUFHWvF5H-TtzD7zxHEoR7A3ejiLPW2-gq1W0gy3cj~bcNFq0mSv5JGeo0GBNfq9inF5kZA6P~As5A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
   height: 75%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -635,6 +635,11 @@ header .header-iconx {
     font-size: 1.6rem;
   }
 }
+@media screen and (min-width: 576px) and (max-width: 1058px) {
+  .courses-card-body {
+    padding: 1.25rem 1.5rem 35px 1.5rem;
+  }
+}
 @media screen and (min-width: 576px) and (max-width: 998px) {
   .courses-list {
     margin-top: -60px;
@@ -665,13 +670,26 @@ header .header-iconx {
     font-size: 2.5rem;
   }
 }
+@media screen and (min-width: 576px) and (max-width: 911px) {
+  .courses-card-body {
+    padding: 1.25rem 0rem 35px 0rem;
+  }
+
+  .card {
+    margin: 0 10px;
+  }
+
+  .card-text {
+    padding: 0 15px;
+  }
+}
 @media screen and (min-width: 576px) and (max-width: 790px) {
   .courses-img {
     padding: 2rem 2.5rem;
   }
 
   .courses-card-body {
-    padding: 0.3rem 0.7rem 20px 0.7rem;
+    padding: 0.3rem 0rem 20px 0rem;
   }
 
   .card-title {
@@ -683,21 +701,22 @@ header .header-iconx {
   }
 
   .card-text {
-    font-size: 0.85rem;
-    line-height: 1.4rem;
+    font-size: 0.81rem;
+    line-height: 1.2rem;
+    padding: 0 15px;
+  }
+
+  .card {
+    margin: 0 5px;
   }
 }
 @media screen and (min-width: 576px) and (max-width: 690px) {
-  .card {
-    margin: 0 7px;
-  }
-
   .courses-card-body {
-    padding: 0.3rem 0rem 20px 0rem;
+    padding: 0.3rem 0rem 15px 0rem;
   }
 
   .card-text {
-    padding: 0 10px;
+    padding: 0 5px;
   }
 
   .courses-btn {
@@ -712,6 +731,15 @@ header .header-iconx {
   .courses-view-courses {
     font-size: 2.3rem;
     margin-top: 50px;
+  }
+
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .courses-btn {
+    font-size: 1rem;
   }
 }
 @media screen and (max-width: 575px) {
@@ -2182,77 +2210,4 @@ header .header-iconx {
   .form-r button {
     margin-left: 20px;
   }
-}
-.listcourse {
-  padding: 40px 70px;
-  background-color: #E5E5E5;
-  font-family: "Open Sans";
-}
-
-.listcourse-top {
-  margin-bottom: 20px;
-}
-
-.btn-listcourse-filter {
-  padding: 10px 15px;
-  background-color: white;
-  border: 1px solid #C4C4C4;
-  color: #505353;
-  border-radius: 5px;
-  margin-right: 10px;
-  font-size: 16px;
-  line-height: 1.375;
-  font-weight: bolder;
-  cursor: pointer;
-}
-
-.listcourse-search {
-  position: relative;
-  margin-right: 10px;
-}
-.listcourse-search input {
-  padding: 10px 160px 10px 10px;
-  border: 1px solid #C4C4C4;
-  border-radius: 5px;
-}
-.listcourse-search input::-moz-placeholder {
-  font-size: 16px;
-  line-height: 1.375;
-  color: #BABABA;
-}
-.listcourse-search input:-ms-input-placeholder {
-  font-size: 16px;
-  line-height: 1.375;
-  color: #BABABA;
-}
-.listcourse-search input::placeholder {
-  font-size: 16px;
-  line-height: 1.375;
-  color: #BABABA;
-}
-.listcourse-search .fa-search {
-  font-size: 20px;
-  color: #505353;
-  position: absolute;
-  top: 13px;
-  right: 10px;
-  cursor: pointer;
-}
-
-.btn-listcourse-search {
-  font-size: 15px;
-  line-height: calc(20 / 15);
-  font-weight: bold;
-  padding: 10px 20px;
-  background-color: #B2D235;
-  color: white;
-  border: 0;
-  border-radius: 5px;
-}
-
-.ls-filter {
-  background-color: white;
-  padding: 15px 20px;
-  border: 1pox solid #C4C4C4;
-  border-radius: 5px;
 }
