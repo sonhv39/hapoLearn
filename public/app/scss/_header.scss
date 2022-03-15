@@ -24,13 +24,14 @@ header {
     border-radius: 17px;
     padding: 1px 12px;
     transition: all 0.3s ease;
+    margin: 0 5px;
 
     &.header-active,
     &:hover {
       background-color: $color-green-0;
 
       a {
-        color: white;
+        color: white !important;
       }
     }
 
@@ -199,7 +200,7 @@ header {
         background-color: transparent;
 
         a {
-          color: $color-green-0;
+          color: $color-green-0 !important;
         }
       }
 
@@ -277,6 +278,7 @@ header {
     }
   }
 }
+
 @media screen and (max-width: 345px) {
   .header-navbar-brand {
     .navbar-brand {
