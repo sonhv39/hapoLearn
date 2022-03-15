@@ -160,6 +160,12 @@
   }
 }
 
+@media screen and (min-width: 576px) and (max-width : 1058px) {
+  .courses-card-body {
+    padding: 1.25rem 1.5rem 35px 1.5rem;
+  }
+}
+
 @media screen and (min-width: 576px) and (max-width : 998px) {
   .courses-list {
     margin-top: -60px;
@@ -193,13 +199,27 @@
   }
 }
 
+@media screen and (min-width: 576px) and (max-width : 911px) {
+  .courses-card-body {
+    padding: 1.25rem 0rem 35px 0rem;
+  }
+
+  .card {
+    margin: 0 10px;
+  }
+
+  .card-text {
+    padding: 0 15px;
+  }
+}
+
 @media screen and (min-width: 576px) and (max-width : 790px) {
   .courses-img {
     padding: 2rem 2.5rem;
   }
 
   .courses-card-body {
-    padding: 0.3rem 0.7rem 20px 0.7rem;
+    padding: 0.3rem 0rem 20px 0rem;
   }
 
   .card-title {
@@ -211,22 +231,23 @@
   }
 
   .card-text {
-    font-size: 0.85rem;
-    line-height: 1.4rem;
+    font-size: 0.81rem;
+    line-height: 1.2rem;
+    padding: 0 15px;
+  }
+
+  .card {
+    margin: 0 5px;
   }
 }
 
 @media screen and (min-width: 576px) and (max-width : 690px) {
-  .card {
-    margin: 0 7px;
-  }
-
   .courses-card-body {
-    padding: 0.3rem 0rem 20px 0rem;
+    padding: 0.3rem 0rem 15px 0rem;
   }
 
   .card-text {
-    padding: 0 10px;
+    padding: 0 5px;
   }
 
   .courses-btn {
@@ -243,6 +264,15 @@
   .courses-view-courses {
     font-size: 2.3rem;
     margin-top: 50px;
+  }
+
+  .container-fluid {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .courses-btn {
+    font-size: 1rem;
   }
 }
 
