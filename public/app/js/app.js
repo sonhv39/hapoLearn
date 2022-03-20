@@ -126,5 +126,6 @@ $(document).ready(function(){
     $('.modal').addClass('show');
     $('.modal').css({'display' : 'block'});
     $('.modal-backdrop').css({'display' : 'block'})
+    console.log('aaa')
   })
 });

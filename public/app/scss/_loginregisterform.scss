@@ -1,0 +1,586 @@
+.form-rl-header {
+  font-family: $fontNu;
+  display: inline-block;
+  position: relative;
+  p {
+    padding: 10px 65px;
+    display: inline-block;
+    margin-bottom: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 1px solid $color-green-0;
+    cursor: pointer;
+    background-color: white;
+    color: $color-green-0;
+  
+    &.modal-active-cus {
+      background-color: $color-green-0;
+      color: white;
+    }
+  }
+  
+  .modal-header-l {
+    padding: 10px 86px;
+  }
+  
+  .modal-header-r {
+    margin-left: -5px;
+  }
+
+  .form-group {
+    margin-bottom: 2.5rem;
+  }
+
+  .modal-close {
+    width: 45px;
+    height: 45px;
+    line-height: 57px;
+    text-align: center;
+    background-color: $color-green-0;
+    border-radius: 50%;
+    position: absolute;
+    top: -19px;
+    right: -20px;
+    cursor: pointer;
+
+    i {
+      font-size: 30px;
+      color: white;
+    }
+  }
+}
+
+
+.form-r {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  padding: 31px;
+  color: $color-black-0;
+
+  label {
+    font-size: 1.52rem;
+    font-weight: bold;
+    line-height: calc(1.78 / 1.42);
+  }
+
+  input {
+    padding: 25px 0;
+    background-color: $color-white-0;
+    box-sizing: border-box;
+    border: 1px solid #E1E1E1;
+  }
+
+  button {
+    padding: 10px 80px;
+    background-color: #B2D235;
+    border-radius: 27px;
+    font-size: 1.43rem;
+    font-weight: bold;
+    font-style: normal;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    color: white;
+    border: 0;
+    margin-left: 100px;
+  }
+}
+
+.form-l {
+  width: 100%;
+  height: 80%;
+  background-color: white;
+  padding: 43px 30px 40px 30px;
+  color: $color-black-0;
+
+  label {
+    font-size: 1.52rem;
+    font-weight: bold;
+    line-height: calc(1.78 / 1.42);
+  }
+
+  input {
+    padding: 30px 0;
+    background-color: $color-white-0;
+    box-sizing: border-box;
+    border: 1px solid #E1E1E1;
+  }
+
+  button {
+    padding: 10px 80px;
+    background-color: #B2D235;
+    border-radius: 27px;
+    font-size: 1.43rem;
+    font-weight: bold;
+    font-style: normal;
+    box-shadow: inset 0px 1.5px 2px #6f8710;
+    color: white;
+    border: 0;
+    margin-left: 120px;
+  }
+
+  .form-check {
+    margin-top: -20px;
+
+    .form-check-input {
+      margin-top: 2px;
+      accent-color: $color-green-0;
+      width: 18px;
+      height: 18px;
+    }
+
+    .form-check-label {
+      font-size: 19px;
+      line-height: calc(22.07 / 18);
+      margin-left: 13px;
+    }
+
+    a {
+      display: inline-block;
+      margin-left: 139px;
+      font-size: 18px;
+      color: $color-green-0;
+      font-weight: 500;
+      line-height: 22.07px;
+    }
+  }
+
+  .loginwith-text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: $color-black-0;
+    margin-top: 20px;
+
+    &::after {
+      content: ' ';
+      position: absolute;
+      width: 39%;
+      height: 1px;
+      background-color: #DBDBDB;
+      bottom: 189px;
+      right: 0;
+    }
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      width: 39%;
+      height: 1px;
+      background-color: #DBDBDB;
+      bottom: 189px;
+      left: 0;
+    }
+  }
+
+  .login-google {
+    margin-top: 30px;
+    padding: 10px 40px;
+    background-color: #DC4E41;
+    color: white;
+    cursor: pointer;
+
+    i {
+      font-size: 30px;
+    }
+
+    span {
+      font-size: 25px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+
+  .login-facebook {
+    margin-top: 25px;
+    padding: 10px 40px;
+    background-color: #3B5999;
+    color: white;
+    cursor: pointer;
+
+    i {
+      font-size: 30px;
+    }
+
+    span {
+      font-size: 20px;
+      display: inline-block;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .form-rl-header {
+    p {
+      font-size: 1.8rem;
+    }
+  
+    .modal-header-r {
+      margin-left: -5px;
+    }
+  
+    .form-group {
+      margin-bottom: 2rem;
+    }
+  }
+  
+  .form-r {
+    padding: 30px;
+  
+    label {
+      font-size: 1.42rem;
+    }
+  
+    input {
+      padding: 25px 0;
+    }
+  
+    button {
+      padding: 10px 61px;
+      border-radius: 22px;
+      font-size: 1.28rem;
+      font-weight: bold;
+      font-style: normal;
+      box-shadow: inset 0px 1.5px 2px #6F8710;
+      color: white;
+      border: 0;
+      margin-left: 115px;
+    }
+  }
+  
+  .form-l {
+    width: 100%;
+    background-color: white;
+    padding: 31px;
+    color: $color-black-0;
+  
+    label {
+      font-size: 1.42rem;
+    }
+  
+    input {
+      padding: 25px 0;
+      background-color: $color-white-0;
+      box-sizing: border-box;
+      border: 1px solid #E1E1E1;
+    }
+  
+    button {
+      padding: 10px 70px;
+      background-color: $color-green-0;
+      border-radius: 22px;
+      font-size: 1.28rem;
+      font-weight: bold;
+      font-style: normal;
+      box-shadow: inset 0px 1.5px 2px #6F8710;
+      color: white;
+      border: 0;
+      margin-left: 120px;
+    }
+  
+    .form-check {
+      margin-top: -20px;
+  
+      .form-check-input {
+        margin-top: 6px;
+        accent-color: $color-green-0;
+        width: 14px;
+        height: 14px;
+      }
+  
+      .form-check-label {
+        font-size: 18px;
+        margin-left: 2px;
+      }
+  
+      a {
+        display: inline-block;
+        margin-left: 139px;
+        font-size: 18px;
+        color: $color-green-0;
+        font-weight: 500;
+        line-height: 22.07px;
+      }
+    }
+  
+    .loginwith-text {
+      text-align: center;
+      font-size: 20px;
+      font-weight: bold;
+      color: $color-black-0;
+      margin-top: 20px;
+  
+      &::after {
+        content: ' ';
+        position: absolute;
+        width: 39%;
+        height: 1px;
+        background-color: #DBDBDB;
+        bottom: 189px;
+        right: 0;
+      }
+  
+      &::before {
+        content: ' ';
+        position: absolute;
+        width: 39%;
+        height: 1px;
+        background-color: #DBDBDB;
+        bottom: 189px;
+        left: 0;
+      }
+    }
+  
+    .login-google {
+      margin-top: 30px;
+      padding: 10px 40px;
+      background-color: #DC4E41;
+      color: white;
+      cursor: pointer;
+  
+      i {
+        font-size: 30px;
+      }
+  
+      span {
+        font-size: 20px;
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+  
+    .login-facebook {
+      margin-top: 20px;
+      padding: 10px 40px;
+      background-color: #3B5999;
+      color: white;
+      cursor: pointer;
+  
+      i {
+        font-size: 30px;
+      }
+  
+      span {
+        font-size: 20px;
+        display: inline-block;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 593px) {
+  .form-rl-header {
+    p {
+      padding: 10px 30px;
+    }
+
+    .modal-header-l {
+      padding: 10px 52px;
+    }
+  }
+
+  .form-r {
+    button {
+      margin-left: 63px;
+    }
+  }
+
+  .form-l .form-check .form-check-label {
+    font-size: 14px;
+  }
+
+  .form-l .form-check a {
+    font-size: 14px;
+    margin-left: 116px;
+  }
+
+  .form-l button {
+    margin-left: 82px;
+  }
+
+  .form-l {
+    padding: 8px;
+    width: 100%;
+
+    .form-check {
+      a {
+        margin-left: 100px;
+      }
+    }
+
+    .loginwith-text {
+      &::after {
+        bottom: 168px;
+        width: 36%;
+      }
+
+      &::before {
+        bottom: 168px;
+        width: 36%;
+      }
+    }
+  }
+
+  .form-r {
+    padding: 22px;
+  }
+}
+
+@media screen and (max-width: 473px) {
+  .form-l .form-check .form-check-label {
+    font-size: 15px;
+    margin-top: 5px;
+  }
+
+  .form-l .form-check a {
+    font-size: 14px;
+    margin-left: 100px;
+  }
+
+  .form-l label {
+    font-size: 1.1rem;
+  }
+
+  .form-rl-header .modal-close {
+    width: 35px;
+    height: 35px;
+    line-height: 45px;
+    text-align: center;
+    background-color: #B2D235;
+    border-radius: 50%;
+    position: absolute;
+    top: -21px;
+    right: -13px;
+    cursor: pointer;
+  }
+
+  .form-l button {
+    margin-left: 80px;
+  }
+
+  .form-rl-header .modal-close i {
+    font-size: 25px;
+  }
+
+  .form-r {
+    button {
+      margin-left: 55px;
+    }
+
+    label {
+      font-size: 1.1rem;
+    }
+  }
+
+  .form-l {
+    padding: 10px 7px 10px 10px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 442px) {
+  .form-r {
+    button {
+      margin-left: 55px;
+    }
+  }
+
+  .form-l {
+    padding: 10px 6px 10px 10px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form-r button {
+    margin-left: 40px;
+  }
+
+  .form-l .loginwith-text {
+    font-size: 16px;
+  }
+
+  .form-rl-header {
+    p {
+      padding: 10px 20px;
+    }
+
+    .modal-header-l {
+      padding: 10px 40px;
+    }
+  }
+
+  .form-l {
+    padding: 5px;
+
+    .form-check {
+      a {
+        margin-left: 63px;
+      }
+    }
+
+    button {
+      margin-left: 62px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .form-rl-header {
+    p {
+      padding: 10px 17px;
+      font-size: 1.5rem;
+    }
+
+    .modal-header-l {
+      padding: 10px 34px;
+    }
+  }
+
+  .form-l .form-check .form-check-label {
+    font-size: 12px;
+  }
+
+  .form-l .form-check a {
+    font-size: 12px;
+    margin-left: 56px;
+  }
+
+  .form-l {
+    padding: 5px;
+
+    label {
+      font-size: 1rem;
+    }
+
+    input {
+      padding: 20px 0;
+    }
+
+    button {
+      margin-left: 62px;
+      padding: 10px 50px;
+      font-size: 1rem;
+    }
+
+    .loginwith-text {
+      &::after {
+        bottom: 168px;
+        width: 33%;
+      }
+
+      &::before {
+        bottom: 168px;
+        width: 33%;
+      }
+    }
+  }
+
+  .form-r {
+    padding: 20px;
+
+    button {
+      margin-left: 20px;
+    }
+  }
+}
