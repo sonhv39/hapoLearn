@@ -1,9 +1,4 @@
 $(document).ready(function(){
-  window.onload = function(){
-    limitText(80);
-    limitRvText(130);
-  };
-
   $('#headerBtnIcon').click(function() {
     if ($('.header-content').hasClass('show')) {
       $('.navbar-toggler-icon').removeClass('hide');
@@ -75,7 +70,7 @@ $(document).ready(function(){
     $('.mess-content').removeClass('mess-active')
   });
 
-  // xu ly modal
+  // xu ly modal 
   $('.modal-header-l').click(function(){
     $('.modal-header-l').addClass('modal-active-cus');
     $('.modal-header-r').removeClass('modal-active-cus');
@@ -110,42 +105,5 @@ $(document).ready(function(){
     $('.modal').addClass('show');
     $('.modal').css({'display' : 'block'});
     $('.modal-backdrop').css({'display' : 'block'})
-  });
-
-  function limitText(textLenght){
-    var tdList = document.getElementsByClassName("card-text");
-    for (var i = 0; i< tdList.length; i++){
-      if (tdList[i].innerHTML.length > textLenght){
-        tdList[i].innerHTML = tdList[i].innerHTML.substr(0, textLenght - 4) +'...';
-      }
-    }
-  }
-
-  function limitRvText(textLenght){
-    var tdList = document.getElementsByClassName("review-text");
-    for (var i = 0; i< tdList.length; i++){
-      if (tdList[i].innerHTML.length > textLenght ){
-        tdList[i].innerHTML = tdList[i].innerHTML.substr(0, textLenght - 4) +'...';
-      }
-    }
-  }
-
-  $('.feedback-content').slick({
-    dots: false,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 2,
-    slidesToScroll: 2,
-    responsive: [
-      {
-        breakpoint: 900,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: false
-        }
-      },
-    ]
-  });
+  })
 });

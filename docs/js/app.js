@@ -30,12 +30,52 @@ $(document).ready(function(){
 
   $('.counter').countUp();
 
-  if ($(window).width() > 1100) {
+  if ($(window).width() > 1804 & $(window).width() < 1983) {
     $('.footer-icon').mouseenter(function(){
-      $('.footer-right').css({'margin-left' : '10px'});
+      $('.footer-right').css({'margin-left' : '50px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '135px'});
+      $('.footer-right').css({'margin-left' : '275px'});
+    });
+  } 
+  else if ($(window).width() > 1698 & $(window).width() < 1804) {
+    $('.footer-icon').mouseenter(function(){
+    $('.footer-right').css({'margin-left' : '40px'});
+    });
+    $('.footer-icon').mouseleave(function(){
+      $('.footer-right').css({'margin-left' : '203px'});
+    });
+  }
+  else if ($(window).width() > 1583 & $(window).width() < 1699) {
+    $('.footer-icon').mouseenter(function(){
+    $('.footer-right').css({'margin-left' : '20px'});
+    });
+    $('.footer-icon').mouseleave(function(){
+      $('.footer-right').css({'margin-left' : '185px'});
+    });
+  }
+  else if ($(window).width() > 1451 & $(window).width() < 1584) {
+    $('.footer-icon').mouseenter(function(){
+    $('.footer-right').css({'margin-left' : '20px'});
+    });
+    $('.footer-icon').mouseleave(function(){
+      $('.footer-right').css({'margin-left' : '255px'});
+    });
+  }
+  else if ($(window).width() > 1349 & $(window).width() < 1452) {
+    $('.footer-icon').mouseenter(function(){
+    $('.footer-right').css({'margin-left' : '10px'});
+    });
+    $('.footer-icon').mouseleave(function(){
+      $('.footer-right').css({'margin-left' : '165px'});
+    });
+  }
+  else if ($(window).width() >= 1083 & $(window).width() < 1350) {
+    $('.footer-icon').mouseenter(function(){
+      $('.footer-right').css({'margin-left' : '5px'});
+    });
+    $('.footer-icon').mouseleave(function(){
+      $('.footer-right').css({'margin-left' : '165px'});
     });
   }
 
