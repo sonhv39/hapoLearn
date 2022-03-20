@@ -6,14 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HapoLearn</title>
-    <link rel="icon" href="../favicon.ico" type="image/png">
+    <link rel="icon" href="./img/icon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="./slick-1.8.1/slick/slick.css">
     <link rel="stylesheet" href="./slick-1.8.1/slick/slick-theme.css">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="./public/css/app.css"> -->
     <link rel="stylesheet" href="./public/css/app.css">
 </head>
 
@@ -40,7 +38,8 @@
                         <li class="nav-item header-nav-item header-active">
                             <a class="nav-link" href="#">ALL COURSES</a>
                         </li>
-                        <li class="nav-item header-nav-item header-lr-cus" data-toggle="modal" data-target="#loginRegisterModal">
+                        <li class="nav-item header-nav-item header-lr-cus" data-toggle="modal"
+                            data-target="#loginRegisterModal">
                             <a class="nav-link" href="#">LOGIN/REGISTER</a>
                         </li>
                         <li class="nav-item header-nav-item">
@@ -209,7 +208,7 @@
                         </div>
                         <div class="feedback-bot">
                             <div class="feedback-img">
-                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat">
+                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat" class="w-100">
                             </div>
                             <div class="feedback-right">
                                 <p>Hoang Anh Nguyen</p>
@@ -232,7 +231,7 @@
                         </div>
                         <div class="feedback-bot">
                             <div class="feedback-img">
-                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat">
+                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat" class="w-100">
                             </div>
                             <div class="feedback-right">
                                 <p>Hoang Anh Nguyen</p>
@@ -255,7 +254,7 @@
                         </div>
                         <div class="feedback-bot">
                             <div class="feedback-img">
-                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat">
+                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat" class="w-100">
                             </div>
                             <div class="feedback-right">
                                 <p>Hoang Anh Nguyen</p>
@@ -278,7 +277,7 @@
                         </div>
                         <div class="feedback-bot">
                             <div class="feedback-img">
-                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat">
+                                <img src="./img/feedback_img_cat.png" alt="feedback_img_cat" class="w-100">
                             </div>
                             <div class="feedback-right">
                                 <p>Hoang Anh Nguyen</p>
@@ -304,7 +303,7 @@
                     <button class="slogan-btn">Start Learning Now!</button>
                 </div>
             </section>
-            <section class="statistic container-lg">
+            <section class="statistic">
                 <div class="statistic-title">Statistic</div>
                 <div class="counters d-sm-flex justify-content-between">
                     <div class="statistic-item">
@@ -323,7 +322,7 @@
             </section>
         </main>
         <footer class="footer">
-            <div class="footer-lg container-lg d-sm-flex">
+            <div class="footer-lg d-sm-flex">
                 <div class="footer-left">
                     <div class="footer-img">
                         <img src="./img/footer_hapo.png" alt="" class="w-100">
@@ -357,8 +356,7 @@
                             <div class="text-center custom-fb-icon">
                                 <i class="fab fa-facebook-f"></i>
                             </div>
-                            <a class="footer-link"
-                                href="https://www.facebook.com/tuyen.dung.haposoft">https://www.facebook.com/tuyen.dung.haposoft</a>
+                            <a class="footer-link" href="#">https://www.facebook.com/tuyen.dung.haposoft</a>
                         </div>
                         <div class="footer-icon d-flex align-items-center">
                             <div class="text-center custom-phone-icon">
@@ -381,7 +379,7 @@
         </footer>
 
         <div class="icon-mess">
-            <div class="icon-img">
+            <div class="icon-img d-flex align-items-center justify-content-center">
                 <i class="fab fa-facebook-messenger"></i>
             </div>
             <div class="mess-content">
@@ -404,61 +402,63 @@
         </div>
         <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModal"
             aria-hidden="true">
-            <div class="form-rl-header">
-                <div class="modal-header-custom">
-                    <p class="modal-header-l modal-active-cus">LOGIN</p>
-                    <P class="modal-header-r">REGISTER</P>
-                </div>
-                <form class="form-r d-none">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username">
+            <div class="d-flex justify-content-center align-items-center pt-4">
+                <div class="form-rl-header">
+                    <div class="modal-header-custom">
+                        <p class="modal-header-l modal-active-cus">LOGIN</p>
+                        <P class="modal-header-r">REGISTER</P>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="rppassword">Repeat Password:</label>
-                        <input type="password" class="form-control" id="rppassword">
-                    </div>
-                    <button type="submit">REGISTER</button>
-                </form>
-                <form class="form-l d-block">
-                    <div class="form-group">
-                        <label for="usernamel">Username:</label>
-                        <input type="text" class="form-control" id="usernamel">
-                    </div>
-                    <div class="form-group">
-                        <label for="passwordl">Password:</label>
-                        <input type="password" class="form-control" id="passwordl">
-                    </div>
-                    <div class="form-group form-check">
-                        <input type="checkbox" class="form-check-input" id="rememberl">
-                        <label class="form-check-label" for="rememberl">Remember me</label>
-                        <a href="#" class="">Forgot Password</a>
-                    </div>
-                    <button type="submit">LOGIN</button>
-                    <div class="loginwith-text">Login with</div>
-                    <div class="login-google d-flex justify-content-center">
-                        <div class="d-flex align-items-center">
-                            <i class="fab fa-google-plus-g"></i>
-                            <span>Google</span>
+                    <form class="form-r d-none">
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username">
                         </div>
-                    </div>
-                    <div class="login-facebook d-flex justify-content-center align-items-center">
-                        <div class="d-flex align-items-center">
-                            <i class="fab fa-facebook-f"></i>
-                            <span>Facebook</span>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email">
                         </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password">
+                        </div>
+                        <div class="form-group">
+                            <label for="rppassword">Repeat Password:</label>
+                            <input type="password" class="form-control" id="rppassword">
+                        </div>
+                        <button type="submit">REGISTER</button>
+                    </form>
+                    <form class="form-l d-block">
+                        <div class="form-group">
+                            <label for="usernamel">Username:</label>
+                            <input type="text" class="form-control" id="usernamel">
+                        </div>
+                        <div class="form-group">
+                            <label for="passwordl">Password:</label>
+                            <input type="password" class="form-control" id="passwordl">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberl">
+                            <label class="form-check-label" for="rememberl">Remember me</label>
+                            <a href="#" class="">Forgot Password</a>
+                        </div>
+                        <button type="submit">LOGIN</button>
+                        <div class="loginwith-text">Login with</div>
+                        <div class="login-google d-flex justify-content-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fab fa-google-plus-g"></i>
+                                <span>Google</span>
+                            </div>
+                        </div>
+                        <div class="login-facebook d-flex justify-content-center align-items-center">
+                            <div class="d-flex align-items-center">
+                                <i class="fab fa-facebook-f"></i>
+                                <span>Facebook</span>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="modal-close">
+                        <i class="fa fa-times" aria-hidden="true"></i>
                     </div>
-                </form>
-                <div class="modal-close">
-                    <i class="fa fa-times" aria-hidden="true"></i>
                 </div>
             </div>
         </div>

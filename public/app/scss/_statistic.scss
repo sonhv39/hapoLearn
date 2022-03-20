@@ -1,11 +1,11 @@
 .statistic {
-  padding-top: 100px;
-  font-family: 'UTM BryantLG';
+  padding: 100px 200px 65px 200px;
+  font-family: $fontNu;
   text-align: center;
 }
 
 .statistic-title {
-  font-size: 6rem;
+  font-size: 6vw;
   font-weight: bold;
   color: $color-blue-0;
   display: inline-block;
@@ -15,23 +15,61 @@
 
 .statistic-item {
   p {
-    font-size: 50px;
+    font-size: 70px;
     line-height: 100%;
     font-weight: bold;
     color: $color-black-0;
   }
 
   span {
-    font-size: 50px;
+    font-size: 65px;
     line-height: 100%;
     font-weight: 500;
     color: $color-green-0;
   }
 }
 
+@media screen and (max-width: 1750px) {
+  .statistic-item {
+    p {
+      font-size: 60px;
+    }
+  
+    span {
+      font-size: 55px;
+    }
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .statistic {
+    padding: 100px 150px 35px 150px;
+  }
+  
+  .statistic-title {
+    font-size: 6rem;
+  }
+  
+  .statistic-item {
+    p {
+      font-size: 50px;
+    }
+  
+    span {
+      font-size: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  .statistic {
+    padding: 100px 110px 35px 110px;
+  }
+}
+
 @media screen and (max-width: 992px) {
   .statistic {
-    padding-top: 70px;
+    padding: 70px 0 0 0;
   }
 
   .statistic-title {
@@ -55,7 +93,7 @@
 
 @media screen and (max-width: 768px) {
   .statistic {
-    padding-top: 60px;
+    padding-top: 60px 0 0 0;
   }
 
   .statistic-title {

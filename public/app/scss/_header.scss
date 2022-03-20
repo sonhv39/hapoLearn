@@ -21,8 +21,8 @@ header {
   margin-left: auto;
 
   .header-nav-item {
-    border-radius: 17px;
-    padding: 1px 12px;
+    border-radius: 25px;
+    padding: 1px 15px;
     transition: all 0.3s ease;
     margin: 0 5px;
 
@@ -44,13 +44,69 @@ header {
   }
 }
 
-.header-navbar-brand {
-  .navbar-brand {
-    width: 24rem;
+@media screen and (max-width: 1920px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      width: 32rem;
+    }
+  }
+
+  .header-ul {
+    .header-nav-item {
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1490px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      width: 28rem;
+    }
+  }
+
+  .header-ul {
+    .header-nav-item {
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1290px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      width: 26rem;
+    }
+  }
+
+  .header-ul {
+    .header-nav-item {
+      a {
+        font-size: 14px;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 950px) and (max-width: 1100px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      width: 25rem;
+    }
+  }
+
+  .header-ul {
+    .header-nav-item {
+      a {
+        font-size: 16px;
+      }
+    }
+  }
+
   .navbar {
     &.header-navbar {
       display: block;

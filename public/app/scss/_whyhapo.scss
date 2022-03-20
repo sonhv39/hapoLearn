@@ -1,12 +1,12 @@
 .whyhapo-lg,
 .whyhapo-md {
   margin-top: 80px;
-  font-family: "UTM BryantLG";
+  font-family: $fontNu;
   background: url("https://s3-alpha-sig.figma.com/img/c558/56f1/074a76c0613b7249fa2847b58b2160cd?Expires=1647820800&Signature=D4h8p4Fp1bXnsCEMB20API6aUomP8uE6v2u9xM-Sfj0tAH69oIBZES95JuT8u2y80aupUbcEcNokObgzQj~ifbT6Ny-TLlX0NfVnJ1BD8zVYW90w52fpwevvjMOcGiQNkw1yqtzoCxF6orfOWbm-W2MBEoaHTNQ0DhztfWjLN1HSebcQcKtWYuaulfYkuL2-BZZNyl5wNDqO~nuosdHsB3ILLOhCwDFy1CAPGgBYWWcBKwal7Aw8AN1v~6utg4gYqdv1gbcE2fIWG1pz~6OM4JaI8rX-oDqd7yVaBcWFfxq1rnwmFeqHp6ktl4rX0BCu4Uo5pi73TM0YZy-s8SamBQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA")
         center center;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 700px;
+  height: 950px;
 }
 
 .whyhapo-md {
@@ -15,17 +15,17 @@
 
 .whyhapo-topimg {
   display: inline-block;
-  margin-top: -200px;
-  width: 367px;
-  height: 480px;
+  margin-top: -260px;
+  width: 500px;
+  height: 685px;
 }
 
 .whyhapo-left {
   color: white;
-  margin-left: 7rem;
+  margin-left: 11rem;
 
   .whyhapo-title {
-    font-size: 5rem;
+    font-size: 5vw;
     font-weight: bold;
     line-height: 100%;
     letter-spacing: -2%;
@@ -34,8 +34,8 @@
 
   span {
     display: flex;
-    font-size: 1.3rem;
-    padding-left: 20px;
+    font-size: 2rem;
+    padding-left: 41px;
     align-items: center;
     margin-bottom: 20px;
 
@@ -48,27 +48,104 @@
 }
 
 .whyhapo-right {
-  margin-top: -13rem;
-  width: 50rem;
+  margin-top: -16rem;
+  width: 48vw;
+  margin-left: 40px;
+}
+
+@media screen and (max-width: 1839px) {
+  .whyhapo-lg {
+    height: 880px;
+  }
+
+  .whyhapo-left {
+    .whyhapo-title {
+      font-size: 4vw;
+    }
+    
+    span {
+      font-size: 1.6rem;
+      padding-left: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1564px) {
+  .whyhapo-lg {
+    height: 800px;
+  }
+
+  .whyhapo-topimg {
+    width: 470px;
+    height: 630px;
+  }
+
+  .whyhapo-right {
+    width: 45vw;
+    margin-top: -12rem;
+  }
+
+  .whyhapo-left {
+    span {
+      font-size: 1.55rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1464px) {
+  .whyhapo-left {
+    .whyhapo-title {
+      font-size: 3.8vw;
+    }
+    
+    span {
+      font-size: 1.4rem;
+      padding-left: 25px;
+    }
+  }
 }
 
 @media screen and (max-width: 1370px) {
+  .whyhapo-lg {
+    height: 730px;
+  }
+
+  .whyhapo-topimg {
+    width: 440px;
+    height: 580px;
+  }
+
   .whyhapo-right {
     margin-top: -10rem;
-    width: 45rem;
+    width: 43rem;
+  }
+
+  .whyhapo-left {
+    span {
+      font-size: 1.15rem;
+    }
   }
 }
 
 @media screen and (max-width: 1270px) {
+  .whyhapo-lg {
+    height: 630px;
+  }
+
+  .whyhapo-topimg {
+    width: 410px;
+    height: 535px;
+  }
+
   .whyhapo-left {
     margin-left: 6rem;
 
     .whyhapo-title {
-      font-size: 4.5rem;
+      font-size: 4rem;
     }
 
     span {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
 
       i {
         font-size: 1.7rem;
@@ -87,11 +164,11 @@
     margin-left: 5rem;
 
     .whyhapo-title {
-      font-size: 4.2rem;
+      font-size: 3.88rem;
     }
 
     span {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
 
       i {
         font-size: 1.7rem;
@@ -101,11 +178,17 @@
 
   .whyhapo-right {
     margin-top: -8rem;
-    width: 40rem;
+    width: 38rem;
   }
 }
 
 @media screen and (max-width: 1100px) {
+  .whyhapo-topimg {
+    width: 370px;
+    height: 480px;
+    margin-top: -220px;
+  }
+
   .whyhapo-lg {
     display: none;
   }
@@ -131,13 +214,13 @@
 
     span {
       display: flex;
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       padding-left: 20px;
       align-items: center;
       margin-bottom: 20px;
   
       i {
-        font-size: 1.9rem;
+        font-size: 1.7rem;
         padding-right: 12px;
         opacity: 1;
       }
@@ -147,13 +230,15 @@
   .whyhapomd-right {
     margin-top: -5rem;
     width: 35rem;
-    margin-left: 7rem;
+    margin-left: 4rem;
   }
 }
 
 @media screen and (max-width: 1046px) {
   .whyhapomd-right {
-    margin-left: 4rem;
+    margin-left: 3.8rem;
+    margin-top: -5rem;
+    width: 32rem;
   }
 
   .whyhapomd-text {
@@ -165,18 +250,12 @@
       }
     }
   }
-
-  .whyhapomd-right {
-    margin-top: -5rem;
-    width: 32rem;
-    margin-left: 6rem;
-  }
 }
 
 @media screen and (max-width: 971px) {
   .whyhapomd-text {
     span {
-      font-size: 0.96rem;
+      font-size: 0.91rem;
 
       i {
         font-size: 1.6rem;
@@ -185,7 +264,7 @@
   }
 
   .whyhapomd-right {
-    margin-left: 2.8rem;
+    margin-left: 2.2rem;
     width: 31rem;
     margin-top: -4.8rem;
   }
@@ -199,20 +278,26 @@
 }
 
 @media screen and (max-width: 883px) {
+  .whyhapo-topimg {
+    width: 344px;
+    height: 450px;
+    margin-top: -198px;
+  }
+
   .whyhapomd-right {
-    margin-left: 1rem;
-    width: 28rem;
+    margin-left: 7vw;
+    width: 25rem;
     margin-top: -3.6rem;
   }
 
   .whyhapomd-text {
-    margin-left: 17px;
+    margin-left: 1.9vw;
 
     span {
-      font-size: 0.9rem;
+      font-size: 0.86rem;
 
       i {
-        font-size: 1.6rem;
+        font-size: 1.58rem;
       }
     }
   }
@@ -228,7 +313,7 @@
 @media screen and (max-width: 784px) {
   .whyhapomd-text {
     span {
-      font-size: 0.77rem;
+      font-size: 0.75rem;
 
       i {
         font-size: 1.3rem;
@@ -244,14 +329,13 @@
   }
 
   .whyhapomd-right {
-    margin-left: 0;
-    width: 24rem;
+    margin-left: 6.5vw;
+    width: 20rem;
     margin-top: -2.6rem;
   }
-  
 }
 
-@media screen and (max-width: 663px) {
+@media screen and (max-width: 664px) {
   .whyhapo-topimg {
     width: 330px;
     height: 440px;
@@ -259,7 +343,7 @@
   }
 
   .whyhapomd-text {
-    margin-left: 3px;
+    margin-left: 0px;
 
     span {
       font-size: 0.64rem;
@@ -271,8 +355,8 @@
   }
 
   .whyhapomd-right {
-    width: 21rem;
     margin-top: -1.9rem;
+    margin-left: 2.5vw;
   }
 
   .whyhapo-top {
@@ -298,18 +382,27 @@
   }
 
   .whyhapo-topimg {
-    height: 375px;
+    height: 365px;
+    width: 274px;
   }
 
   .whyhapomd-text {
     width: 80%;
     margin: 0 auto;
+
     span {
-      font-size: 1.15rem;
+      font-size: 1.06rem;
 
       i {
-        font-size: 1.8rem;
+        font-size: 1.56rem;
       }
+    }
+  }
+
+  .whyhapo-top {
+    .whyhapomd-title {
+      font-size: 2.8rem;
+      margin-left: -80px;
     }
   }
 
@@ -321,14 +414,14 @@
 
 @media screen and (min-width: 430px) and (max-width: 531px) {
   .whyhapomd-text {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 
     span {
       font-size: 1rem;
 
       i {
-        font-size: 1.7rem;
+        font-size: 1.5rem;
       }
     }
   }
@@ -336,8 +429,6 @@
 
 @media screen and (max-width: 473px) {
   .whyhapomd-text {
-    width: 80%;
-
     span {
       font-size: 0.9rem;
 
@@ -347,6 +438,7 @@
     }
   }
 }
+
 @media screen and (max-width: 430px) {
   .whyhapo-md {
     height: 620px;
@@ -359,8 +451,8 @@
   }
 
   .whyhapomd-text {
-    width: 80%;
-    margin-left: 10px;
+    width: 90%;
+    margin: auto;
     span {
       font-size: 0.8rem;
 
@@ -378,13 +470,13 @@
 
 @media screen and (max-width: 370px) {
   .whyhapomd-text {
-    width: 90%;
-    margin-left: 10px;
+    width: 100%;
+    margin-left: 0;
     span {
       font-size: 0.74rem;
 
       i {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
       }
     }
   }

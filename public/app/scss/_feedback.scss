@@ -1,10 +1,10 @@
 .feedback {
-  font-family: "UTM BryantLG";
+  font-family: $fontNu;
   text-align: center;
   padding-top: 70px;
 
   .feedback-title {
-    font-size: 6rem;
+    font-size: 6vw;
     font-weight: bold;
     color: $color-blue-0;
     display: inline-block;
@@ -13,17 +13,17 @@
   }
 
   .feedback-undertitle {
-    font-size: 1.78rem;
+    font-size: 1.78vw;
     color: $color-black-0;
-    line-height: 2.6rem;
+    line-height: calc(2.6 / 1.78);
     width: 50%;
     margin: 0 auto;
-    margin-bottom: 30px;
+    margin-bottom: 55px;
   }
 }
 
 .feedback-content {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
 
   .feedback-item {
@@ -41,33 +41,34 @@
 }
 
 .feedback-text {
-  padding: 15px 10px;
-  border-radius: 10px;
+  padding: 15px 25px;
+  border-radius: 18px;
   box-shadow: 0px 0px 10px rgb(0 0 0 / 25%);
   position: relative;
 
   p {
-    padding: 20px 10px;
+    padding: 20px 25px;
     border-left: 5px solid $color-white-1;
-    font-size: 1.14rem;
-    letter-spacing: -5%;
+    font-size: 1.7rem;
+    line-height: 1.5;
   }
 
   &::after {
     content: "";
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     background-color: white;
     position: absolute;
-    left: 27px;
-    bottom: -5px;
+    left: 40px;
+    bottom: -9px;
     transform: rotate(45deg);
-    border-color: rgb(0 0 0 / 25%);
+    box-shadow: 1px 1px 1.5px 0px rgb(0 0 0 / 25%);
   }
 }
 
 .feedback-img {
-  padding-left: 25px;
+  width: 85px;
+  margin-left: 35px;
 }
 
 .feedback-bot {
@@ -81,47 +82,50 @@
   p {
     margin-bottom: 0;
     color: $color-blue-0;
-    font-size: 1.43rem;
+    font-size: 2rem;
     font-weight: bold;
     line-height: 100%;
   }
 
   span {
-    font-size: 1.14rem;
+    font-size: 1.8rem;
     color: $color-black-0;
   }
 
   .feedback-stars {
-    font-size: 1rem;
     color: $color-yellow-0;
+  }
+
+  .fa-star,
+  .fa-star-half-alt {
+    font-size: 1.4rem;
   }
 }
 
 .slick-prev {
   position: absolute;
-  left: -14px;
-  top: 75px;
+  left: -13px;
+  top: 95px;
   font-size: 0;
   z-index: 10;
 
   &::before {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
-    content: "\f104";
+    content: "";
     background-color: white;
-    padding: 3px 6.5px;
+    padding: 3px 8.5px;
     border-radius: 50%;
     color: black;
     border: 1px solid #C4C4C4;
-    font-size: 15px;
+    font-size: 22px;
   }
-  
 }
 
 .slick-next {
   position: absolute;
-  right: -13.8px;
-  top: 75px;
+  right: -7.8px;
+  top: 95px;
   font-size: 0;
   z-index: 10;
 
@@ -130,18 +134,79 @@
     font-weight: 900;
     content: "\f105";
     background-color: white;
-    padding: 3px 6.5px;
+    padding: 3px 8.5px;
     border-radius: 50%;
     color: black;
     border: 1px solid #C4C4C4;
-    font-size: 15px;
+    font-size: 22px;
   }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1794px) {
+  .feedback-text {
+    p {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .feedback-text {
+    padding: 15px 20px;
+
+    p {
+      font-size: 1rem;
+      padding: 15px;
+    }
+  }
+
+  .feedback-content {
+    width: 80%;
+  }
+
+  .slick-prev::before,
+  .slick-next::before {
+    font-size: 17px;
+  }
+
+  .slick-prev{
+    top: 65px;
+  }
+
+  .slick-next {
+    top: 65px;
+  }
+
+  .feedback-img {
+    width: 65px;
+  }
+
+  .feedback-right p {
+    font-size: 1.3rem;
+  }
+
+  .feedback-right span {
+    font-size: 1.1rem;
+  }
+
+  .feedback-right {
+    .fa-star,
+    .fa-star-half-alt {
+      font-size: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .feedback .feedback-undertitle {
+    font-size: 1.68rem;
+  }
+}
+
+@media screen and (max-width: 1180px) {
   .feedback {
     .feedback-undertitle {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
     }
   }
 }
@@ -177,6 +242,10 @@
       font-size: 1.4rem;
     }
   }
+
+  .feedback-right p {
+    font-size: 1.6rem;
+  }
 }
 
 @media screen and (max-width: 455px) {
@@ -188,5 +257,15 @@
     .feedback-undertitle {
       font-size: 1.1rem;
     }
+  }
+
+  .feedback-img {
+    margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 424px) {
+  .feedback-text p {
+    font-size: 1rem;
   }
 }
