@@ -1,8 +1,8 @@
 .banner {
   position: relative;
-  height: 700px;
   background: linear-gradient(180deg, #fffbfb 87.5%, #e7e9ee 100%);
-  font-family: 'UTM BryantLG';
+  font-family: $fontNu;
+  height: 800px;
 
   .banner-img {
     background-image: url("../asset/image/Hapo_Learn_banner1.png");
@@ -23,13 +23,11 @@
 .banner-content {
   p:first-child {
     font-weight: 400;
-    font-size: 3.3rem;
     color: $color-blue-0;
     margin-bottom: 0;
   }
 
   .banner-content-imgsmall {
-    font-size: 3.1rem;
     font-weight: bold;
     color: $color-blue-0;
     word-spacing: 5px;
@@ -37,13 +35,11 @@
   }
 
   .banner-tagp {
-    font-size: 1.6rem;
     color: $color-black-0;
     margin-bottom: 2rem;
   }
 
   .banner-btn {
-    font-size: 1.6rem;
     padding: 13px 55px;
     border-radius: 35px;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -99,7 +95,7 @@
 @media screen and(max-width : 1100px) {
   .banner {
     .banner-content {
-      top: 13%;
+      top: 16%;
       padding-left: 80px;
 
       p:first-child {
@@ -156,11 +152,11 @@
 
     .banner-content {
       p:first-child {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
       }
 
       .banner-content-imgsmall {
-        font-size: 2.3rem;
+        font-size: 2.2rem;
       }
 
       .banner-tagp {
@@ -187,6 +183,11 @@
       .banner-content-imgsmall {
         font-size: 1.8rem;
         margin-bottom: 8px;
+
+        img {
+          width: 35px;
+          margin: -5px;
+        }
       }
 
       .banner-tagp {

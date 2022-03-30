@@ -38,15 +38,15 @@ $(document).ready(function(){
       $('.footer-right').css({'margin-left' : '5px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '230px'});
+      $('.footer-right').css({'margin-left' : '255px'});
     });
   }
   else if ($(window).width() > 1349 & $(window).width() < 1452) {
     $('.footer-icon').mouseenter(function(){
-      $('.footer-right').css({'margin-left' : '10px'});
+    $('.footer-right').css({'margin-left' : '10px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '200px'});
+      $('.footer-right').css({'margin-left' : '165px'});
     });
   }
   else if ($(window).width() >= 1083 & $(window).width() < 1350) {
@@ -105,5 +105,6 @@ $(document).ready(function(){
     $('.modal').addClass('show');
     $('.modal').css({'display' : 'block'});
     $('.modal-backdrop').css({'display' : 'block'})
+    console.log('aaa')
   })
 });
