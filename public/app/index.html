@@ -69,8 +69,8 @@
                     </div>
                 </div>
             </section>
-            <section class="courses container-fluid text-center">
-                <div class="courses-list d-sm-flex justify-content-around px-lg-5">
+            <section class="courses custom-container text-center">
+                <div class="courses-list d-sm-flex justify-content-around">
                     <div class="card">
                         <div class="courses-img courses-hcj">
                             <img src="./img/course_html_css.png" class="card-img-top w-100" alt="coursehtmlcss">
@@ -110,7 +110,7 @@
                 </div>
                 <div class="courses-other">
                     <p class="text-center">Other courses</p>
-                    <div class="courses-other-list d-sm-flex justify-content-around px-lg-5 ">
+                    <div class="courses-other-list d-sm-flex justify-content-around">
                         <div class="card">
                             <div class="courses-img courses-css">
                                 <img src="./img/course_css.png" class="card-img-top w-100 " alt="coursecss">
@@ -204,7 +204,7 @@
                 <p class="feedback-undertitle">What other students turned professionals have to say about us after
                     learning
                     with us and reaching their goals</p>
-                <div class="feedback-content">
+                <div class="feedback-content custom-container">
                     <div class="feedback-item">
                         <div class="feedback-text">
                             <p>“A wonderful course on how to start. Eddie beautifully conveys all essentials of a
@@ -408,7 +408,7 @@
         </div>
         <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModal"
             aria-hidden="true">
-            <div class="d-flex justify-content-center align-items-center pt-4">
+            <div class="d-flex justify-content-center">
                 <div class="form-rl-header">
                     <div class="modal-header-custom">
                         <p class="modal-header-l modal-active-cus">LOGIN</p>
@@ -431,7 +431,9 @@
                             <label for="rppassword">Repeat Password:</label>
                             <input type="password" class="form-control" id="rppassword">
                         </div>
-                        <button type="submit">REGISTER</button>
+                        <div class="text-center">
+                            <button type="submit">REGISTER</button>
+                        </div>
                     </form>
                     <form class="form-l d-block">
                         <div class="form-group">
@@ -442,12 +444,16 @@
                             <label for="passwordl">Password:</label>
                             <input type="password" class="form-control" id="passwordl">
                         </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="rememberl">
-                            <label class="form-check-label" for="rememberl">Remember me</label>
+                        <div class="form-group form-check d-flex justify-content-between">
+                            <div>
+                                <input type="checkbox" class="form-check-input" id="rememberl">
+                                <label class="form-check-label" for="rememberl">Remember me</label>
+                            </div>
                             <a href="#" class="">Forgot Password</a>
                         </div>
-                        <button type="submit">LOGIN</button>
+                        <div class="text-center">
+                            <button type="submit">LOGIN</button>
+                        </div>
                         <div class="loginwith-text">Login with</div>
                         <div class="login-google d-flex justify-content-center">
                             <div class="d-flex align-items-center">

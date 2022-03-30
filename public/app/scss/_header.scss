@@ -1,6 +1,6 @@
 header {
   .header-navbar {
-    padding: 15px 35px 15px 50px;
+    padding: 25px 132px 25px 132px;
 
     .header-tonggle {
       border: 0;
@@ -38,7 +38,7 @@ header {
     a {
       font-family: "Open Sans";
       font-size: 14px;
-      font-weight: bold;
+      font-weight: 500;
       color: $color-black-0;
     }
   }
@@ -47,15 +47,23 @@ header {
 @media screen and (max-width: 1920px) {
   .header-navbar-brand {
     .navbar-brand {
-      width: 32rem;
+      width: 341px;
     }
   }
+}
 
-  .header-ul {
-    .header-nav-item {
-      a {
-        font-size: 20px;
-      }
+@media screen and (max-width: 1820px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      width: 300px;
+    }
+  }
+}
+
+@media screen and (max-width: 1690px) {
+  .header-navbar-brand {
+    .navbar-brand {
+      width: 280px;
     }
   }
 }
@@ -63,15 +71,7 @@ header {
 @media screen and (max-width: 1490px) {
   .header-navbar-brand {
     .navbar-brand {
-      width: 28rem;
-    }
-  }
-
-  .header-ul {
-    .header-nav-item {
-      a {
-        font-size: 15px;
-      }
+      width: 250px;
     }
   }
 }
@@ -79,31 +79,27 @@ header {
 @media screen and (max-width: 1290px) {
   .header-navbar-brand {
     .navbar-brand {
-      width: 26rem;
-    }
-  }
-
-  .header-ul {
-    .header-nav-item {
-      a {
-        font-size: 14px;
-      }
+      width: 220px;
     }
   }
 }
 
 @media screen and (min-width: 950px) and (max-width: 1100px) {
+  header .header-navbar {
+    padding: 25px 49px 25px 49px;
+  }
+
   .header-navbar-brand {
+    text-align: center;
+
     .navbar-brand {
-      width: 25rem;
+      width: 215px;
     }
   }
 
   .header-ul {
     .header-nav-item {
-      a {
-        font-size: 16px;
-      }
+      padding: 0 10px;
     }
   }
 
@@ -112,9 +108,7 @@ header {
       display: block;
 
       .header-navbar-brand {
-        width: 35%;
-        margin: 0 auto;
-        padding-bottom: 21px;
+        padding-bottom: 10px;
       }
     }
   }
@@ -135,14 +129,16 @@ header {
 }
 
 @media screen and (min-width: 768px) and (max-width: 950px) {
+  header .header-navbar {
+    padding: 25px 49px 25px 49px;
+  }
+
   .navbar {
     &.header-navbar {
       display: block;
 
       .header-navbar-brand {
-        width: 40%;
-        margin: 0 auto;
-        padding-bottom: 21px;
+        text-align: center;
       }
     }
   }
@@ -158,22 +154,27 @@ header {
   .header-content {
     .header-ul {
       justify-content: space-between;
+    }
+  }
+
+  .header-ul {
+    .header-nav-item {
+      padding: 0 10px;
     }
   }
 }
 
 @media screen and (min-width: 668px) and (max-width: 768px) {
+  header .header-navbar {
+    padding: 25px 49px 25px 49px;
+  }
+
   .header-navbar {
     display: block;
 
     .header-navbar-brand {
-      width: 50%;
-      margin: 0 auto;
-      padding-bottom: 21px;
-
-      .navbar-brand {
-        width: 22rem;
-      }
+      padding-bottom: 10px;
+      text-align: center;
     }
   }
 
@@ -190,13 +191,25 @@ header {
       justify-content: space-between;
     }
   }
+
+  .header-ul {
+    .header-nav-item {
+      padding: 0 10px;
+    }
+  }
 }
 
 @media screen and (min-width: 576px) and (max-width: 668px) {
+  header .header-navbar {
+    padding: 25px 49px 25px 49px;
+  }
+
   .header-ul {
     .header-nav-item {
+      padding: 0 10px;
+
       a{
-        font-size: 0.7rem;
+        font-size: 11.2px;
       }
     }
   }
@@ -205,12 +218,11 @@ header {
     display: block;
 
     .header-navbar-brand {
-      width: 50%;
-      margin: 0 auto;
-      padding-bottom: 21px;
+      padding-bottom: 10px;
+      text-align: center;
 
       .navbar-brand {
-        width: 19rem;
+        width: 210px;
       }
     }
   }
@@ -231,6 +243,10 @@ header {
 }
 
 @media screen and (max-width: 575px) {
+  .navbar-toggler-icon {
+    margin-top: 8px;
+  }
+  
   .header-tonggle {
     top: 26px;
   }
@@ -296,13 +312,13 @@ header {
         width: 100%;
         margin: 0;
         padding-bottom: 0px;
+        text-align: center;
       }
     }
   }
 
   .header-navbar-brand {
     .navbar-brand {
-      margin: 0 0 0 7rem;
       width: 15rem;
     }
   }
@@ -311,7 +327,6 @@ header {
 @media screen and (max-width: 460px) {
   .header-navbar-brand {
     .navbar-brand {
-      margin: 0 0 0 6rem;
       width: 15rem;
     }
   }
@@ -320,17 +335,19 @@ header {
 @media screen and (max-width: 430px) {
   .header-navbar-brand {
     .navbar-brand {
-      margin: 0 0 0 5rem;
-      width: 15rem;
+      width: 14rem;
     }
   }
 }
 
 @media screen and (max-width: 400px) {
+  header .header-navbar {
+    padding: 31px 0 25px 0;
+  }
+
   .header-navbar-brand {
     .navbar-brand {
-      margin: 0 0 0 4rem;
-      width: 14rem;
+      width: 11.5rem;
     }
   }
 }
@@ -338,8 +355,7 @@ header {
 @media screen and (max-width: 345px) {
   .header-navbar-brand {
     .navbar-brand {
-      margin: 0 0 0 2.5rem;
-      width: 13rem;
+      width: 11rem;
     }
   }
 }

@@ -1,7 +1,7 @@
 .slogan {
   background: url("https://scontent.fhan14-2.fna.fbcdn.net/v/t1.15752-9/275135370_977242776231502_5362606624304119384_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=6J8szmQLPuMAX9Mkk5T&_nc_ht=scontent.fhan14-2.fna&oh=03_AVL8B3o3cTWJuE8sZ5SymuEaP2Lr4RMgraEoZ3CclurZNg&oe=624ED1CC") center center;
   background-size: cover;
-  height: 660px;
+  height: 550px;
   margin-top: 100px;
 }
 
@@ -9,16 +9,15 @@
   font-family: $fontNu;
     
   p {
-    font-size: 5.28rem;
+    font-size: 60px;
     font-weight: 700;
-    line-height: calc(5.25 / 4.28);
+    line-height: calc(73.56 / 60);
     color: white;
   }
 
   button {
-    font-size: 3rem;
-    line-height: 100%;
-    letter-spacing: -5%;
+    font-size: 30px;
+    line-height: calc(36.78 / 30);
     font-weight: bold;
     padding: 17px 55px;
     background-color: white;
@@ -36,7 +35,7 @@
 
 @media screen and (max-width: 1600px) {
   .slogan {
-    height: 600px;
+    height: 520px;
   }
 }
 
@@ -47,11 +46,11 @@
   
   .slogan-content {      
     p {
-      font-size: 4.28rem;
+      font-size: 50px;
     }
   
     button {
-      font-size: 2.15rem;
+      font-size: 25px;
       padding: 13px 55px;
       border-radius: 35px;
     }
@@ -59,29 +58,29 @@
 }
 
 @media screen and (max-width: 900px) {
+  .slogan {
+    height: 400px;
+  }
+
   .slogan-content {
     p {
-      font-size: 4rem;
+      font-size: 45px;
     }
 
     button {
-      font-size: 2rem;
+      font-size: 22px;
     }
   }
 }
 
 @media screen and (max-width: 800px) {
-  .slogan {
-    height: 450px;
-  }
-
   .slogan-content {
     p {
-      font-size: 3.5rem;
+      font-size: 40px;
     }
 
     button {
-      font-size: 1.9rem;
+      font-size: 20px;
       padding: 13px 35px;
     }
   }
@@ -89,47 +88,48 @@
 
 @media screen and (max-width: 640px) {
   .slogan {
-    height: 400px;
+    height: 350px;
   }
 
   .slogan-content {
     p {
-      font-size: 3rem;
-      line-height: 55.56px;
+      font-size: 35px;
     }
 
     button {
-      font-size: 1.6rem;
+      font-size: 18px;
     }
   }
 }
 
 @media screen and (max-width: 500px) {
   .slogan {
-    height: 350px;
+    height: 300px;
   }
 
   .slogan-content {
     p {
-      font-size: 2.3rem;
-      line-height: 40.56px;
+      font-size: 30px;
     }
 
     button {
-      font-size: 1.3rem;
+      font-size: 15px;
     }
   }
 }
 
 @media screen and (max-width: 375px) {
+  .slogan {
+    height: 270px;
+  }
+
   .slogan-content {
     p {
-      font-size: 1.9rem;
-      line-height: 40.56px;
+      font-size: 23px;
     }
 
     button {
-      font-size: 1rem;
+      font-size: 12px;
     }
   }
 }
