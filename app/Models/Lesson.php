@@ -18,13 +18,19 @@ class Lesson extends Model
         'time',
         'requirement',
     ];
-    public function userLessons(){
-        $this->hasMany('App\Models\UserLesson','lesson_id');
+
+    public function userLessons()
+    {
+        $this->hasMany('App\Models\UserLesson', 'lesson_id');
     }
-    public function course(){
-        $this->belongsTo('App\Models\Course','course_id');
+
+    public function course()
+    {
+        $this->belongsTo('App\Models\Course', 'course_id');
     }
-    public function documents(){
-        $this->hasMany('App\Models\Document','lesson_id');
+
+    public function documents()
+    {
+        $this->hasMany('App\Models\Document', 'lesson_id');
     }
 }

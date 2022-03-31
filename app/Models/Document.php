@@ -16,7 +16,9 @@ class Document extends Model
         'name',
         'link'
     ];
-    public function lesson(){
-        $this->belongsTo('App\Models\lesson','lesson_id');
+
+    public function lesson()
+    {
+        $this->belongsTo('App\Models\lesson', 'lesson_id');
     }
 }

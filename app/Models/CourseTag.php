@@ -15,10 +15,14 @@ class CourseTag extends Model
         'course_id',
         'tag_id'
     ];
-    public function tag(){
-        $this->belongsTo('App\Models\Tag','tag_id');
+
+    public function tag()
+    {
+        $this->belongsTo('App\Models\Tag', 'tag_id');
     }
-    public function course(){
-        $this->belongsTo('App\Models\Course','course_id');
+    
+    public function course()
+    {
+        $this->belongsTo('App\Models\Course', 'course_id');
     }
 }

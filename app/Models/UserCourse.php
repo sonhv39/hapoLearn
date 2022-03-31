@@ -17,10 +17,13 @@ class UserCourse extends Model
         'user_id',
     ];
 
-    public function user(){
-        $this -> belongsTo('App\Models\User','user_id','id');
+    public function user()
+    {
+        $this -> belongsTo('App\Models\User', 'user_id', 'id');
     }
-    public function course(){
-        $this -> belongsTo('App\Models\Course','course_id','id');
+
+    public function course()
+    {
+        $this -> belongsTo('App\Models\Course', 'course_id', 'id');
     }
 }

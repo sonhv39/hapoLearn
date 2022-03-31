@@ -15,10 +15,14 @@ class UserLesson extends Model
         'user_id',
         'lesson_id',
     ];
-    public function user(){
-        $this->belongsTo('App\Models\User','user_id');
+
+    public function user()
+    {
+        $this->belongsTo('App\Models\User', 'user_id');
     }
-    public function lesson(){
-        $this->belongsTo('App\Models\Lesson','lesson_id');
+    
+    public function lesson()
+    {
+        $this->belongsTo('App\Models\Lesson', 'lesson_id');
     }
 }

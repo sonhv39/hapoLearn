@@ -17,10 +17,14 @@ class Review extends Model
         'content',
         'star_rating'
     ];
-    public function user(){
-        $this -> belongsTo('App\Models\User','user_id');
+
+    public function user()
+    {
+        $this -> belongsTo('App\Models\User', 'user_id');
     }
-    public function course(){
-        $this -> belongsTo('App\Models\Course','course_id');
+
+    public function course()
+    {
+        $this -> belongsTo('App\Models\Course', 'course_id');
     }
 }

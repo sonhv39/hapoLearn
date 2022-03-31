@@ -17,19 +17,28 @@ class Course extends Model
         'img_url',
         'price',
     ];
-    public function userCourses(){
-        return $this->hasMany('App\Models\UserCourse','course_id');
+
+    public function userCourses()
+    {
+        return $this->hasMany('App\Models\UserCourse', 'course_id');
     }
+
     public function teacherCourses(){
-        return $this->hasMany('App\Models\TeacherCourse','course_id');
+        return $this->hasMany('App\Models\TeacherCourse', 'course_id');
     }
-    public function reviews(){
-        return $this->hasMany('App\Models\Review','course_id');
+
+    public function reviews()
+    {
+        return $this->hasMany('App\Models\Review', 'course_id');
     }
-    public function lessons(){
-        return $this->hasMany('App\Models\Lesson','course_id');
+
+    public function lessons()
+    {
+        return $this->hasMany('App\Models\Lesson', 'course_id');
     }
-    public function coursesTag(){
-        return $this->hasMany('App\Models\CourseTag','course_id');
+
+    public function coursesTag()
+    {
+        return $this->hasMany('App\Models\CourseTag', 'course_id');
     }
 }
