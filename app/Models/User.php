@@ -20,6 +20,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phonenumber',
+        'address',
+        'date_of_birth',
+        'usename',
+        'avata_url',
+        'role',
+        'delete_at'
     ];
 
     /**
@@ -40,4 +47,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function usersCourse(){
+        return $this->hasMany('App\Models\UserCourse','user_id');
+    }
+    public function teachersCourse(){
+        return $this->hasMany('App\Models\TeacherCourse','user_id');
+    }
+    public function reviews(){
+        return $this->hasMany('App\Models\Review','user_id');
+    }
+    public function usersLesson(){
+        return $this->hasMany('App\Models\UserLesson','user_id');
+    }
 }
