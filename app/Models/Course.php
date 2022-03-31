@@ -23,7 +23,8 @@ class Course extends Model
         return $this->hasMany('App\Models\UserCourse', 'course_id');
     }
 
-    public function teacherCourses(){
+    public function teacherCourses()
+    {
         return $this->hasMany('App\Models\TeacherCourse', 'course_id');
     }
 

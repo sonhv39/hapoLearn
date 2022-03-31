@@ -17,7 +17,7 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->bigInteger('user_id');
             $table->bigInteger('course_id');
-            $table->string('content',1000);
+            $table->string('content', 1000);
             $table->float('star_rating');
             $table->timestamps();
             $table->softDeletes();
