@@ -11,7 +11,7 @@ class UserLesson extends Model
     use HasFactory;
     protected $table = "user_lesson";
     use SoftDeletes;
-    protected $fillable =[
+    protected $fillable = [
         'user_id',
         'lesson_id',
     ];
@@ -20,7 +20,7 @@ class UserLesson extends Model
     {
         $this->belongsTo('App\Models\User', 'user_id');
     }
-    
+
     public function lesson()
     {
         $this->belongsTo('App\Models\Lesson', 'lesson_id');

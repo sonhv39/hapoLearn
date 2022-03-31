@@ -11,7 +11,7 @@ class Document extends Model
     use HasFactory;
     protected $table = "documents";
     use SoftDeletes;
-    protected $fillable =[
+    protected $fillable = [
         'lesson_id',
         'name',
         'link'
