@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Tag extends Model
 {
     use HasFactory;
-    protected $table = 'tags';
     use SoftDeletes;
+    
     protected $fillable = [
         'name',
         'link',

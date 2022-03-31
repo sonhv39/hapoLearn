@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class UserCourse extends Model
 {
     use HasFactory;
-    protected $table = "user_course";
     use SoftDeletes;
+
     protected $fillable = [
         'course_id',
         'user_id',
@@ -19,11 +19,11 @@ class UserCourse extends Model
 
     public function user()
     {
-        $this -> belongsTo('App\Models\User', 'user_id', 'id');
+        $this->belongsTo('App\Models\User', 'user_id', 'id');
     }
 
     public function course()
     {
-        $this -> belongsTo('App\Models\Course', 'course_id', 'id');
+        $this->belongsTo('App\Models\Course', 'course_id', 'id');
     }
 }

@@ -9,8 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Review extends Model
 {
     use HasFactory;
-    protected $table = 'reviews';
     use SoftDeletes;
+    
     protected $fillable = [
         'course_id',
         'user_id',
@@ -20,11 +20,11 @@ class Review extends Model
 
     public function user()
     {
-        $this -> belongsTo('App\Models\User', 'user_id');
+        $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function course()
     {
-        $this -> belongsTo('App\Models\Course', 'course_id');
+        $this->belongsTo('App\Models\Course', 'course_id');
     }
 }

@@ -14,10 +14,10 @@ class EditTableUsers extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table-> string('phonenumber', 10);
-            $table-> string('address', 255);
-            $table-> date('date_of_birth');
-            $table-> string('username', 32);
+            $table->string('phonenumber', 10);
+            $table->string('address', 255);
+            $table->date('date_of_birth');
+            $table->string('username', 32);
             $table->string('avata_url', 1000);
             $table->string('role', 32);
             $table->softDeletes();
