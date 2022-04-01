@@ -17,7 +17,7 @@ $(document).ready(function(){
     slidesToScroll: 2,
     responsive: [
       {
-        breakpoint: 1100,
+        breakpoint: 900,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -32,7 +32,7 @@ $(document).ready(function(){
 
   if ($(window).width() > 1804 & $(window).width() < 1983) {
     $('.footer-icon').mouseenter(function(){
-      $('.footer-right').css({'margin-left' : '50px'});
+      $('.footer-right').css({'margin-left' : '40px'});
     });
     $('.footer-icon').mouseleave(function(){
       $('.footer-right').css({'margin-left' : '275px'});
@@ -48,18 +48,18 @@ $(document).ready(function(){
   }
   else if ($(window).width() > 1583 & $(window).width() < 1699) {
     $('.footer-icon').mouseenter(function(){
-    $('.footer-right').css({'margin-left' : '20px'});
+    $('.footer-right').css({'margin-left' : '10px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '185px'});
+      $('.footer-right').css({'margin-left' : '250px'});
     });
   }
   else if ($(window).width() > 1451 & $(window).width() < 1584) {
     $('.footer-icon').mouseenter(function(){
-    $('.footer-right').css({'margin-left' : '20px'});
+    $('.footer-right').css({'margin-left' : '5px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '255px'});
+      $('.footer-right').css({'margin-left' : '230px'});
     });
   }
   else if ($(window).width() > 1349 & $(window).width() < 1452) {
@@ -67,7 +67,7 @@ $(document).ready(function(){
     $('.footer-right').css({'margin-left' : '10px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '165px'});
+      $('.footer-right').css({'margin-left' : '200px'});
     });
   }
   else if ($(window).width() >= 1083 & $(window).width() < 1350) {
@@ -126,5 +126,6 @@ $(document).ready(function(){
     $('.modal').addClass('show');
     $('.modal').css({'display' : 'block'});
     $('.modal-backdrop').css({'display' : 'block'})
+    console.log('aaa')
   })
 });
