@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ModifyColumnReviewsTableV2 extends Migration
+class CreateUserCourseTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class ModifyColumnReviewsTableV2 extends Migration
      */
     public function up()
     {
-        Schema::table('reviews', function (Blueprint $table) {
-            $table->float('star_rating')->default(5)->change();
+        Schema::create('user_course', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('course_id')->unsigned();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,8 +29,6 @@ class ModifyColumnReviewsTableV2 extends Migration
      */
     public function down()
     {
-        Schema::table('reviews', function (Blueprint $table) {
-            $table->float('star_rating')->change();
-        });
+        Schema::dropIfExists('user_course');
     }
 }

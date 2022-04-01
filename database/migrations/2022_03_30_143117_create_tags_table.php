@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ModifyColumnUserTableV2 extends Migration
+class CreateTagsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class ModifyColumnUserTableV2 extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->integer('role')->default(0)->change();
+        Schema::create('tags', function (Blueprint $table) {
+            $table->id();
+            $table->string('name')->nullable();
+            $table->string('link')->nullable();
+            $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -25,9 +29,6 @@ class ModifyColumnUserTableV2 extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
-            // them khac phuc
-            $table->integer('role')->change();
-        });
+        Schema::dropIfExists('tags');
     }
 }
