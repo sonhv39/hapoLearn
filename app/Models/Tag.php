@@ -16,8 +16,8 @@ class Tag extends Model
         'link',
     ];
 
-    public function courseTags()
+    public function courses()
     {
-        $this->hasMany('App\Models\CourseTag', 'tag_id');
+        $this->belongsToMany(Course::class, 'course_tag', 'tag_id', 'course_id');
     }
 }

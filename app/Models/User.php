@@ -49,23 +49,18 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function usersCourse()
+    public function courses()
     {
-        return $this->hasMany('App\Models\UserCourse', 'user_id');
-    }
-
-    public function teachersCourse()
-    {
-        return $this->hasMany('App\Models\TeacherCourse', 'user_id');
+        return $this->belongsToMany(Course::class, 'user_course', 'user_id', 'course_id');
     }
 
     public function reviews()
     {
-        return $this->hasMany('App\Models\Review', 'user_id');
+        return $this->hasMany(Review::class, 'user_id');
     }
     
-    public function usersLesson()
+    public function lessons()
     {
-        return $this->hasMany('App\Models\UserLesson', 'user_id');
+        return $this->belongsToMany(Lesson::class, 'user_lesson', 'user_id', 'lesson_id');
     }
 }

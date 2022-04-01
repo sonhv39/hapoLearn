@@ -20,11 +20,11 @@ class Review extends Model
 
     public function user()
     {
-        $this->belongsTo('App\Models\User', 'user_id');
+        $this->belongsTo(User::class, 'user_id');
     }
 
     public function course()
     {
-        $this->belongsTo('App\Models\Course', 'course_id');
+        $this->belongsTo(Course::class, 'course_id');
     }
 }

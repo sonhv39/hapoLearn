@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use PhpParser\Node\Expr\FuncCall;
 
 class Course extends Model
 {
@@ -18,28 +19,23 @@ class Course extends Model
         'price',
     ];
 
-    public function userCourses()
-    {
-        return $this->hasMany('App\Models\UserCourse', 'course_id');
-    }
-
-    public function teacherCourses()
-    {
-        return $this->hasMany('App\Models\TeacherCourse', 'course_id');
-    }
-
     public function reviews()
     {
-        return $this->hasMany('App\Models\Review', 'course_id');
+        return $this->hasMany(Review::class, 'course_id');
     }
 
     public function lessons()
     {
-        return $this->hasMany('App\Models\Lesson', 'course_id');
+        return $this->hasMany(Lesson::class, 'course_id');
     }
 
-    public function coursesTag()
+    public function users()
     {
-        return $this->hasMany('App\Models\CourseTag', 'course_id');
+        return $this->belongsToMany(User::class, 'user_course', 'course_id', 'user_id');
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class, 'course_tag', 'course_id', 'tag_id');
     }
 }

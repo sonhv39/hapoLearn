@@ -19,6 +19,6 @@ class Document extends Model
 
     public function lesson()
     {
-        $this->belongsTo('App\Models\lesson', 'lesson_id');
+        $this->belongsTo(Lesson::class, 'lesson_id');
     }
 }
