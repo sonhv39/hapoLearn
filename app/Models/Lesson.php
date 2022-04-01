@@ -21,16 +21,16 @@ class Lesson extends Model
 
     public function users()
     {
-        $this->belongsToMany(User::class, 'user_lesson', 'lesson_id', 'user_id');
+        return $this->belongsToMany(User::class, 'user_lesson', 'lesson_id', 'user_id');
     }
 
     public function course()
     {
-        $this->belongsTo(Course::class, 'course_id');
+        return $this->belongsTo(Course::class, 'course_id');
     }
 
     public function documents()
     {
-        $this->hasMany(Document::class, 'lesson_id');
+        return $this->hasMany(Document::class, 'lesson_id');
     }
 }
