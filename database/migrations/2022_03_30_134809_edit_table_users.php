@@ -38,7 +38,7 @@ class EditTableUsers extends Migration
             $table->dropColumn('username');
             $table->dropColumn('avata_url');
             $table->dropColumn('role');
-            $table->dropColumn('delete_at');
+            $table->dropSoftDeletes();
         });
     }
 }
