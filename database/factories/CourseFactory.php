@@ -17,7 +17,7 @@ class CourseFactory extends Factory
             'title' => $this->faker->title(),
             'description' => $this->faker->text(),
             'img_url' => $this->faker->imageUrl(),
-            'price' => $this->faker->randomFloat($nbMaxDeciamals = 2, $min = 0, $max = 10000),
+            'price' => $this->faker->randomFloat(2, 0, 10000),
         ];
     }
 }

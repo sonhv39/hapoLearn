@@ -30,7 +30,7 @@ class UserFactory extends Factory
             'remember_token' => Str::random(10),
             'phonenumber' => $this->faker->phoneNumber(10),
             'address' => $this->faker->address(),
-            'date_of_birth' => $this->faker->date($format  = 'Y-m-d', $max = 'now'),
+            'date_of_birth' => $this->faker->date('Y-m-d', 'now'),
             'username' => $this->faker->userName(),
             'avata_url' => $this->faker->imageUrl(),
             'role' => $this->faker->numberBetween(0, 1)
