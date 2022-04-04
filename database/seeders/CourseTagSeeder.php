@@ -14,7 +14,7 @@ class CourseTagSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i < 50; $i++){
+        for ($i = 0; $i < 50; $i++) {
             DB::table('course_tag')->insert([
                 'course_id' => rand(1, 52),
                 'tag_id' => rand(1, 10)
