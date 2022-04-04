@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\CourseTag;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,11 +15,6 @@ class CourseTagSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 50; $i++) {
-            DB::table('course_tag')->insert([
-                'course_id' => rand(1, 52),
-                'tag_id' => rand(1, 10)
-            ]);
-        }
+        CourseTag::factory()->count(50)->create();
     }
 }

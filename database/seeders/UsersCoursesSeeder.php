@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\UserCourse;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -15,11 +16,6 @@ class UsersCoursesSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 50; $i++) {
-            DB::table('user_course')->insert([
-                'user_id' => rand(1, 10),
-                'course_id' => rand(1, 50)
-            ]);
-        }
+        UserCourse::factory()->count(50)->create();
     }
 }
