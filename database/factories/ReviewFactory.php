@@ -14,10 +14,10 @@ class ReviewFactory extends Factory
     public function definition()
     {
         return [
-            'course_id' => rand(1,50),
-            'user_id' => rand(1,10),
+            'course_id' => rand(1, 50),
+            'user_id' => rand(1, 10),
             'content' => $this->faker->text(255),
-            'star_rating' => $this->faker->randomFloat(0,1,5)
+            'star_rating' => $this->faker->randomFloat(0, 1, 5)
         ];
     }
 }
