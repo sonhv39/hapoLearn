@@ -255,3 +255,7 @@
         </div>
     </div>
 @endsection
+<<<<<<< HEAD
+=======
+>>>>>>>> a2e3c18 (ignore foder public):resources/views/index.blade.php
+>>>>>>> a2e3c18 (ignore foder public)
