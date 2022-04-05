@@ -13,7 +13,13 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+<<<<<<< HEAD
 /public/app
 /public/css
 /public/js
+=======
+/public/app/public
+/public/css/app.css
+/public/js/app.js
+>>>>>>> ed4d55e (push code v1)
 /public/fonts
