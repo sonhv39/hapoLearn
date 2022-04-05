@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('contentuser')
+@section('content')
     <main>
         <section class="banner">
             <div class="banner-img">
@@ -8,7 +8,7 @@
             <div class="banner-content">
                 <div>
                     <p class="">Learn Anytime, Anywhere</p>
-                    <div class="banner-content-imgsmall">at HapoLearn <img src="{{asset('app/img/imghaposmall.png')}}" alt="imghaposmall"> !
+                    <div class="banner-content-imgsmall">at HapoLearn <img src="{{ asset('images/imghaposmall.png') }}" alt="imghaposmall"> !
                     </div>
                     <p class="banner-tagp">Interactive lessons, "on-the-go" <br>
                         practice, peer support</p>
@@ -18,50 +18,14 @@
         </section>
         <section class="courses custom-container text-center">
             <div class="courses-list d-sm-flex justify-content-around">
-                {{--                <div class="card">--}}
-                {{--                    <div class="courses-img courses-hcj">--}}
-                {{--                        <img src="{{asset('app/img/course_html_css.png')}}" class="card-img-top w-100" alt="coursehtmlcss">--}}
-                {{--                    </div>--}}
-                {{--                    <div class="card-body courses-card-body">--}}
-                {{--                        <div class="card-title">HTML/CSS/js Tutorial</div>--}}
-                {{--                        <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New--}}
-                {{--                            Media. I had coded quite a bit, but never touched anything in regards to web--}}
-                {{--                            development.</p>--}}
-                {{--                        <a href="#" class="btn courses-btn">Take This Course</a>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                {{--                <div class="card">--}}
-                {{--                    <div class="courses-img courses-laravel">--}}
-                {{--                        <img src="{{asset('app/img/course_laravel.png')}}" class="card-img-top w-100" alt="courselaravel">--}}
-                {{--                    </div>--}}
-                {{--                    <div class="card-body courses-card-body">--}}
-                {{--                        <div class="card-title">LARAVEL Tutorial</div>--}}
-                {{--                        <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New--}}
-                {{--                            Media. I had coded quite a bit, but never touched anything in regards to web--}}
-                {{--                            development.</p>--}}
-                {{--                        <a href="#" class="btn courses-btn">Take This Course</a>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                {{--                <div class="card">--}}
-                {{--                    <div class="courses-img courses-php">--}}
-                {{--                        <img src="{{asset('app/img/course_php.png')}}" class="card-img-top w-100" alt="coursephp">--}}
-                {{--                    </div>--}}
-                {{--                    <div class="card-body courses-card-body">--}}
-                {{--                        <div class="card-title">PHP Tutorial</div>--}}
-                {{--                        <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New--}}
-                {{--                            Media. I had coded quite a bit, but never touched anything in regards to web--}}
-                {{--                            development.</p>--}}
-                {{--                        <a href="#" class="btn courses-btn">Take This Course</a>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                @foreach($courses as $c)
+                @foreach(range(1,3) as $i)
                     <div class="card">
                         <div class="courses-img courses-hcj">
-                            <img src="{{ $c->img_url }}" class="card-img-top w-100" alt="img.{{ $c->title }}">
+                            <img src="{{ $listcourses[$i]->img_url }}" class="card-img-top w-100" alt="img.{{ $listcourses[$i]->title }}">
                         </div>
                         <div class="card-body courses-card-body">
-                            <div class="card-title">{{ $c->title }}</div>
-                            <p class="card-text">{{ $c->description }}</p>
+                            <div class="card-title">{{ $listcourses[$i]->title }}</div>
+                            <p class="card-text">{{ $listcourses[$i]->description }}</p>
                             <a href="#" class="btn courses-btn">Take This Course</a>
                         </div>
                     </div>
@@ -70,47 +34,14 @@
             <div class="courses-other">
                 <p class="text-center">Other courses</p>
                 <div class="courses-other-list d-sm-flex justify-content-around">
-                    {{--                    <div class="card">--}}
-                    {{--                        <div class="courses-img courses-css">--}}
-                    {{--                            <img src="{{asset('app/img/course_css.png')}}" class="card-img-top w-100 " alt="coursecss">--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="card-body courses-card-body">--}}
-                    {{--                            <div class="card-title">CSS Tutorial</div>--}}
-                    {{--                            <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New--}}
-                    {{--                                Media,...</p>--}}
-                    {{--                            <a href="#" class="btn courses-btn">Take This Course</a>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="card">--}}
-                    {{--                        <div class="courses-img courses-ruby">--}}
-                    {{--                            <img src="{{asset('app/img/course_ruby.png')}}" class="card-img-top w-100" alt="courseruby">--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="card-body courses-card-body">--}}
-                    {{--                            <div class="card-title">Ruby on rails Tutorial</div>--}}
-                    {{--                            <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New--}}
-                    {{--                                Media,...</p>--}}
-                    {{--                            <a href="#" class="btn courses-btn">Take This Course</a>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="card">--}}
-                    {{--                        <div class="courses-img courses-java">--}}
-                    {{--                            <img src="{{asset('app/img/course_java.png')}}" class="card-img-top w-100 " alt="coursejava">--}}
-                    {{--                        </div>--}}
-                    {{--                        <div class="card-body courses-card-body">--}}
-                    {{--                            <div class="card-title">Java Tutorial</div>--}}
-                    {{--                            <p class="card-text">I knew hardly anything about HTML, JS, and CSS before entering New--}}
-                    {{--                                Media,...</p>--}}
-                    {{--                            <a href="#" class="btn courses-btn">Take This Course</a>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                    @foreach($coursesother as $ct)
+                    @foreach(range(20,22) as $i)
                         <div class="card">
                             <div class="courses-img courses-hcj">
-                                <img src="{{ $ct->img_url }}" class="card-img-top w-100" alt="img.{{ $ct->title }}">
+                                <img src="{{ $listcourses[$i]->img_url }}" class="card-img-top w-100" alt="img.{{ $listcourses[$i]->title }}">
                             </div>
                             <div class="card-body courses-card-body">
-                                <div class="card-title">{{ $ct->title }}</div>
-                                <p class="card-text">{{ $ct->description }}</p>
+                                <div class="card-title">{{ $listcourses[$i]->title }}</div>
+                                <p class="card-text">{{ $listcourses[$i]->description }}</p>
                                 <a href="#" class="btn courses-btn">Take This Course</a>
                             </div>
                         </div>
@@ -122,7 +53,7 @@
         </section>
         <section class="whyhapo-lg">
             <div class="whyhapo-topimg">
-                <img src="{{asset('app/img/bgwhylearnhapolearnsmalllaptop.png')}}" alt="bgwhylearnhapolearnsmalllaptop"
+                <img src="{{ asset('images/bgwhylearnhapolearnsmalllaptop.png') }}" alt="bgwhylearnhapolearnsmalllaptop"
                      class="w-100">
             </div>
             <div class="whyhapo-content d-flex">
@@ -140,7 +71,7 @@
                             support.</span>
                 </div>
                 <div class="whyhapo-right">
-                    <img src="{{asset('app/img/bgwhylearnhapolearnsmall.png')}}" alt="bgwhylearnhapolearnsmall"
+                    <img src="{{ asset('images/bgwhylearnhapolearnsmall.png') }}" alt="bgwhylearnhapolearnsmall"
                          class="w-100">
                 </div>
             </div>
@@ -148,7 +79,7 @@
         <section class="whyhapo-md">
             <div class="whyhapo-top d-flex">
                 <div class="whyhapo-topimg">
-                    <img src="{{asset('app/img/bgwhylearnhapolearnsmalllaptop.png')}}"
+                    <img src="{{ asset('images/bgwhylearnhapolearnsmalllaptop.png') }}"
                          alt="bgwhylearnhapolearnsmalllaptop"
                          class="w-100">
                 </div>
@@ -168,7 +99,7 @@
                             support.</span>
                 </div>
                 <div class="whyhapomd-right">
-                    <img src="./img/bgwhylearnhapolearnsmall.png" alt="bgwhylearnhapolearnsmall" class="w-100">
+                    <img src="{{ asset('images/bgwhylearnhapolearnsmall.png') }}" alt="bgwhylearnhapolearnsmall" class="w-100">
                 </div>
             </div>
         </section>
@@ -216,21 +147,21 @@
             <div class="counters d-sm-flex justify-content-between">
                 <div class="statistic-item">
                     <p>Courses</p>
-                    <span class="counter">{{count($lc)}}</span>
+                    <span class="counter">{{ $numbercourse }}</span>
                 </div>
                 <div class="statistic-item">
                     <p>Lessons</p>
-                    <span class="counter">{{count($lessons)}}</span>
+                    <span class="counter">{{ $numberlesson }}</span>
                 </div>
                 <div class="statistic-item">
                     <p>Learners</p>
-                    <span class="counter">{{count($users)}}</span>
+                    <span class="counter">{{ $numberuser }}</span>
                 </div>
             </div>
         </section>
     </main>
 @endsection
-@section('iconmess')
+@section('messenger')
     <div class="icon-mess">
         <div class="icon-img d-flex align-items-center justify-content-center">
             <i class="fab fa-facebook-messenger"></i>
@@ -239,7 +170,7 @@
             <div class="mess-name">HapoLearn</div>
             <div class="mess-ava d-flex">
                 <div class="ava-hapo">
-                    <img src="{{asset('app/img/ava_hapo.png')}}" alt="avata_hapo" class="w-100">
+                    <img src="{{ asset('images/ava_hapo.png') }}" alt="avata_hapo" class="w-100">
                 </div>
                 <div class="mess-chat">
                     <p>HapoLearn xin chào bạn. <br>
@@ -254,7 +185,7 @@
 
     </div>
 @endsection
-@section('modallogin')
+@section('login_register')
     <div class="modal fade" id="loginRegisterModal" tabindex="-1" aria-labelledby="loginRegisterModal"
          aria-hidden="true">
         <div class="d-flex justify-content-center">

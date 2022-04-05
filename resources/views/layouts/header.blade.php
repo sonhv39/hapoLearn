@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-sm navbar-light header-navbar">
         <div class="header-navbar-brand">
             <div class="navbar-brand">
-                <a href="#"><img src="{{asset('app/img/hapo_learn.png')}}" alt="hapo_learn" class="w-100"></a>
+                <a href="#"><img src="{{ asset('images/hapo_learn.png') }}" alt="hapo_learn" class="w-100"></a>
             </div>
         </div>
         <button class="navbar-toggler header-tonggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="headerBtnIcon">

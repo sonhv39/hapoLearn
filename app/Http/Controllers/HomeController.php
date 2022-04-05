@@ -27,12 +27,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $lc = Course::get();
-        $courses = Course::take(3)->get();
-        $coursesother = Course::take(3)->get();
+        $listcourses = Course::get();
         $reviews = Review::take(4)->get();
         $lessons = Lesson::get();
         $users = User::get();
-        return view('home', compact('courses', 'coursesother', 'reviews', 'lessons', 'users', 'lc'));
+        $numbercourse = count($listcourses);
+        $numberlesson = count($lessons);
+        $numberuser = count($users);
+        return view('index', compact('listcourses', 'reviews', 'lessons', 'users', 'numbercourse', 'numberlesson', 'numberuser'));
     }
 }
