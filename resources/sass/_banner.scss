@@ -1,0 +1,425 @@
+.banner {
+  position: relative;
+  background: linear-gradient(180deg, #fffbfb 87.5%, #e7e9ee 100%);
+  font-family: $fontNu;
+  height: 800px;
+
+  .banner-img {
+    background-image: url("../asset/image/Hapo_Learn_banner1.png");
+    height: 650px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 22%;
+    left: 0;
+    padding-left: 160px;
+  }
+}
+
+.banner-content {
+  p:first-child {
+    font-weight: 400;
+    color: $color-blue-0;
+    margin-bottom: 0;
+  }
+
+  .banner-content-imgsmall {
+    font-weight: bold;
+    color: $color-blue-0;
+    word-spacing: 5px;
+    margin-bottom: 13px;
+  }
+
+  .banner-tagp {
+    color: $color-black-0;
+    margin-bottom: 2rem;
+  }
+
+  .banner-btn {
+    padding: 13px 55px;
+    border-radius: 35px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 0;
+    color: white;
+    font-weight: 600;
+    background-color: $color-green-0;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: $color-green-1;
+    }
+  }
+}
+
+@media screen and(max-width: 1920px) {
+  .banner-content {
+    p:first-child {
+      font-size: 50px;
+    }
+
+    .banner-content-imgsmall {
+      font-size: 50px;
+      margin-top: -15px;
+      margin-bottom: 0;
+
+      img {
+        width: 70px;
+        margin: 0 -13px;
+      }
+    }
+
+    .banner-tagp {
+      font-size: 17px;
+    }
+
+    .banner-btn {
+      font-size: 17px;
+    }
+  }
+}
+
+@media screen and(max-width: 1650px) {
+  .banner-content {
+    p:first-child {
+      font-size: 45px;
+    }
+
+    .banner-content-imgsmall {
+      font-size: 42px;
+
+      img {
+        width: 60px;
+      }
+    }
+
+    .banner-tagp {
+      font-size: 16px;
+    }
+
+    .banner-btn {
+      font-size: 16px;
+    }
+  }
+
+  .banner {
+    height: 750px;
+
+    .banner-img {
+      height: 600px;
+    }
+  }
+}
+
+@media screen and(max-width : 1400px) {
+  .banner {
+    height: 650px;
+
+    .banner-img {
+      height: 500px;
+    }
+
+    .banner-content {
+      p:first-child {
+        font-size: 40px;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 40px;
+        margin: 0 0 10px 0;
+
+        img {
+          width: 57px;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 1260px) {
+  .banner {
+    height: 550px;
+
+    .banner-img {
+      height: 450px;
+    }
+    .banner-content {
+      p:first-child {
+        font-size: 35px;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 32px;
+        margin-bottom: 0;
+      }
+
+      .banner-tagp {
+        font-size: 14px;
+      }
+
+      .banner-btn {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 1100px) {
+  .banner {
+    .banner-content {
+      top: 16%;
+      padding-left: 80px;
+
+      p:first-child {
+        font-size: 35px;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 34px;
+
+        img {
+          width: 45px;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 14px;
+      }
+
+      .banner-btn {
+        font-size: 14px;
+        padding: 14px 55px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 898px) {
+  .banner {
+    height: 485px;
+
+    .banner-img {
+      height: 385px;
+    }
+
+    .banner-content {
+      p:first-child {
+        font-size: 2.2rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.2rem;
+      }
+
+      .banner-tagp {
+        font-size: 1.1rem;
+      }
+
+      .banner-btn {
+        font-size: 1.1rem;
+        padding: 12px 38px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 768px) {
+  .banner {
+    .banner-content {
+      top: 15%;
+
+      p:first-child {
+        font-size: 28px;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 25px;
+        margin-bottom: 8px;
+
+        img {
+          width: 35px;
+          margin: -5px;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 0.8rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .banner-btn {
+        font-size: 0.8rem;
+        padding: 11px 30px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 668px) {
+  .banner {
+    height: 465px;
+
+    .banner-img {
+      height: 380px;
+    }
+
+    .banner-content {
+      top: 18%;
+
+      p:first-child {
+        font-size: 25px;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .banner-content-imgsmall {
+    img{
+      width: 6%;
+    }
+  }
+}
+
+@media screen and(max-width : 575px) {
+  .banner {
+    height: 500px;
+
+    .banner-img {
+      height: 40%;
+    }
+
+    .banner-content {
+      position: relative;
+      top: 0%;
+      width: 88%;
+      margin: 0 auto;
+      padding-left: 55px;
+
+      p:first-child {
+        font-size: 25px;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 25px;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 16px;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 18px;
+        padding: 12px 50px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 484px) {
+  .banner {
+    .banner-content{
+      p:first-child {
+        font-size: 1.8rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 1.8rem;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 1rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 1.1rem;
+        padding: 12px 44px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 410px) {
+  .banner {
+    height: 530px;
+
+    .banner-img {
+      height: 45%;
+    }
+
+    .banner-content{
+      width: 91%;
+
+      p:first-child {
+        font-size: 1.6rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 1.6rem;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 1rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 1rem;
+        padding: 11px 40px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 354px) {
+  .banner {
+    .banner-content{
+      padding-left: 40px;
+
+      p:first-child {
+        font-size: 1.4rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 1.35rem;
+
+        img {
+          width: 10%;
+        }
+      }
+
+      .banner-tagp {
+        font-size: 1rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 1rem;
+        padding: 11px 40px;
+      }
+    }
+  }
+}

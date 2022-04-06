@@ -11,9 +11,9 @@ class Course extends Model
 {
     use HasFactory;
     use SoftDeletes;
-    
+
     protected $fillable = [
-        'tilte',
+        'title',
         'description',
         'img_url',
         'price',
