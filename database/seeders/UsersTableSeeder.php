@@ -1,7 +1,7 @@
 <?php
 
+use App\Models\User as User;
 use Illuminate\Database\Seeder;
-use App\User;
 
 class UsersTableSeeder extends Seeder
 {
@@ -17,5 +17,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test@haposoft.com',
             'password' => bcrypt('12345678')
         ]);
+
+        User::factory()->count(10)->create();
     }
 }
