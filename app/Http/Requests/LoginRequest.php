@@ -7,16 +7,6 @@ use Illuminate\Foundation\Http\FormRequest;
 class LoginRequest extends FormRequest
 {
     /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-//    public function authorize()
-//    {
-//        return false;
-//    }
-
-    /**
      * Get the validation rules that apply to the request.
      *
      * @return array
@@ -32,10 +22,12 @@ class LoginRequest extends FormRequest
     public function messages()
     {
         return [
-            'username.required' => 'username bắt buộc phải điền!!!',
-            'username.max' or 'username.min' => 'username bắt buộc phải có độ dài từ 8 đến 32 kí tự!!!',
-            'password.required' => 'password bắt buộc phải điền!!!',
-            'password.max' or 'password.min' => 'password bắt buộc phải có độ dài từ 8 đến 32 kí tự!!!',
+            'username.required' => 'Vui lòng điền username!!!',
+            'username.max' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
+            'username.min' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
+            'password.required' => 'Vui lòng điền password!!!',
+            'password.max' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
+            'password.min' => 'độ dài không hợp lệ(từ 8-32 kí tự)'
         ];
     }
 }

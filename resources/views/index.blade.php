@@ -222,13 +222,18 @@
                         <input type="text" class="form-control" id="usernamel" name="username">
                         @if($errors->first('username'))
                             <div class="alert alert-danger" role="alert">
-                                {{$errors->first('username')}}
+                                {{ $errors->first('username') }}
                             </div>
                         @endif
                     </div>
                     <div class="form-group">
                         <label for="passwordl">Password:</label>
                         <input type="password" class="form-control" id="passwordl" name="password">
+                      @if($errors->first('password'))
+                        <div class="alert alert-danger" role="alert">
+                          {{ $errors->first('password') }}
+                        </div>
+                      @endif
                     </div>
                     <div class="form-group form-check d-flex justify-content-between">
                         <div>
