@@ -18,14 +18,14 @@
         </section>
         <section class="courses custom-container text-center">
             <div class="courses-list d-sm-flex justify-content-around">
-                @foreach(range(1,3) as $i)
+                @foreach($listcourses as $c)
                     <div class="card">
                         <div class="courses-img courses-hcj">
-                            <img src="{{ $listcourses[$i]->img_url }}" class="card-img-top w-100" alt="img.{{ $listcourses[$i]->title }}">
+                            <img src="{{ $c->img_url }}" class="card-img-top w-100" alt="img.{{ $c->title }}">
                         </div>
                         <div class="card-body courses-card-body">
-                            <div class="card-title">{{ $listcourses[$i]->title }}</div>
-                            <p class="card-text">{{ $listcourses[$i]->description }}</p>
+                            <div class="card-title">{{ $c->title }}</div>
+                            <p class="card-text">{{ $c->description }}</p>
                             <a href="#" class="btn courses-btn">Take This Course</a>
                         </div>
                     </div>
@@ -34,14 +34,14 @@
             <div class="courses-other">
                 <p class="text-center">Other courses</p>
                 <div class="courses-other-list d-sm-flex justify-content-around">
-                    @foreach(range(20,22) as $i)
+                    @foreach($listcourses as $c)
                         <div class="card">
                             <div class="courses-img courses-hcj">
-                                <img src="{{ $listcourses[$i]->img_url }}" class="card-img-top w-100" alt="img.{{ $listcourses[$i]->title }}">
+                                <img src="{{ $c->img_url }}" class="card-img-top w-100" alt="img.{{ $c->title }}">
                             </div>
                             <div class="card-body courses-card-body">
-                                <div class="card-title">{{ $listcourses[$i]->title }}</div>
-                                <p class="card-text">{{ $listcourses[$i]->description }}</p>
+                                <div class="card-title">{{ $c->title }}</div>
+                                <p class="card-text">{{ $c->description }}</p>
                                 <a href="#" class="btn courses-btn">Take This Course</a>
                             </div>
                         </div>

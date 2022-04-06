@@ -108,6 +108,11 @@ $(document).ready(function(){
     console.log('aaa')
   });
 
+  window.onload = function(){
+    limitText(80);
+    limitRvText(130);
+  };
+
   function limitText(textLenght){
     var tdList = document.getElementsByClassName("card-text");
     console.log(tdList);
@@ -127,8 +132,22 @@ $(document).ready(function(){
     }
   }
 
-  window.onload = function(){
-    limitText(80);
-    limitRvText(130);
-  };
+  $('.feedback-content').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+    ]
+  });
 });
