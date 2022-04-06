@@ -13,19 +13,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
-<<<<<<< HEAD
-<<<<<<< HEAD
 /public/app
 /public/css
 /public/js
-=======
-/public/app/public
-/public/css/app.css
-/public/js/app.js
->>>>>>> ed4d55e (push code v1)
-=======
-/public/css/app.css
-/public/js
->>>>>>> 8c773f8 (ignore foder public)
 /public/fonts
-/public/images
