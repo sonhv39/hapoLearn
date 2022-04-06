@@ -2,7 +2,7 @@
     <div class="footer-lg d-sm-flex">
         <div class="footer-left">
             <div class="footer-img">
-                <img src="{{asset('app/img/footer_hapo.png')}}" alt="" class="w-100">
+                <img src="{{ asset('images/footer_hapo.png') }}" alt="" class="w-100">
             </div>
             <p>Interactive lessons, "on-the-go"<br>
                 practice, peer support.</p>
@@ -23,7 +23,7 @@
         <div class="footer-right d-flex align-items-center">
             <div class="footer-logo-sm d-sm-none">
                 <div class="footer-img">
-                    <img src="{{asset("images/footer_hapo.png")}}" alt="" class="w-100">
+                    <img src="{{ asset("images/footer_hapo.png" )}}" alt="" class="w-100">
                 </div>
                 <p>Interactive lessons, "on-the-go"<br>
                     practice, peer support.</p>

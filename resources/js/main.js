@@ -1,4 +1,9 @@
 $(document).ready(function(){
+  window.onload = function(){
+    limitText(80);
+    limitRvText(130);
+  };
+
   $('#headerBtnIcon').click(function() {
     if ($('.header-content').hasClass('show')) {
       $('.navbar-toggler-icon').removeClass('hide');
@@ -105,17 +110,10 @@ $(document).ready(function(){
     $('.modal').addClass('show');
     $('.modal').css({'display' : 'block'});
     $('.modal-backdrop').css({'display' : 'block'})
-    console.log('aaa')
   });
-
-  window.onload = function(){
-    limitText(80);
-    limitRvText(130);
-  };
 
   function limitText(textLenght){
     var tdList = document.getElementsByClassName("card-text");
-    console.log(tdList);
     for (var i = 0; i< tdList.length; i++){
       if (tdList[i].innerHTML.length > textLenght){
         tdList[i].innerHTML = tdList[i].innerHTML.substr(0, textLenght - 4) +'...';

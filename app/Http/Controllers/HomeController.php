@@ -16,11 +16,11 @@ class HomeController extends Controller
 
     public function index()
     {
-        $listcourses = Course::take(3)->get();
+        $courses = Course::take(3)->get();
         $reviews = Review::take(4)->get();
-        $numberlesson = Lesson::count();
-        $numberuser = User::count();
-        $numbercourse = Course::count();
-        return view('index', compact('listcourses', 'reviews', 'numbercourse', 'numberlesson', 'numberuser'));
+        $numberLesson = Lesson::count();
+        $numberUser = User::count();
+        $numberCourse = Course::count();
+        return view('index', compact('courses', 'reviews', 'numberCourse', 'numberLesson', 'numberUser'));
     }
 }

@@ -18,7 +18,7 @@
         </section>
         <section class="courses custom-container text-center">
             <div class="courses-list d-sm-flex justify-content-around">
-                @foreach($listcourses as $c)
+                @foreach($courses as $c)
                     <div class="card">
                         <div class="courses-img courses-hcj">
                             <img src="{{ $c->img_url }}" class="card-img-top w-100" alt="img.{{ $c->title }}">
@@ -34,7 +34,7 @@
             <div class="courses-other">
                 <p class="text-center">Other courses</p>
                 <div class="courses-other-list d-sm-flex justify-content-around">
-                    @foreach($listcourses as $c)
+                    @foreach($courses as $c)
                         <div class="card">
                             <div class="courses-img courses-hcj">
                                 <img src="{{ $c->img_url }}" class="card-img-top w-100" alt="img.{{ $c->title }}">
@@ -112,16 +112,16 @@
                 @foreach($reviews as $rv)
                     <div class="feedback-item">
                         <div class="feedback-text">
-                            <p class="review-text">“{{$rv->content}}</p>
+                            <p class="review-text">“{{ $rv->content }}</p>
                         </div>
                         <div class="feedback-bot">
                             <div class="feedback-img">
-                                <img src="{{$rv->user->avata_url}}" alt="feedback_img_cat"
+                                <img src="{{ $rv->user->avata_url }}" alt="feedback_img_cat"
                                      class="w-100">
                             </div>
                             <div class="feedback-right">
-                                <p>{{$rv->user->name}}</p>
-                                <span>{{$rv->course->title}}</span>
+                                <p>{{ $rv->user->name }}</p>
+                                <span>{{ $rv->course->title }}</span>
                                 <div class="feedback-stars">
                                     @for($i = 0; $i < $rv->star_rating; $i++)
                                         <i class="fa fa-star"></i>
@@ -147,15 +147,15 @@
             <div class="counters d-sm-flex justify-content-between">
                 <div class="statistic-item">
                     <p>Courses</p>
-                    <span class="counter">{{ $numbercourse }}</span>
+                    <span class="counter">{{ $numberCourse }}</span>
                 </div>
                 <div class="statistic-item">
                     <p>Lessons</p>
-                    <span class="counter">{{ $numberlesson }}</span>
+                    <span class="counter">{{ $numberLesson }}</span>
                 </div>
                 <div class="statistic-item">
                     <p>Learners</p>
-                    <span class="counter">{{ $numberuser }}</span>
+                    <span class="counter">{{ $numberUser }}</span>
                 </div>
             </div>
         </section>
