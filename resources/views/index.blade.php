@@ -215,14 +215,20 @@
                         <button type="submit">REGISTER</button>
                     </div>
                 </form>
-                <form class="form-l d-block">
+                <form class="form-l d-block" action="login" method="post">
+                    @csrf
                     <div class="form-group">
                         <label for="usernamel">Username:</label>
-                        <input type="text" class="form-control" id="usernamel">
+                        <input type="text" class="form-control" id="usernamel" name="username">
+                        @if($errors->first('username'))
+                            <div class="alert alert-danger" role="alert">
+                                {{$errors->first('username')}}
+                            </div>
+                        @endif
                     </div>
                     <div class="form-group">
                         <label for="passwordl">Password:</label>
-                        <input type="password" class="form-control" id="passwordl">
+                        <input type="password" class="form-control" id="passwordl" name="password">
                     </div>
                     <div class="form-group form-check d-flex justify-content-between">
                         <div>

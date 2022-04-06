@@ -38,15 +38,15 @@ $(document).ready(function(){
       $('.footer-right').css({'margin-left' : '5px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '255px'});
+      $('.footer-right').css({'margin-left' : '230px'});
     });
   }
   else if ($(window).width() > 1349 & $(window).width() < 1452) {
     $('.footer-icon').mouseenter(function(){
-    $('.footer-right').css({'margin-left' : '10px'});
+      $('.footer-right').css({'margin-left' : '10px'});
     });
     $('.footer-icon').mouseleave(function(){
-      $('.footer-right').css({'margin-left' : '165px'});
+      $('.footer-right').css({'margin-left' : '200px'});
     });
   }
   else if ($(window).width() >= 1083 & $(window).width() < 1350) {
@@ -70,7 +70,7 @@ $(document).ready(function(){
     $('.mess-content').removeClass('mess-active')
   });
 
-  // xu ly modal 
+  // xu ly modal
   $('.modal-header-l').click(function(){
     $('.modal-header-l').addClass('modal-active-cus');
     $('.modal-header-r').removeClass('modal-active-cus');
