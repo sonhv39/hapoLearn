@@ -37,11 +37,24 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
     }
 
     public function login(LoginRequest $request)
     {
+        $input = $request->only('lusername', 'lpassword');
+        if (Auth::attempt([
+          'username' => $input['lusername'],
+          'password' => $input['lpassword']
+        ])) {
+            return redirect()->route('home');
+        } else {
+            return redirect()->back()->withError('sai username hoặc password!!!');
+        }
+    }
 
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('home');
     }
 }
