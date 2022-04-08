@@ -14,20 +14,20 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => 'required|string|max:32|min:8',
-            'password' => 'required|max:32|min:8'
+            'lusername' => 'required|string|max:32|min:6',
+            'lpassword' => 'required|max:32|min:6'
         ];
     }
 
     public function messages()
     {
         return [
-            'username.required' => 'Vui lòng điền username!!!',
-            'username.max' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
-            'username.min' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
-            'password.required' => 'Vui lòng điền password!!!',
-            'password.max' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
-            'password.min' => 'độ dài không hợp lệ(từ 8-32 kí tự)'
+            'lusername.required' => 'Vui lòng điền username!!!',
+            'lusername.max' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
+            'lusername.min' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
+            'lpassword.required' => 'Vui lòng điền password!!!',
+            'lpassword.max' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
+            'lpassword.min' => 'độ dài không hợp lệ(từ 8-32 kí tự)'
         ];
     }
 }

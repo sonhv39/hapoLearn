@@ -17,6 +17,22 @@ header {
   }
 }
 
+.avata-cus {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avata {
+  background-color: white;
+  outline: 0;
+
+  span {
+    padding-left: 5px;
+  }
+}
+
 .header-ul {
   margin-left: auto;
 
@@ -39,7 +55,7 @@ header {
       font-family: "Open Sans";
       font-size: 14px;
       font-weight: 500;
-      color: $color-black-0;
+      color: $color-black-0!important;
     }
   }
 }
@@ -126,6 +142,12 @@ header {
       justify-content: space-between;
     }
   }
+
+  .icon-user {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 950px) {
@@ -162,6 +184,12 @@ header {
       padding: 0 10px;
     }
   }
+
+  .icon-user {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 }
 
 @media screen and (min-width: 668px) and (max-width: 768px) {
@@ -196,6 +224,12 @@ header {
     .header-nav-item {
       padding: 0 10px;
     }
+  }
+
+  .icon-user {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
@@ -239,6 +273,12 @@ header {
     .header-ul {
       justify-content: space-between;
     }
+  }
+
+  .icon-user {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
 }
 
@@ -321,6 +361,10 @@ header {
     .navbar-brand {
       width: 15rem;
     }
+  }
+
+  .icon-user {
+    display: none;
   }
 }
 

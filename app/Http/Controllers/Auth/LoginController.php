@@ -7,6 +7,7 @@ use App\Http\Requests\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -23,29 +24,18 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
     }
 
     public function login(LoginRequest $request)
     {
-        $input = $request->only('lusername', 'lpassword');
+        $input = $request->only('lusername', 'lpassword', 'remember_token');
         if (Auth::attempt([
           'username' => $input['lusername'],
           'password' => $input['lpassword']
-        ])) {
+        ], isset($input['remember_token']) ? true : false)) {
+//            dd(Auth::user());
             return redirect()->route('home');
         } else {
             return redirect()->back()->withError('sai username hoặc password!!!');

@@ -25,7 +25,11 @@
                         </div>
                         <div class="card-body courses-card-body">
                             <div class="card-title">{{ $c->title }}</div>
-                            <p class="card-text">{{ $c->description }}</p>
+                            <p class="card-text">
+                                @if(strlen($c->description) > 100)
+                                    {{ substr($c->description, 0, 97) }}...
+                                @endif
+                            </p>
                             <a href="#" class="btn courses-btn">Take This Course</a>
                         </div>
                     </div>
@@ -41,7 +45,11 @@
                             </div>
                             <div class="card-body courses-card-body">
                                 <div class="card-title">{{ $c->title }}</div>
-                                <p class="card-text">{{ $c->description }}</p>
+                                <p class="card-text">
+                                    @if(strlen($c->description) > 100)
+                                        {{ substr($c->description, 0, 97) }}...
+                                    @endif
+                                </p>
                                 <a href="#" class="btn courses-btn">Take This Course</a>
                             </div>
                         </div>
@@ -112,7 +120,9 @@
                 @foreach($reviews as $rv)
                     <div class="feedback-item">
                         <div class="feedback-text">
-                            <p class="review-text">“{{ $rv->content }}</p>
+                            <p class="review-text">“@if(strlen($rv->content) > 130)
+                                    {{ substr($rv->content, 0, 127) }}...
+                                @endif</p>
                         </div>
                         <div class="feedback-bot">
                             <div class="feedback-img">
@@ -194,32 +204,11 @@
                     <p class="modal-header-l modal-active-cus">LOGIN</p>
                     <P class="modal-header-r">REGISTER</P>
                 </div>
-                <form class="form-r d-none">
-                    <div class="form-group">
-                        <label for="username">Username:</label>
-                        <input type="text" class="form-control" id="username">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" class="form-control" id="email">
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password:</label>
-                        <input type="password" class="form-control" id="password">
-                    </div>
-                    <div class="form-group">
-                        <label for="rppassword">Repeat Password:</label>
-                        <input type="password" class="form-control" id="rppassword">
-                    </div>
-                    <div class="text-center">
-                        <button type="submit">REGISTER</button>
-                    </div>
-                </form>
-                <form class="form-l d-block" action="login" method="post">
+                <form class="form-r d-none @if($errors->first('username') || $errors->first('password') || $errors->first('cfpassword') || $errors->first('email')) form-r-err  @endif" action="{{ route('register') }}" method="POST">
                     @csrf
                     <div class="form-group">
-                        <label for="usernamel">Username:</label>
-                        <input type="text" class="form-control" id="usernamel" name="username">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username">
                         @if($errors->first('username'))
                             <div class="alert alert-danger" role="alert">
                                 {{ $errors->first('username') }}
@@ -227,21 +216,69 @@
                         @endif
                     </div>
                     <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email">
+                        @if($errors->first('email'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('email') }}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" name="password">
+                        @if($errors->first('password'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('password') }}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="form-group">
+                        <label for="rppassword">Repeat Password:</label>
+                        <input type="password" class="form-control" id="rppassword" name="cfpassword">
+                        @if($errors->first('cfpassword'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('cfpassword') }}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="text-center">
+                        <button type="submit">REGISTER</button>
+                    </div>
+                </form>
+
+                <form class="form-l d-block @if($errors->first('lusername') || $errors->first('lpassword') || session('error')) form-l-err @endif" action="{{ route('login') }}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <label for="usernamel">Username:</label>
+                        <input type="text" class="form-control" id="usernamel" name="lusername">
+                        @if($errors->first('lusername'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('lusername') }}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="form-group">
                         <label for="passwordl">Password:</label>
-                        <input type="password" class="form-control" id="passwordl" name="password">
-                      @if($errors->first('password'))
+                        <input type="password" class="form-control" id="passwordl" name="lpassword">
+                      @if($errors->first('lpassword'))
                         <div class="alert alert-danger" role="alert">
-                          {{ $errors->first('password') }}
+                          {{ $errors->first('lpassword') }}
                         </div>
                       @endif
                     </div>
                     <div class="form-group form-check d-flex justify-content-between">
                         <div>
-                            <input type="checkbox" class="form-check-input" id="rememberl">
+                            <input type="checkbox" class="form-check-input" id="rememberl" name="remember_token" value="remember_token">
                             <label class="form-check-label" for="rememberl">Remember me</label>
                         </div>
                         <a href="#" class="">Forgot Password</a>
                     </div>
+                    @if(session('error'))
+                        <div class="alert alert-danger" role="alert">
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     <div class="text-center">
                         <button type="submit">LOGIN</button>
                     </div>
@@ -266,7 +303,4 @@
         </div>
     </div>
 @endsection
-<<<<<<< HEAD
-=======
->>>>>>>> a2e3c18 (ignore foder public):resources/views/index.blade.php
->>>>>>> a2e3c18 (ignore foder public)
+

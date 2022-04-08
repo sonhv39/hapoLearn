@@ -105,6 +105,44 @@ $(document).ready(function(){
     $('.modal').addClass('show');
     $('.modal').css({'display' : 'block'});
     $('.modal-backdrop').css({'display' : 'block'})
-    console.log('aaa')
   })
+
+  if ($('.alert').hasClass('alert-danger')) {
+    $('#loginRegisterModal').modal();
+    if ($('.form-l').hasClass('form-l-err')) {
+      $('.modal-header-l').addClass('modal-active-cus');
+      $('.modal-header-r').removeClass('modal-active-cus');
+      $('.form-l').addClass('d-block');
+      $('.form-l').removeClass('d-none');
+      $('.form-r').addClass('d-none');
+      $('.form-r').removeClass('d-block');
+    }
+    if ($('.form-r').hasClass('form-r-err')) {
+      $('.modal-header-r').addClass('modal-active-cus');
+      $('.modal-header-l').removeClass('modal-active-cus');
+      $('.form-r').addClass('d-block');
+      $('.form-r').removeClass('d-none');
+      $('.form-l').addClass('d-none');
+      $('.form-l').removeClass('d-block');
+    }
+  }
+
+  $('.feedback-content').slick({
+    dots: false,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    responsive: [
+      {
+        breakpoint: 900,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false
+        }
+      },
+    ]
+  });
 });

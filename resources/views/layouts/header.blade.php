@@ -17,7 +17,7 @@
                 <li class="nav-item header-nav-item header-active">
                     <a class="nav-link" href="#">ALL COURSES</a>
                 </li>
-                <li class="nav-item header-nav-item header-lr-cus" data-toggle="modal" data-target="#loginRegisterModal">
+                <li class="nav-item header-nav-item header-lr-cus @if(Auth::user()) d-none @endif" data-toggle="modal" data-target="#loginRegisterModal">
                     <a class="nav-link" href="#">LOGIN/REGISTER</a>
                 </li>
                 <li class="nav-item header-nav-item">
@@ -25,5 +25,22 @@
                 </li>
             </ul>
         </div>
+        @if(Auth::user())
+            <div class="dropdown icon-user">
+                <button class="btn dropdown-toggle d-flex align-items-center avata" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+                    <div class="avata-cus">
+                        <img src="{{ Auth::user()->avata_url }}" class="w-100 h-100" alt="avata.{{ Auth::user()->name }}">
+                    </div>
+                    <span>{{ Auth::user()->name }}</span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <form action="{{ route('logout') }}" method="POST">
+                        @csrf
+                        <button class="dropdown-item" href="#">Logout</button>
+                    </form>
+                </div>
+            </div>
+        @endif
     </nav>
 </header>
