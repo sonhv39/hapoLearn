@@ -25,9 +25,7 @@ class User extends Authenticatable
         'role'
     ];
 
-    protected $attributes = [
-        'role' => 0
-    ];
+    const ROLE = 0;
 
     protected $hidden = [
         'password',
@@ -38,7 +36,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-//    accesors name để format 1 attr từ csdl lên
     public function getNameAttribute($name)
     {
         return strtoupper($name);
@@ -49,7 +46,6 @@ class User extends Authenticatable
         return strtoupper($username);
     }
 
-//    mutator để formmat mật khẩu trc khi lưu xuống csdl
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
