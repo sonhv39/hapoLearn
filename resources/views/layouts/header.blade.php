@@ -31,7 +31,7 @@
             <div class="dropdown icon-user">
                 <button class="btn dropdown-toggle d-flex align-items-center avata" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                     <div class="avata-cus">
-                        <img src="{{ Auth::user()->avata_url }}" class="w-100 h-100" alt="avata.{{ Auth::user()->username }}">
+                        <img src="{{ Auth::user()->make_avata_url }}" class="w-100 h-100" alt="avata.{{ Auth::user()->username }}">
                     </div>
                     <span>{{ Auth::user()->username }}</span>
                 </button>
