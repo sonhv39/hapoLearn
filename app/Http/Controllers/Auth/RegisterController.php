@@ -21,11 +21,7 @@ class RegisterController extends Controller
 
     public function register(RegisterRequest $request)
     {
-        $data = $request->all();
-        $data += [
-            'avata_url' => ''
-        ];
-        $user = User::create($data);
+        $user = User::create($request->all());
         if ($user) {
             Auth::login($user, true);
             return redirect()->route('home');

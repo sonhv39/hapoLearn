@@ -44,14 +44,17 @@ class User extends Authenticatable
         return strtoupper($username);
     }
 
+    public function getAvataUrlAttribute($avata_url)
+    {
+        if ($avata_url == null) {
+            return $this->attributes['avata_url'] = asset('images/avata_default.png');
+        }
+        return $avata_url;
+    }
+
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
-    }
-
-    public function setAvataUrlAttribute()
-    {
-        $this->attributes['avata_url'] = asset('images/avata_default.png');
     }
 
     public function courses()
