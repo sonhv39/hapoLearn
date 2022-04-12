@@ -35,7 +35,6 @@ class LoginController extends Controller
           'username' => $input['lusername'],
           'password' => $input['lpassword']
         ], isset($input['remember_token']) ? true : false)) {
-//            dd(Auth::user());
             return redirect()->route('home');
         } else {
             return redirect()->back()->withError('sai username hoặc password!!!');
