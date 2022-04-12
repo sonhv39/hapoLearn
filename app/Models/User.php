@@ -46,9 +46,7 @@ class User extends Authenticatable
 
     public function getAvataUrlAttribute($avataUrl)
     {
-        if ($avataUrl == null) {
-            return $this->attributes['avata_url'] = asset('images/avata_default.png');
-        }
+        $avataUrl == null ? $avataUrl = asset('images/avata_default.png') : $avataUrl;
         return $avataUrl;
     }
 
