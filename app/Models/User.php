@@ -13,11 +13,6 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
     use SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name',
         'email',
@@ -30,24 +25,24 @@ class User extends Authenticatable
         'role'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+//    accesors name để format 1 attr từ csdl lên
+    public function  getNameAttribute($name) {
+        return strtoupper($name);
+    }
+
+//    mutator để formmat mật khẩu trc khi lưu xuống csdl
+    public function setPasswordAttribute($password) {
+        $this->attributes['password'] = bcrypt($password);
+    }
 
     public function courses()
     {
