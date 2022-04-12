@@ -1,9 +1,4 @@
 $(document).ready(function(){
-  window.onload = function(){
-    limitText(80);
-    limitRvText(130);
-  };
-
   $('#headerBtnIcon').click(function() {
     if ($('.header-content').hasClass('show')) {
       $('.navbar-toggler-icon').removeClass('hide');
@@ -110,23 +105,25 @@ $(document).ready(function(){
     $('.modal').addClass('show');
     $('.modal').css({'display' : 'block'});
     $('.modal-backdrop').css({'display' : 'block'})
-  });
+  })
 
-  function limitText(textLenght){
-    var tdList = document.getElementsByClassName("card-text");
-    for (var i = 0; i< tdList.length; i++){
-      if (tdList[i].innerHTML.length > textLenght){
-        tdList[i].innerHTML = tdList[i].innerHTML.substr(0, textLenght - 4) +'...';
-      }
+  if ($('.alert').hasClass('alert-danger')) {
+    $('#loginRegisterModal').modal();
+    if ($('.form-l').hasClass('form-l-err')) {
+      $('.modal-header-l').addClass('modal-active-cus');
+      $('.modal-header-r').removeClass('modal-active-cus');
+      $('.form-l').addClass('d-block');
+      $('.form-l').removeClass('d-none');
+      $('.form-r').addClass('d-none');
+      $('.form-r').removeClass('d-block');
     }
-  }
-
-  function limitRvText(textLenght){
-    var tdList = document.getElementsByClassName("review-text");
-    for (var i = 0; i< tdList.length; i++){
-      if (tdList[i].innerHTML.length > textLenght ){
-        tdList[i].innerHTML = tdList[i].innerHTML.substr(0, textLenght - 4) +'...';
-      }
+    if ($('.form-r').hasClass('form-r-err')) {
+      $('.modal-header-r').addClass('modal-active-cus');
+      $('.modal-header-l').removeClass('modal-active-cus');
+      $('.form-r').addClass('d-block');
+      $('.form-r').removeClass('d-none');
+      $('.form-l').addClass('d-none');
+      $('.form-l').removeClass('d-block');
     }
   }
 

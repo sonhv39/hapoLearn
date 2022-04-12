@@ -13,11 +13,6 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
     use SoftDeletes;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
         'name',
         'email',
@@ -25,29 +20,39 @@ class User extends Authenticatable
         'phonenumber',
         'address',
         'date_of_birth',
-        'usename',
+        'username',
         'avata_url',
         'role'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password',
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function getNameAttribute($name)
+    {
+        return strtoupper($name);
+    }
+
+    public function getUsernameAttribute($username)
+    {
+        return strtoupper($username);
+    }
+
+    public function getMakeAvataUrlAttribute()
+    {
+        return isset($this['avata_url']) ? $this['avata_url'] : asset('images/avata_default.png');
+    }
+
+    public function setPasswordAttribute($password)
+    {
+        $this->attributes['password'] = bcrypt($password);
+    }
 
     public function courses()
     {

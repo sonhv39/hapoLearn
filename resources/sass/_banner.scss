@@ -14,7 +14,7 @@
 
   .banner-content {
     position: absolute;
-    top: 22%;
+    top: 21%;
     left: 0;
     padding-left: 160px;
   }
@@ -22,24 +22,41 @@
 
 .banner-content {
   p:first-child {
+    font-size: 50px;
+    line-height: calc(61 / 50);
+    letter-spacing: -0.05em;
     font-weight: 400;
     color: $color-blue-0;
     margin-bottom: 0;
   }
 
   .banner-content-imgsmall {
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: calc(61 / 50);
     color: $color-blue-0;
     word-spacing: 5px;
     margin-bottom: 13px;
+
+    img {
+      width: 54px;
+      height: 48px;
+      margin: 0 -12px;
+    }
   }
 
   .banner-tagp {
+    font-size: 20px;
+    line-height: calc(24.52 / 20);
+    letter-spacing: -0.05em;
     color: $color-black-0;
     margin-bottom: 2rem;
   }
 
   .banner-btn {
+    font-size: 30px;
+    line-height: calc(37 / 30);
+    letter-spacing: -0.05em;
     padding: 13px 55px;
     border-radius: 35px;
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -55,73 +72,8 @@
   }
 }
 
-@media screen and(max-width: 1920px) {
-  .banner-content {
-    p:first-child {
-      font-size: 50px;
-    }
-
-    .banner-content-imgsmall {
-      font-size: 50px;
-      margin-top: -15px;
-      margin-bottom: 0;
-
-      img {
-        width: 70px;
-        margin: 0 -13px;
-      }
-    }
-
-    .banner-tagp {
-      font-size: 17px;
-    }
-
-    .banner-btn {
-      font-size: 17px;
-    }
-  }
-}
-
-@media screen and(max-width: 1650px) {
-  .banner-content {
-    p:first-child {
-      font-size: 45px;
-    }
-
-    .banner-content-imgsmall {
-      font-size: 42px;
-
-      img {
-        width: 60px;
-      }
-    }
-
-    .banner-tagp {
-      font-size: 16px;
-    }
-
-    .banner-btn {
-      font-size: 16px;
-    }
-  }
-
-  .banner {
-    height: 750px;
-
-    .banner-img {
-      height: 600px;
-    }
-  }
-}
-
 @media screen and(max-width : 1400px) {
   .banner {
-    height: 650px;
-
-    .banner-img {
-      height: 500px;
-    }
-
     .banner-content {
       p:first-child {
         font-size: 40px;
@@ -129,15 +81,14 @@
 
       .banner-content-imgsmall {
         font-size: 40px;
-        margin: 0 0 10px 0;
-
-        img {
-          width: 57px;
-        }
       }
 
       .banner-tagp {
-        font-size: 16px;
+        font-size: 18px;
+      }
+
+      .banner-btn {
+        font-size: 23px;
       }
     }
   }
@@ -145,27 +96,27 @@
 
 @media screen and(max-width : 1260px) {
   .banner {
-    height: 550px;
-
-    .banner-img {
-      height: 450px;
-    }
     .banner-content {
       p:first-child {
         font-size: 35px;
       }
 
       .banner-content-imgsmall {
-        font-size: 32px;
-        margin-bottom: 0;
+        font-size: 35px;
+
+        img {
+          width: 50px;
+          height: 43px;
+        }
       }
 
       .banner-tagp {
-        font-size: 14px;
+        font-size: 15px;
       }
 
       .banner-btn {
-        font-size: 14px;
+        font-size: 19px;
+        padding: 13px 48px;
       }
     }
   }
@@ -178,24 +129,44 @@
       padding-left: 80px;
 
       p:first-child {
-        font-size: 35px;
+        font-size: 40px;
       }
 
       .banner-content-imgsmall {
-        font-size: 34px;
-
-        img {
-          width: 45px;
-        }
+        font-size: 40px;
       }
 
       .banner-tagp {
-        font-size: 14px;
+        font-size: 18px;
+        opacity: 0.7;
       }
 
       .banner-btn {
-        font-size: 14px;
+        font-size: 20px;
         padding: 14px 55px;
+      }
+    }
+  }
+}
+
+@media screen and(max-width : 1000px) {
+  .banner {
+    .banner-content {
+      p:first-child {
+        font-size: 2.5rem;
+      }
+
+      .banner-content-imgsmall {
+        font-size: 2.4rem;
+      }
+
+      .banner-tagp {
+        font-size: 1.3rem;
+      }
+
+      .banner-btn {
+        font-size: 1.3rem;
+        padding: 14px 48px;
       }
     }
   }
@@ -203,10 +174,10 @@
 
 @media screen and(max-width : 898px) {
   .banner {
-    height: 485px;
+    height: 650px;
 
     .banner-img {
-      height: 385px;
+      height: 85%;
     }
 
     .banner-content {
@@ -236,11 +207,11 @@
       top: 15%;
 
       p:first-child {
-        font-size: 28px;
+        font-size: 2rem;
       }
 
       .banner-content-imgsmall {
-        font-size: 25px;
+        font-size: 1.8rem;
         margin-bottom: 8px;
 
         img {
@@ -250,12 +221,12 @@
       }
 
       .banner-tagp {
-        font-size: 0.8rem;
-        margin-bottom: 1.4rem;
+        font-size: 0.9rem;
+        margin-bottom: 1.7rem;
       }
 
       .banner-btn {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 11px 30px;
       }
     }
@@ -264,21 +235,25 @@
 
 @media screen and(max-width : 668px) {
   .banner {
-    height: 465px;
-
-    .banner-img {
-      height: 380px;
-    }
-
     .banner-content {
       top: 18%;
 
       p:first-child {
-        font-size: 25px;
+        font-size: 1.8rem;
       }
 
       .banner-content-imgsmall {
-        font-size: 22px;
+        font-size: 1.6rem;
+      }
+
+      .banner-tagp {
+        font-size: 0.85rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .banner-btn {
+        font-size: 0.85rem;
+        padding: 10px 25px;
       }
     }
   }
@@ -292,10 +267,10 @@
 
 @media screen and(max-width : 575px) {
   .banner {
-    height: 500px;
+    height: 600px;
 
     .banner-img {
-      height: 40%;
+      height: 45%;
     }
 
     .banner-content {
@@ -303,14 +278,14 @@
       top: 0%;
       width: 88%;
       margin: 0 auto;
-      padding-left: 55px;
+      padding-left: 40px;
 
       p:first-child {
-        font-size: 25px;
+        font-size: 2.4rem;
       }
 
       .banner-content-imgsmall {
-        font-size: 25px;
+        font-size: 2.4rem;
 
         img {
           width: 10%;
@@ -318,12 +293,12 @@
       }
 
       .banner-tagp {
-        font-size: 16px;
+        font-size: 1.4rem;
         margin-bottom: 1.7rem;
       }
 
       .banner-btn {
-        font-size: 18px;
+        font-size: 1.4rem;
         padding: 12px 50px;
       }
     }
@@ -334,24 +309,25 @@
   .banner {
     .banner-content{
       p:first-child {
-        font-size: 1.8rem;
+        font-size: 2.15rem;
       }
 
       .banner-content-imgsmall {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
 
         img {
-          width: 10%;
+          width: 12%;
+          height: 37px;
         }
       }
 
       .banner-tagp {
-        font-size: 1rem;
+        font-size: 1.3rem;
         margin-bottom: 1.7rem;
       }
 
       .banner-btn {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         padding: 12px 44px;
       }
     }
@@ -370,24 +346,20 @@
       width: 91%;
 
       p:first-child {
-        font-size: 1.6rem;
+        font-size: 1.9rem;
       }
 
       .banner-content-imgsmall {
-        font-size: 1.6rem;
-
-        img {
-          width: 10%;
-        }
+        font-size: 1.8rem;
       }
 
       .banner-tagp {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin-bottom: 1.7rem;
       }
 
       .banner-btn {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 11px 40px;
       }
     }
@@ -397,18 +369,12 @@
 @media screen and(max-width : 354px) {
   .banner {
     .banner-content{
-      padding-left: 40px;
-
       p:first-child {
-        font-size: 1.4rem;
+        font-size: 1.68rem;
       }
 
       .banner-content-imgsmall {
-        font-size: 1.35rem;
-
-        img {
-          width: 10%;
-        }
+        font-size: 1.4rem;
       }
 
       .banner-tagp {
