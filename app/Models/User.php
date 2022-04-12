@@ -35,12 +35,14 @@ class User extends Authenticatable
     ];
 
 //    accesors name để format 1 attr từ csdl lên
-    public function  getNameAttribute($name) {
+    public function getNameAttribute($name)
+    {
         return strtoupper($name);
     }
 
 //    mutator để formmat mật khẩu trc khi lưu xuống csdl
-    public function setPasswordAttribute($password) {
+    public function setPasswordAttribute($password)
+    {
         $this->attributes['password'] = bcrypt($password);
     }
 
