@@ -120,9 +120,11 @@
                 @foreach($reviews as $rv)
                     <div class="feedback-item">
                         <div class="feedback-text">
-                            <p class="review-text">“@if(strlen($rv->content) > 130)
-                                    {{ substr($rv->content, 0, 127) }}...
-                                @endif</p>
+                            <p class="review-text">
+                                @if(strlen($rv->content) > 130)
+                                    "{{ substr($rv->content, 0, 127) }}..."
+                                @endif
+                            </p>
                         </div>
                         <div class="feedback-bot">
                             <div class="feedback-img">
@@ -261,11 +263,11 @@
                     <div class="form-group">
                         <label for="passwordl">Password:</label>
                         <input type="password" class="form-control" id="passwordl" name="login_password">
-                      @if($errors->first('login_password'))
-                        <div class="alert alert-danger" role="alert">
-                          {{ $errors->first('login_password') }}
-                        </div>
-                      @endif
+                        @if($errors->first('login_password'))
+                            <div class="alert alert-danger" role="alert">
+                                {{ $errors->first('login_password') }}
+                            </div>
+                        @endif
                     </div>
                     <div class="form-group form-check d-flex justify-content-between">
                         <div>

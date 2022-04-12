@@ -17,9 +17,11 @@
                 <li class="nav-item header-nav-item header-active">
                     <a class="nav-link" href="#">ALL COURSES</a>
                 </li>
-                <li class="nav-item header-nav-item header-lr-cus @if(Auth::user()) d-none @endif" data-toggle="modal" data-target="#loginRegisterModal">
-                    <a class="nav-link" href="#">LOGIN/REGISTER</a>
-                </li>
+                @if(!Auth::user())
+                    <li class="nav-item header-nav-item header-lr-cus" data-toggle="modal" data-target="#loginRegisterModal">
+                        <a class="nav-link" href="#">LOGIN/REGISTER</a>
+                    </li>
+                @endif
                 <li class="nav-item header-nav-item">
                     <a class="nav-link" href="#">PROFILE</a>
                 </li>
@@ -29,7 +31,7 @@
             <div class="dropdown icon-user">
                 <button class="btn dropdown-toggle d-flex align-items-center avata" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                     <div class="avata-cus">
-                        <img src="@if(Auth::user()->avata_url == null) {{ asset('images/avata_default.png') }} @else {{ Auth::user()->avata_url }} @endif" class="w-100 h-100" alt="avata.{{ Auth::user()->name }}">
+                        <img src="{{ Auth::user()->avata_url }}" class="w-100 h-100" alt="avata.{{ Auth::user()->username }}">
                     </div>
                     <span>{{ Auth::user()->username }}</span>
                 </button>

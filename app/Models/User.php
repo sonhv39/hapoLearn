@@ -25,8 +25,6 @@ class User extends Authenticatable
         'role'
     ];
 
-    const ROLE = 0;
-
     protected $hidden = [
         'password',
         'remember_token',
@@ -49,6 +47,11 @@ class User extends Authenticatable
     public function setPasswordAttribute($password)
     {
         $this->attributes['password'] = bcrypt($password);
+    }
+
+    public function setAvataUrlAttribute()
+    {
+        $this->attributes['avata_url'] = asset('images/avata_default.png');
     }
 
     public function courses()
