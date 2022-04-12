@@ -30,11 +30,12 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $input = $request->only('lusername', 'lpassword', 'remember_token');
-        if (Auth::attempt([
-          'username' => $input['lusername'],
-          'password' => $input['lpassword']
-        ], isset($input['remember_token']) ? true : false)) {
+        $input = $request->only('login_username', 'login_password', 'remember_token');
+        $data = [
+            'username' => $input['login_username'],
+            'password' => $input['login_password']
+        ];
+        if (Auth::attempt($data, isset($input['remember_token']) ? true : false)) {
             return redirect()->route('home');
         } else {
             return redirect()->back()->withError('sai username hoặc password!!!');

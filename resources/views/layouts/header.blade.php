@@ -29,9 +29,9 @@
             <div class="dropdown icon-user">
                 <button class="btn dropdown-toggle d-flex align-items-center avata" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
                     <div class="avata-cus">
-                        <img src="{{ Auth::user()->avata_url }}" class="w-100 h-100" alt="avata.{{ Auth::user()->name }}">
+                        <img src="@if(Auth::user()->avata_url == null) {{ asset('images/avata_default.png') }} @else {{ Auth::user()->avata_url }} @endif" class="w-100 h-100" alt="avata.{{ Auth::user()->name }}">
                     </div>
-                    <span>{{ Auth::user()->name }}</span>
+                    <span>{{ Auth::user()->username }}</span>
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                     <a class="dropdown-item" href="#">Profile</a>

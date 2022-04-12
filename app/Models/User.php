@@ -25,6 +25,10 @@ class User extends Authenticatable
         'role'
     ];
 
+    protected $attributes = [
+        'role' => 0
+    ];
+
     protected $hidden = [
         'password',
         'remember_token',
@@ -38,6 +42,11 @@ class User extends Authenticatable
     public function getNameAttribute($name)
     {
         return strtoupper($name);
+    }
+
+    public function getUsernameAttribute($username)
+    {
+        return strtoupper($username);
     }
 
 //    mutator để formmat mật khẩu trc khi lưu xuống csdl

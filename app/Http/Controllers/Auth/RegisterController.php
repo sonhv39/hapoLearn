@@ -36,11 +36,6 @@ class RegisterController extends Controller
     public function register(RegisterRequest $request)
     {
         $input = $request->only('username', 'password', 'email');
-        $input += [
-          "avata_url" => Factory::create()->imageUrl,
-          "name" => Factory::create()->name,
-          "role" => "0"
-        ];
         $user = User::create($input);
         if ($user) {
             Auth::login($user, true);

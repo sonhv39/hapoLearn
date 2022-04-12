@@ -27,7 +27,7 @@ class RegisterRequest extends FormRequest
             'username' => 'required|unique:users|string|max:32|min:6',
             'password' => 'required|max:32|min:6',
             'email' => 'email|unique:users|required',
-            'cfpassword' => 'same:password'
+            'confirm_password' => 'same:password'
         ];
     }
 
@@ -41,7 +41,7 @@ class RegisterRequest extends FormRequest
             'password.required' => 'Vui lòng điền password!!!',
             'password.max' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
             'password.min' => 'độ dài không hợp lệ(từ 8-32 kí tự)',
-            'cfpassword.same' => 'mật khẩu không khớp',
+            'confirm_password.same' => 'mật khẩu không khớp',
             'email.email' => 'sai định dạng email',
             'email.unique' => 'password đã tồn tại'
         ];

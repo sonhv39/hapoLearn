@@ -235,10 +235,10 @@
                     </div>
                     <div class="form-group">
                         <label for="rppassword">Repeat Password:</label>
-                        <input type="password" class="form-control" id="rppassword" name="cfpassword">
-                        @if($errors->first('cfpassword'))
+                        <input type="password" class="form-control" id="rppassword" name="confirm_password">
+                        @if($errors->first('confirm_password'))
                             <div class="alert alert-danger" role="alert">
-                                {{ $errors->first('cfpassword') }}
+                                {{ $errors->first('confirm_password') }}
                             </div>
                         @endif
                     </div>
@@ -247,23 +247,23 @@
                     </div>
                 </form>
 
-                <form class="form-l d-block @if($errors->first('lusername') || $errors->first('lpassword') || session('error')) form-l-err @endif" action="{{ route('login') }}" method="post">
+                <form class="form-l d-block @if($errors->first('login_username') || $errors->first('login_password') || session('error')) form-l-err @endif" action="{{ route('login') }}" method="post">
                     @csrf
                     <div class="form-group">
                         <label for="usernamel">Username:</label>
-                        <input type="text" class="form-control" id="usernamel" name="lusername">
-                        @if($errors->first('lusername'))
+                        <input type="text" class="form-control" id="usernamel" name="login_username">
+                        @if($errors->first('login_username'))
                             <div class="alert alert-danger" role="alert">
-                                {{ $errors->first('lusername') }}
+                                {{ $errors->first('login_username') }}
                             </div>
                         @endif
                     </div>
                     <div class="form-group">
                         <label for="passwordl">Password:</label>
-                        <input type="password" class="form-control" id="passwordl" name="lpassword">
-                      @if($errors->first('lpassword'))
+                        <input type="password" class="form-control" id="passwordl" name="login_password">
+                      @if($errors->first('login_password'))
                         <div class="alert alert-danger" role="alert">
-                          {{ $errors->first('lpassword') }}
+                          {{ $errors->first('login_password') }}
                         </div>
                       @endif
                     </div>
