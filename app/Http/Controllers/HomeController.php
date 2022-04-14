@@ -6,7 +6,6 @@ use App\Models\Course;
 use App\Models\Lesson;
 use App\Models\Review;
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {

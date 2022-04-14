@@ -12,10 +12,10 @@
         <div class="collapse navbar-collapse header-content" id="navbarSupportedContent">
             <ul class="navbar-nav header-ul">
                 <li class="nav-item header-nav-item">
-                    <a class="nav-link" href="#">HOME</a>
+                    <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 </li>
                 <li class="nav-item header-nav-item header-active">
-                    <a class="nav-link" href="#">ALL COURSES</a>
+                    <a class="nav-link" href="{{ route('listcourse') }}">ALL COURSES</a>
                 </li>
                 @if(!Auth::user())
                     <li class="nav-item header-nav-item header-lr-cus" data-toggle="modal" data-target="#loginRegisterModal">

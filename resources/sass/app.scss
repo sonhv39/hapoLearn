@@ -20,6 +20,9 @@
 @import "~@fortawesome/fontawesome-free/scss/list";
 @import "~@fortawesome/fontawesome-free/scss/solid";
 
+//Select2
+@import "~select2/dist/css/select2.css";
+
 @import "./global.scss";
 @import "./header.scss";
 @import "./banner.scss";
@@ -31,3 +34,4 @@
 @import "./footer.scss";
 @import "./messengericon.scss";
 @import "./loginregisterform.scss";
+@import "./page/listcourse.scss";

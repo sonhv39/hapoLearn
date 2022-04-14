@@ -18,6 +18,7 @@
     <div class="viewport">
         @include('layouts.header')
         @yield('content')
+        @yield('courses')
         @include('layouts.footer')
         @yield('messenger')
         @yield('login_register')
