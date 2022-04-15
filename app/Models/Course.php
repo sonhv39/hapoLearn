@@ -72,12 +72,6 @@ class Course extends Model
             $query->where('title', 'LIKE', '%'.$data['input'].'%');
         }
 
-		if (isset($data['teacher']) && $data['teacher'] != 'null') {
-			$query->whereHas('users', function ($subquery) use ($data) {
-				$subquery->where('user_id', $data['teacher']);
-			});
-		}
-
         if (isset($data['amountstd']) && $data['amountstd'] != 'null') {
             $query->withCount([
                 'users' => function ($subquery) {
@@ -99,6 +93,12 @@ class Course extends Model
                 $subquery->whereIn('tag_id', $data['tag']);
             });
         }
+
+		    if (isset($data['teacher']) && $data['teacher'] != 'null') {
+			      $query->whereHas('users', function ($subquery) use ($data) {
+				    $subquery->where('user_id', $data['teacher']);
+			      });
+		    }
 
         return $query;
     }
