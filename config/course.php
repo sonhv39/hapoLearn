@@ -6,10 +6,10 @@ return [
     'user' => 0,
 	],
 
-	'sort' => [
+  'sort' => [
     'ascending' => 'asc',
     'decrease' => 'desc'
-	],
+  ],
 
-	'items_per_page' => 12
+  'items_per_page' => 12
 ];
