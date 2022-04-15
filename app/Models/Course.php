@@ -61,8 +61,6 @@ class Course extends Model
 
     public function scopeFilter($query, $data)
     {
-        $query->orderBy('created_at', 'desc');
-
         if (isset($data['sort'])) {
             if (is_null($data['sort'])) {
                 $query->orderBy('created_at', 'desc');
@@ -101,6 +99,8 @@ class Course extends Model
                     $subquery->where('user_id', $data['teacher']);
                 });
             }
+        } else {
+            $query->orderBy('created_at', 'desc');
         }
         
         return $query;
