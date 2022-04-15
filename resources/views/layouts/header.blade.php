@@ -1,5 +1,5 @@
-<header class="container-fluid">
-    <nav class="navbar navbar-expand-sm navbar-light header-navbar">
+<header>
+    <nav class="navbar navbar-expand-sm header-navbar">
         <div class="header-navbar-brand">
             <div class="navbar-brand">
                 <a href="#"><img src="{{ asset('images/hapo_learn.png') }}" alt="hapo_learn" class="w-100"></a>
@@ -11,11 +11,11 @@
         </button>
         <div class="collapse navbar-collapse header-content" id="navbarSupportedContent">
             <ul class="navbar-nav header-ul">
-                <li class="nav-item header-nav-item">
+                <li class="nav-item header-nav-item @if(Request::route()->getName() == 'home') header-active @endif">
                     <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 </li>
-                <li class="nav-item header-nav-item header-active">
-                    <a class="nav-link" href="{{ route('course') }}">ALL COURSES</a>
+                <li class="nav-item header-nav-item @if(Request::route()->getName() == 'courses.index') header-active @endif">
+                    <a class="nav-link" href="{{ route('courses.index') }}">ALL COURSES</a>
                 </li>
                 @if(!Auth::user())
                     <li class="nav-item header-nav-item header-lr-cus" data-toggle="modal" data-target="#loginRegisterModal">

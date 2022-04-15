@@ -11,5 +11,5 @@ return [
     'decrease' => 'desc'
   ],
 
-  'items_per_page' => 12
+  'items_per_page' => 12,
 ];
