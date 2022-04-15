@@ -21,7 +21,7 @@ class Course extends Model
 
     public function getLearnerAttribute()
     {
-        return Course::users()->where('role', 0)->count();
+        return Course::users()->where('role', Config::get('course.role.user'))->count();
     }
 
     public function getLessonAttribute()
@@ -36,7 +36,7 @@ class Course extends Model
 
     public function getTeacherAttribute()
     {
-        return Course::users()->where('role', 1);
+        return Course::users()->where('role', Config::get('course.role.teacher'));
     }
 
     public function reviews()
@@ -61,44 +61,46 @@ class Course extends Model
 
     public function scopeFilter($query, $data)
     {
-        if (is_null($data['sort'])) {
-            $query->orderBy('created_at', 'desc');
-        } else {
-            $query->orderBy('created_at', $data['sort']);
+        if (isset($data['sort'])) {
+            if (is_null($data['sort'])) {
+                $query->orderBy('created_at', 'desc');
+            } else {
+                $query->orderBy('created_at', $data['sort']);
+            }
+    
+            if (isset($data['input']) && !is_null($data['input'])) {
+                $query->where('title', 'LIKE', '%'.$data['input'].'%');
+            }
+    
+            if (isset($data['amountstd']) && $data['amountstd'] != 'null') {
+                $query->withCount([
+                    'users' => function ($subquery) {
+                        $subquery->where('role', Config::get('course.role.user'));
+                    }
+                ])->orderBy('users_count', $data['amountstd']);
+            }
+    
+            if (isset($data['timelearn']) && $data['timelearn'] != 'null') {
+                $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['timelearn']);
+            }
+    
+            if (isset($data['amountls']) && $data['amountls'] != 'null') {
+                $query->withCount('lessons')->orderBy('lessons_count', $data['amountls']);
+            }
+    
+            if (isset($data['tag']) && !is_null($data['tag'])) {
+                $query->whereHas('tags', function ($subquery) use ($data) {
+                    $subquery->whereIn('tag_id', $data['tag']);
+                });
+            }
+    
+            if (isset($data['teacher']) && $data['teacher'] != 'null') {
+                $query->whereHas('users', function ($subquery) use ($data) {
+                    $subquery->whereIn('user_id', $data['teacher']);
+                });
+            }
         }
-
-        if (isset($data['input']) && !is_null($data['input'])) {
-            $query->where('title', 'LIKE', '%'.$data['input'].'%');
-        }
-
-        if (isset($data['amountstd']) && $data['amountstd'] != 'null') {
-            $query->withCount([
-                'users' => function ($subquery) {
-                    $subquery->where('role', Config::get('course.role.user'));
-                }
-            ])->orderBy('users_count', $data['amountstd']);
-        }
-
-        if (isset($data['timelearn']) && $data['timelearn'] != 'null') {
-            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['timelearn']);
-        }
-
-        if (isset($data['amountls']) && $data['amountls'] != 'null') {
-            $query->withCount('lessons')->orderBy('lessons_count', $data['amountls']);
-        }
-
-        if (isset($data['tag']) && !is_null($data['tag'])) {
-            $query->whereHas('tags', function ($subquery) use ($data) {
-                $subquery->whereIn('tag_id', $data['tag']);
-            });
-        }
-
-        if (isset($data['teacher']) && $data['teacher'] != 'null') {
-            $query->whereHas('users', function ($subquery) use ($data) {
-                $subquery->whereIn('user_id', $data['teacher']);
-            });
-        }
-
+        
         return $query;
     }
 }

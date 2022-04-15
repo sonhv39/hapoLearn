@@ -9,5 +9,7 @@ return [
 	'sort' => [
 	  	'ascending' => 'asc',
 		'decrease' => 'desc'
-	]
+	],
+
+	'itemsPerPage' => 12
 ];

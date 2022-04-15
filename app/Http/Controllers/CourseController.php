@@ -12,7 +12,7 @@ class CourseController extends Controller
 {
     public function index(Request $data)
     {
-        $courses = Course::filter($data->all())->paginate(12);
+        $courses = Course::filter($data->all())->paginate(Config::get('course.itemsPerPage'));
         $teachers = User::all()->where('role', Config::get('course.role.teacher'));
         $tags = Tag::all();
         return view('course', compact('courses', 'data', 'teachers', 'tags'));
