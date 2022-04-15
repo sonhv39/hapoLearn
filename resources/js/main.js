@@ -1,9 +1,4 @@
 $(document).ready(function(){
-  $('.select-custom').select2();
-
-  $('.custom-tag').select2({
-    placeholder: 'Tags',
-  })
 
   $('#headerBtnIcon').click(function() {
     if ($('.header-content').hasClass('show')) {
@@ -141,9 +136,11 @@ $(document).ready(function(){
     }
   });
 
-  // $('.select-tag').select2({
-  //   placeholder : "Select tags"
-  // });
+  $('.select-custom').select2();
+
+  $('.custom-tag').select2({
+    placeholder: 'Tags',
+  })
 
   $('.feedback-content').slick({
     dots: false,

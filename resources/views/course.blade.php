@@ -12,7 +12,7 @@
                     </div>
                     <button class="btn-listcourse-search" type="submit">Tìm kiếm</button>
                 </div>
-                <div class="ls-filter align-items-center">
+                <div class="ls-filter align-items-center @if(!is_null($data['input']) || !is_null($data['sort']) || !is_null($data['teacher']) || !is_null($data['amountstd']) || !is_null($data['timelearn']) || !is_null($data['amountls']) || !is_null($data['tag']))filter-active @endif">
                     <p class="ls-filter-title">Lọc theo</p>
                     <div class="ls-filter-content d-flex">
                         <div class="filter-sort sort-e">
@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="pagination-lc d-flex justify-content-end">
-                {{ $courses->links('layouts.pagination') }}
+                {{ $courses->withQueryString()->links('layouts.pagination') }}
             </div>
         </section>
     </main>
