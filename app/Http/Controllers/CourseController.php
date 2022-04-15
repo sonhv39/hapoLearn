@@ -10,11 +10,13 @@ use Illuminate\Support\Facades\Config;
 
 class CourseController extends Controller
 {
-    public function index(Request $data)
+    public function index(Request $request)
     {
-        $courses = Course::filter($data->all())->paginate(Config::get('course.itemsPerPage'));
-        $teachers = User::all()->where('role', Config::get('course.role.teacher'));
+        // dd($request);
+        $courses = Course::filter($request->all())->paginate(Config::get('course.items_per_page'));
+        $teachers = User::role()->get();
+        // dd($teachers);
         $tags = Tag::all();
-        return view('course', compact('courses', 'data', 'teachers', 'tags'));
+        return view('course', compact('courses', 'request', 'teachers', 'tags'));
     }
 }

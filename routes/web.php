@@ -8,4 +8,4 @@ use \App\Http\Controllers\CourseController;
 Auth::routes();
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/listcourse', [CourseController::class, 'index'])->name('listcourse');
+Route::get('/listcourse', [CourseController::class, 'index'])->name('course');

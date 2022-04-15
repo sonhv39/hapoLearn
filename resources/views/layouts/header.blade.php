@@ -15,7 +15,7 @@
                     <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 </li>
                 <li class="nav-item header-nav-item header-active">
-                    <a class="nav-link" href="{{ route('listcourse') }}">ALL COURSES</a>
+                    <a class="nav-link" href="{{ route('course') }}">ALL COURSES</a>
                 </li>
                 @if(!Auth::user())
                     <li class="nav-item header-nav-item header-lr-cus" data-toggle="modal" data-target="#loginRegisterModal">

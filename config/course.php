@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'role' => [
+	'role' => [
 		'teacher' => 1,
-		'user' => 0
-    ],
+		'user' => 0,
+	],
 
 	'sort' => [
-	  	'ascending' => 'asc',
+		'ascending' => 'asc',
 		'decrease' => 'desc'
 	],
 
-	'itemsPerPage' => 12
+	'items_per_page' => 12
 ];

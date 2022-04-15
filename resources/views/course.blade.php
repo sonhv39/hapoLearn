@@ -3,50 +3,50 @@
 @section('courses')
     <main>
         <section class="listcourse">
-            <form action="{{ route('listcourse') }}" method="GET">
+            <form action="{{ route('course') }}" method="GET">
                 <div class="listcourse-top d-flex">
                     <div class="btn-listcourse-filter"><i class="fa fa-filter"></i> Filter</div>
                     <div class="listcourse-search">
-                        <input placeholder="Search..." name="input" value="{{ $data['input'] }}">
+                        <input placeholder="Search..." name="input" value="{{ $request['input'] }}">
                         <i class="fa fa-search"></i>
                     </div>
                     <button class="btn-listcourse-search" type="submit">Tìm kiếm</button>
                 </div>
-                <div class="ls-filter align-items-center @if(!is_null($data['input']) || !is_null($data['sort']) || !is_null($data['teacher']) || !is_null($data['amountstd']) || !is_null($data['timelearn']) || !is_null($data['amountls']) || !is_null($data['tag']))filter-active @endif">
+                <div class="ls-filter align-items-center @if(!is_null($request['input']) || !is_null($request['sort']) || !is_null($request['teacher']) || !is_null($request['amountstd']) || !is_null($request['timelearn']) || !is_null($request['amountls']) || !is_null($request['tag']))filter-active @endif">
                     <p class="ls-filter-title">Lọc theo</p>
                     <div class="ls-filter-content d-flex">
                         <div class="filter-sort sort-e">
-                            <input class="filter-input" type="radio" name="sort" id="earliest" value="desc" @if($data['sort'] == Config::get('course.sort.decrease') || is_null($data['sort']))checked @endif>
+                            <input class="filter-input" type="radio" name="sort" id="earliest" value="desc" @if($request['sort'] == Config::get('course.sort.decrease') || is_null($request['sort']))checked @endif>
                             <label for="earliest">Mới nhất</label>
                         </div>
                         <div class="filter-sort">
-                            <input class="filter-input" type="radio" name="sort" id="lastest" value="asc" @if($data['sort'] == Config::get('course.sort.ascending'))checked @endif>
+                            <input class="filter-input" type="radio" name="sort" id="lastest" value="asc" @if($request['sort'] == Config::get('course.sort.ascending'))checked @endif>
                             <label for="lastest">Cũ nhất</label>
                         </div>
                         <select name="teacher" class="select-custom custom-teacher">
-                            <option value="null">Giáo viên</option>
+                            <option value="">Giáo viên</option>
                             @foreach($teachers as $t)
-                                <option value="{{ $t->id }}" @if($data['teacher'] == $t->id) selected @endif>{{ $t->name }}</option>
+                                <option value="{{ $t->id }}" @if($request['teacher'] == $t->id) selected @endif>{{ $t->name }}</option>
                             @endforeach
                         </select>
                         <select name="amountstd" class="select-custom">
-                            <option value="null">Số người học</option>
-                            <option value="{{ Config::get('course.sort.ascending') }}" @if($data['amountstd'] == Config::get('course.sort.ascending')) selected @endif>Tăng dần</option>
-                            <option value="{{ Config::get('course.sort.decrease') }}" @if($data['amountstd'] == Config::get('course.sort.decrease')) selected @endif>Giảm dần</option>
+                            <option value="">Số người học</option>
+                            <option value="{{ Config::get('course.sort.ascending') }}" @if($request['amountstd'] == Config::get('course.sort.ascending')) selected @endif>Tăng dần</option>
+                            <option value="{{ Config::get('course.sort.decrease') }}" @if($request['amountstd'] == Config::get('course.sort.decrease')) selected @endif>Giảm dần</option>
                         </select>
                         <select name="timelearn" class="select-custom">
-                            <option value="null">Thời gian học</option>
-                            <option value="{{ Config::get('course.sort.ascending') }}" @if($data['timelearn'] == Config::get('course.sort.ascending')) selected @endif>Tăng dần</option>
-                            <option value="{{ Config::get('course.sort.decrease') }}" @if($data['timelearn'] == Config::get('course.sort.decrease')) selected @endif>Giảm dần</option>
+                            <option value="">Thời gian học</option>
+                            <option value="{{ Config::get('course.sort.ascending') }}" @if($request['timelearn'] == Config::get('course.sort.ascending')) selected @endif>Tăng dần</option>
+                            <option value="{{ Config::get('course.sort.decrease') }}" @if($request['timelearn'] == Config::get('course.sort.decrease')) selected @endif>Giảm dần</option>
                         </select>
                         <select name="amountls" class="select-custom">
-                            <option value="null">Số bài học</option>
-                            <option value="{{ Config::get('course.sort.ascending') }}" @if($data['amountls'] == Config::get('course.sort.ascending')) selected @endif>Tăng dần</option>
-                            <option value="{{ Config::get('course.sort.decrease') }}" @if($data['amountls'] == Config::get('course.sort.decrease')) selected @endif>Giảm dần</option>
+                            <option value="">Số bài học</option>
+                            <option value="{{ Config::get('course.sort.ascending') }}" @if($request['amountls'] == Config::get('course.sort.ascending')) selected @endif>Tăng dần</option>
+                            <option value="{{ Config::get('course.sort.decrease') }}" @if($request['amountls'] == Config::get('course.sort.decrease')) selected @endif>Giảm dần</option>
                         </select>
                         <select name="tag[]" class="select-custom custom-tag" multiple>
                             @foreach($tags as $tag)
-                                <option value="{{ $tag->id }}" @if(!is_null($data['tag'])) @foreach($data['tag'] as $t) @if($t == $tag->id) selected @endif @endforeach @endif>{{ $tag->name }}</option>
+                                <option value="{{ $tag->id }}" @if(!is_null($request['tag'])) @foreach($request['tag'] as $t) @if($t == $tag->id) selected @endif @endforeach @endif>{{ $tag->name }}</option>
                             @endforeach
                         </select>
                     </div>
