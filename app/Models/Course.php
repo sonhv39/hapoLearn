@@ -93,11 +93,11 @@ class Course extends Model
             });
         }
 
-		if (isset($data['teacher']) && $data['teacher'] != 'null') {
-			$query->whereHas('users', function ($subquery) use ($data) {
-				$subquery->where('user_id', $data['teacher']);
-			});
-		}
+        if (isset($data['teacher']) && $data['teacher'] != 'null') {
+            $query->whereHas('users', function ($subquery) use ($data) {
+                $subquery->whereIn('user_id', $data['teacher']);
+            });
+        }
 
         return $query;
     }

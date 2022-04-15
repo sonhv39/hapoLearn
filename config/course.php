@@ -2,12 +2,12 @@
 
 return [
     'role' => [
-			'teacher' => 1,
-			'user' => 0
+		'teacher' => 1,
+		'user' => 0
     ],
 
-		'sort' => [
+	'sort' => [
 	  	'ascending' => 'asc',
-			'decrease' => 'desc'
-		]
+		'decrease' => 'desc'
+	]
 ];
