@@ -21,22 +21,17 @@ class Course extends Model
 
     public function getLearnerAttribute()
     {
-        return Course::users()->where('role', Config::get('course.role.user'))->count();
+        return self::users()->where('role', Config::get('course.role.user'))->count();
     }
 
     public function getLessonAttribute()
     {
-        return $this->lessons->count();
+        return self::lessons()->count();
     }
 
     public function getTimeAttribute()
     {
-        return Course::lessons()->sum('time');
-    }
-
-    public function getTeacherAttribute()
-    {
-        return Course::users()->where('role', Config::get('course.role.teacher'));
+        return self::lessons()->sum('time');
     }
 
     public function reviews()

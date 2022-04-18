@@ -25,7 +25,7 @@
                 <select name="teacher" class="select-custom custom-teacher">
                     <option value="">Giáo viên</option>
                     @foreach($teachers as $teacher)
-                    <option value="{{ $teacher->id }}" @if($request['teacher']==$teacher->id) selected @endif>{{ $teacher->name }}</option>
+                    <option value="{{ $teacher->id }}" @if($request['teacher'] == $teacher->id) selected @endif>{{ $teacher->name }}</option>
                     @endforeach
                 </select>
                 <select name="sort_user" class="select-custom">
@@ -53,11 +53,13 @@
     </form>
     <div class="listcourse-content">
         <div class="row">
-            @include('course.course')
+            @foreach ($courses as $course)
+                @include('courses.course')
+            @endforeach
         </div>
     </div>
     <div class="pagination-lc d-flex justify-content-end">
-        {{ $courses->withQueryString()->links('course.pagination') }}
+        {{ $courses->withQueryString()->links('courses.pagination') }}
     </div>
 </section>
 @endsection

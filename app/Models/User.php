@@ -20,7 +20,7 @@ class User extends Authenticatable
         'phonenumber',
         'address',
         'date_of_birth',
-        'username',
+        'username', 
         'avata_url',
         'role'
     ];
