@@ -53,7 +53,7 @@
     </form>
     <div class="listcourse-content">
         <div class="row">
-            @include('course.course');
+            @include('course.course')
         </div>
     </div>
     <div class="pagination-lc d-flex justify-content-end">
