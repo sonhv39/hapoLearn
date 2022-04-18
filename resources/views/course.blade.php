@@ -24,8 +24,8 @@
                 </div>
                 <select name="teacher" class="select-custom custom-teacher">
                     <option value="">Giáo viên</option>
-                    @foreach($teachers as $t)
-                    <option value="{{ $t->id }}" @if($request['teacher']==$t->id) selected @endif>{{ $t->name }}</option>
+                    @foreach($teachers as $teacher)
+                    <option value="{{ $teacher->id }}" @if($request['teacher']==$teacher->id) selected @endif>{{ $teacher->name }}</option>
                     @endforeach
                 </select>
                 <select name="amount_user" class="select-custom">
@@ -53,9 +53,7 @@
     </form>
     <div class="listcourse-content">
         <div class="row">
-            @foreach($courses as $c)
             @include('layouts.courseview')
-            @endforeach
         </div>
     </div>
     <div class="pagination-lc d-flex justify-content-end">
