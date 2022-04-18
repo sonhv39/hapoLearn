@@ -3,7 +3,9 @@
         <div class="ls-item">
             <div class="ls-item-top d-flex">
                 <div class="ls-img">
-                    <img class="w-100 h-100" src="{{ $course->img_url }}" alt="imgof{{ $course->title }}">
+                    <div class="ls-img-cus">
+                        <img class="w-100 h-100" src="{{ $course->img_url }}" alt="imgof{{ $course->title }}">
+                    </div>
                 </div>
                 <div class="ls-item-content">
                     <div class="ls-item-title">{{ $course->title }}</div>

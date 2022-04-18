@@ -131,7 +131,7 @@ $(document).ready(function(){
   $('.btn-listcourse-filter').click(function (){
     if ($('.ls-filter').hasClass('filter-active')) {
       $('.ls-filter').removeClass('filter-active');
-    }else {
+    } else {
       $('.ls-filter').addClass('filter-active');
     }
   });

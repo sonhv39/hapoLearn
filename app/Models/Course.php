@@ -61,30 +61,31 @@ class Course extends Model
 
     public function scopeFilter($query, $data)
     {
-        if (isset($data['sort_time']) && !is_null($data['sort_time'])) {
-            $query->orderBy('created_at', $data['sort_time']);
+        if (isset($data['created_time']) && !is_null($data['created_time'])) {
+            $query->orderBy('created_at', $data['created_time']);
         } else {
             $query->orderBy('created_at', Config::get('course.sort.decrease'));
         }
 
-        if (isset($data['key_course_search']) && !is_null($data['key_course_search'])) {
-            $query->where('title', 'LIKE', '%' .$data['input']. '%');
+        if (isset($data['keyword']) && !is_null($data['keyword'])) {
+            $query->where('title', 'LIKE', '%' . $data['keyword'] . '%')
+                ->orWhere('description', 'LIKE', '%' . $data['keyword'] . '%');
         }
 
-        if (isset($data['amount_user']) && !is_null($data['amount_user'])) {
+        if (isset($data['sort_user']) && !is_null($data['sort_user'])) {
             $query->withCount([
                 'users' => function ($subquery) {
                     $subquery->where('role', Config::get('course.role.user'));
                 }
-            ])->orderBy('users_count', $data['amount_user']);
+            ])->orderBy('users_count', $data['sort_user']);
         }
 
-        if (isset($data['time_learn']) && !is_null($data['time_learn'])) {
-            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['time_learn']);
+        if (isset($data['learn_time']) && !is_null($data['learn_time'])) {
+            $query->withSum('lessons', 'time')->orderBy('lessons_sum_time', $data['learn_time']);
         }
 
-        if (isset($data['amount_lesson']) && !is_null($data['amount_lesson'])) {
-            $query->withCount('lessons')->orderBy('lessons_count', $data['amount_lesson']);
+        if (isset($data['sort_lesson']) && !is_null($data['sort_lesson'])) {
+            $query->withCount('lessons')->orderBy('lessons_count', $data['sort_lesson']);
         }
 
         if (isset($data['tag']) && !is_null($data['tag'])) {
