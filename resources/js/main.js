@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
   $('#headerBtnIcon').click(function() {
     if ($('.header-content').hasClass('show')) {
       $('.navbar-toggler-icon').removeClass('hide');
@@ -126,6 +127,20 @@ $(document).ready(function(){
       $('.form-l').removeClass('d-block');
     }
   }
+
+  $('.btn-listcourse-filter').click(function (){
+    if ($('.ls-filter').hasClass('filter-active')) {
+      $('.ls-filter').removeClass('filter-active');
+    } else {
+      $('.ls-filter').addClass('filter-active');
+    }
+  });
+
+  $('.select-custom').select2();
+
+  $('.custom-tag').select2({
+    placeholder: 'Tags',
+  })
 
   $('.feedback-content').slick({
     dots: false,
