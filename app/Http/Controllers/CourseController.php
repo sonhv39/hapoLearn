@@ -17,4 +17,15 @@ class CourseController extends Controller
         $tags = Tag::all();
         return view('courses.index', compact('courses', 'request', 'teachers', 'tags'));
     }
+
+    public function show(Request $request, $id)
+    {
+        $courses = Course::take(5)->get();
+        $teachers = User::teacher()->take(3)->get();
+        $course = Course::find($id);
+        $lessons = $course->lessons()->filter($request->all())->paginate(Config::get('lesson.items_per_page'));
+        $countCourse = 0;
+        $tags = $course->tags;
+        return view('courses.show', compact('courses', 'course', 'lessons', 'countCourse', 'tags', 'teachers', 'request'));
+    }
 }

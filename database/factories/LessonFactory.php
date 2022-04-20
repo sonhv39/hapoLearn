@@ -14,7 +14,7 @@ class LessonFactory extends Factory
     public function definition()
     {
         return [
-            'course_id' => rand(1, 50),
+            'course_id' => rand(1, 300),
             'name' => "lesson-".rand(1, 10),
             'description' => $this->faker->text(5000),
             'time' => $this->faker->randomFloat(1, 10, 100)

@@ -14,7 +14,7 @@
                 <li class="nav-item header-nav-item @if(Request::route()->getName() == 'home') header-active @endif">
                     <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 </li>
-                <li class="nav-item header-nav-item @if(Request::route()->getName() == 'courses.index') header-active @endif">
+                <li class="nav-item header-nav-item @if(Request::route()->getName() == 'courses.index' || Request::route()->getName() == 'courses.show') header-active @endif">
                     <a class="nav-link" href="{{ route('courses.index') }}">ALL COURSES</a>
                 </li>
                 @if(!Auth::user())

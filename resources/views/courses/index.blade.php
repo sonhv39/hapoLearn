@@ -53,13 +53,17 @@
     </form>
     <div class="listcourse-content">
         <div class="row">
-            @foreach ($courses as $course)
+            @forelse ($courses as $course)
                 @include('courses.course')
-            @endforeach
+            @empty
+                <div class="text-center">
+                    <p class="text-notify">Không có khóa học nào phù hợp!!!</p>
+                </div>
+            @endforelse
         </div>
     </div>
     <div class="pagination-lc d-flex justify-content-end">
-        {{ $courses->withQueryString()->links('courses.pagination') }}
+        {{ $courses->withQueryString()->links('layouts.pagination') }}
     </div>
 </section>
 @endsection
