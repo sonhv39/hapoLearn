@@ -20,8 +20,8 @@ class CourseController extends Controller
 
     public function show(Request $request, $id)
     {
-        $courses = Course::take(5)->get();
-        $teachers = User::teacher()->take(3)->get();
+        $courses = Course::take(Config::get('course.items_other_course'))->get();
+        $teachers = User::teacher()->take(Config::get('user.teachers_learn_user'))->get();
         $course = Course::find($id);
         $lessons = $course->lessons()->filter($request->all())->paginate(Config::get('lesson.items_per_page'));
         $tags = $course->tags;

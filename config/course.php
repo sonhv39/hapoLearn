@@ -12,4 +12,6 @@ return [
   ],
 
   'items_per_page' => 12,
+
+  'items_other_course' => 5,
 ];
