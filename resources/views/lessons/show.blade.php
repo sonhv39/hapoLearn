@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('lesson_detail')
+@section('content')
     <div class="lesson-detail">
         <div class="detail-link">Home > All courses > Course detail > Lesson detail</div>
         <div class="detail-content d-flex">

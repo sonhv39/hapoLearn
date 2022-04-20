@@ -1,10 +1,10 @@
 <div class="course-other">
     <div class="course-other-top">Other Courses</div>
     <div class="course-other-content">
-        @foreach ($courses as $key => $c)
-            @if ($c !== $course)
+        @foreach ($courses as $key => $courseGet)
+            @if ($courseGet !== $course)
                 <div class="course-other-item">
-                    {{ ++ $key }}. {{ $c->title }}
+                    {{ ++ $key }}. {{ $courseGet->title }}
                 </div>
             @endif
         @endforeach

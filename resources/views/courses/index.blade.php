@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('courses')
+@section('content')
 <section class="listcourse">
     <form action="{{ route('courses.index') }}" method="GET">
         <div class="listcourse-top d-flex">
