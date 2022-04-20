@@ -33,4 +33,13 @@ class Lesson extends Model
     {
         return $this->hasMany(Document::class, 'lesson_id');
     }
+
+    public function scopeFilter($query, $data)
+    {
+        if (isset($data['keyword']) && !is_null($data['keyword'])) {
+            $query->where('name', 'LIKE', '%' . $data['keyword'] . '%');
+        }
+
+        return $query;
+    }
 }

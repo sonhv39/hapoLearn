@@ -17,7 +17,7 @@
                 </p>
             </div>
         </div>
-        <div class="ls-item-btn text-right">More</div>
+        <a class="ls-item-btn text-right" href="{{ route('courses.show', $course->id) }}">More</a>
         <div class="ls-item-bot d-flex justify-content-between">
             <div class="item-bot-static">
                 <p>Learners</p>

@@ -19,6 +19,7 @@
 @import "~@fortawesome/fontawesome-free/scss/core";
 @import "~@fortawesome/fontawesome-free/scss/list";
 @import "~@fortawesome/fontawesome-free/scss/solid";
+@import "~@fortawesome/fontawesome-free/scss/regular";
 
 //Select2
 @import "~select2/dist/css/select2.css";
@@ -35,3 +36,5 @@
 @import "./messengericon.scss";
 @import "./loginregisterform.scss";
 @import "./page/listcourse.scss";
+@import "./page/othercourse.scss";
+@import "./page/lessondetail.scss";

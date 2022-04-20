@@ -2,6 +2,10 @@
   padding: 25px 168px 25px 153px;
   background-color: $color-black-6;
   font-family: 'Open Sans';
+
+  .text-notify {
+    padding: 15px;
+  }
 }
 
 .btn-listcourse-filter {
@@ -181,6 +185,8 @@ select[name = amountls]{
 
   &:hover {
     background-color: $color-green-1;
+    color: white;
+    text-decoration: none;
   }
 }
 
