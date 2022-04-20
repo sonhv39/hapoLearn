@@ -16,6 +16,6 @@ class LessonController extends Controller
         $course = Course::find($idCourse);
         $lesson = Lesson::find($idLesson);
         $tags = $course->tags;
-        return view('lessons.show', compact('courses', 'course' , 'lesson', 'tags'));
+        return view('lessons.show', compact('courses', 'course', 'lesson', 'tags'));
     }
 }
