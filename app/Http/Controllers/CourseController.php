@@ -24,8 +24,7 @@ class CourseController extends Controller
         $teachers = User::teacher()->take(3)->get();
         $course = Course::find($id);
         $lessons = $course->lessons()->filter($request->all())->paginate(Config::get('lesson.items_per_page'));
-        $countCourse = 0;
         $tags = $course->tags;
-        return view('courses.show', compact('courses', 'course', 'lessons', 'countCourse', 'tags', 'teachers', 'request'));
+        return view('courses.show', compact('courses', 'course', 'lessons', 'tags', 'teachers', 'request'));
     }
 }
