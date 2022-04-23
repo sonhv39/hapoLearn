@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Config;
 
 class Lesson extends Model
 {
@@ -32,6 +33,19 @@ class Lesson extends Model
     public function documents()
     {
         return $this->hasMany(Document::class, 'lesson_id');
+    }
+
+    public function caculateProgress()
+    {
+        $documents = $this->documents;
+        $count = 0;
+        foreach ($documents as $document) {
+            if ($document->status == Config::get('document.learned_status')) {
+                $count ++;
+            }
+        }
+
+        return $this->progress = ($count) * Config::get('lesson.max_progress_lesson') / count($documents);
     }
 
     public function scopeFilter($query, $data)

@@ -23,14 +23,35 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="lesson" role="tabpanel" aria-labelledby="lesson-tab">
                             <div class="lesson-top d-flex align-item-center justify-content-between">
-                                <form action="" method="get">
+                                <form action="{{ route('courses.show', $course->id) }}" method="get">
                                     <input type="text" placeholder="Search..." name="keyword" @if (!is_null($request['keyword']))
                                         value="{{ $request['keyword'] }}"
                                     @endif>
                                     <i class="fa fa-search"></i>
                                     <button type="submit">Tìm kiếm</button>
                                 </form>
-                                <a href="" class="btn-join">Tham gia khóa học</a>
+                                @if (Auth::check() && Auth::user()->isJoin($course->id) && Auth::user()->isLearning($course->id))
+                                    <form action="{{ route('users-courses.update', $course->id) }}" method="POST">
+                                        @method('PUT')
+                                        @csrf
+                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                        @if (Auth::check())
+                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                        @endif
+                                        <button type="submit" class="btn-join">Kết thúc khóa học</button>
+                                    </form>
+                                @elseif (Auth::check() && Auth::user()->isJoin($course->id) && !Auth::user()->isLearning($course->id))
+                                    <button type="submit" class="btn-join btn-join-learned" disabled>Đã hoàn thành</button>
+                                @else
+                                    <form action="{{ route('users-courses.store') }}" method="post">
+                                        @csrf
+                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                        @if (Auth::check())
+                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                        @endif
+                                        <button type="submit" class="btn-join">Tham gia khóa học</button>
+                                    </form>
+                                @endif
                             </div>
                             <div class="lesson-content">
                                 @forelse ($lessons as $key => $lesson)
@@ -44,7 +65,11 @@
                                             @endif
                                             <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-title">{{ $lesson->name }}</a>
                                         </div>
-                                        <a href="" class="lesson-btn">Learn</a>
+                                        @if ($lesson->progress == Config::get('lesson.max_progress_lesson'))
+                                            <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-btn">Learned</a>
+                                        @else
+                                            <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-btn">Learn</a>
+                                        @endif
                                     </div>
                                 @empty
                                     <div class="py-5 text-center">

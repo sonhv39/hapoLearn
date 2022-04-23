@@ -128,6 +128,10 @@ $(document).ready(function(){
     }
   }
 
+  if ($('.form-l').hasClass('form-l-require')) {
+    $('#loginRegisterModal').modal();
+  }
+
   $('.btn-listcourse-filter').click(function (){
     if ($('.ls-filter').hasClass('filter-active')) {
       $('.ls-filter').removeClass('filter-active');
