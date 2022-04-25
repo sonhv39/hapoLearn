@@ -77,7 +77,8 @@ class User extends Authenticatable
 
     public function isJoined($courseId)
     {
-        return (is_null(UserCourse::where('user_id', Auth::id())->where('course_id', $courseId)->first()) ? false : true);
+        $userCourse = UserCourse::where('user_id', Auth::id())->where('course_id', $courseId)->first();
+        return (is_null($userCourse) ? false : true);
     }
 
     public function isLearning($courseId)
