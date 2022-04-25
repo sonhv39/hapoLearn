@@ -8,19 +8,19 @@ use Illuminate\Support\Facades\Auth;
 
 class UserCourseController extends Controller
 {
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         UserCourse::create($request-> all());
         return redirect()->route('courses.show', $request['course_id']);
     }
 
-    public function update(Request $request, $course_id)
+    public function update(Request $request, $courseId)
     {
-        if (Auth::user()->isLearning($course_id)) {
-            Auth::user()->courses()->updateExistingPivot($course_id, ['status' => 0]);
+        if (Auth::user()->isLearning($courseId)) {
+            Auth::user()->courses()->updateExistingPivot($courseId, ['status' => 0]);
             return redirect()->route('courses.show', $request['course_id']);
         } else {
             return redirect()->route('courses.show', $request['course_id']);
         }
-        
     }
 }

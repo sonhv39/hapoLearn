@@ -65,11 +65,9 @@
                                             @endif
                                             <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-title">{{ $lesson->name }}</a>
                                         </div>
-                                        @if ($lesson->progress == Config::get('lesson.max_progress_lesson'))
-                                            <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-btn">Learned</a>
-                                        @else
-                                            <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-btn">Learn</a>
-                                        @endif
+                                        <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-btn">
+                                            {{ $lesson->checkLearned() == true ? 'Learned' : 'Learn' }}
+                                        </a>
                                     </div>
                                 @empty
                                     <div class="py-5 text-center">

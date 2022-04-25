@@ -9,8 +9,8 @@
                     <img class="w-100 h-100" src="{{ $course->img_url }}" alt="img of {{ $course->title }}">
                 </div>
                 <div class="progress mt-4">
-                    <p class="number-progress">{{ $lesson->progress }}%</p>
-                    <div class="progress-bar" role="progressbar" style="width: {{ $lesson->progress }}%;"></div>
+                    <p class="number-progress">@if (is_null($userLesson)) 0 @else {{ $userLesson->progress }} @endif%</p>
+                    <div class="progress-bar" role="progressbar" style="width:@if (is_null($userLesson)) 0% @else {{ $userLesson->progress }}% @endif;"></div>
                 </div>
                 <div class="detail-left-content">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -60,15 +60,38 @@
                                             </div>
                                             <div class="d-flex">
                                                 <a href="{{ $document->link }}" class="doc-btn mr-1">Preview</a>
-                                                @if ($document->status == 0)
-                                                    <form action="{{ route('documents.update', $document->id) }}" method="post">
-                                                        @csrf
-                                                        @method('PUT')
-                                                        <button type="submit" class="doc-btn">Learn</button>
-                                                    </form>    
+                                                @if (Auth::check())
+                                                    @forelse (Auth::user()->documents as $key => $documentGet)
+                                                        @if ($documentGet->id == $document->id)
+                                                            <button class="doc-btn btn-learned">Learned</button>
+                                                            @break
+                                                        @endif
+                                                        @if ($key == count(Auth::user()->documents) - 1)
+                                                            <form action="{{ route('users-documents.store') }}" method="post">
+                                                                @csrf
+                                                                <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                                                                <input type="hidden" name="document_id" value="{{ $document->id }}">
+                                                                <button type="submit" class="doc-btn">Learn</button>
+                                                            </form>
+                                                        @endif 
+                                                    @empty
+                                                        <form action="{{ route('users-documents.store') }}" method="post">
+                                                            @csrf
+                                                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                                                            <input type="hidden" name="document_id" value="{{ $document->id }}">
+                                                            <button type="submit" class="doc-btn">Learn</button>
+                                                        </form>
+                                                    @endforelse
                                                 @else
-                                                    <button type="submit" class="doc-btn btn-learned">Learned</button>
+                                                    <form action="{{ route('users-documents.store') }}" method="post">
+                                                        @csrf
+                                                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                                                        <input type="hidden" name="document_id" value="{{ $document->id }}">
+                                                        <button type="submit" class="doc-btn">Learn</button>
+                                                    </form>
                                                 @endif
+                                                
+                                                {{-- <button class="doc-btn btn-learned">Learned</button> --}}
                                             </div>
                                         </div>
                                     @empty

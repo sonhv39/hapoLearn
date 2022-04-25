@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
   $('#headerBtnIcon').click(function() {
     if ($('.header-content').hasClass('show')) {
       $('.navbar-toggler-icon').removeClass('hide');
