@@ -36,13 +36,10 @@ class Lesson extends Model
         return $this->hasMany(Document::class, 'lesson_id');
     }
 
-    public function checkLearned()
+    public function isLearned()
     {
-        if (!is_null(UserLesson::getUserLesson(Auth::id(), $this->id)) && UserLesson::getUserLesson(Auth::id(), $this->id)->progress == Config::get('lesson.max_progress_lesson')) {
-            return true;
-        }
-
-        return false;
+        $userLesson = UserLesson::getUserLesson(Auth::id(), $this->id);
+        return (!is_null($userLesson) && $userLesson->progress == Config::get('lesson.max_progress_lesson'));
     }
 
     public function scopeFilter($query, $data)

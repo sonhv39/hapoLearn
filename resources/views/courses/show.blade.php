@@ -30,28 +30,7 @@
                                     <i class="fa fa-search"></i>
                                     <button type="submit">Tìm kiếm</button>
                                 </form>
-                                @if (Auth::check() && Auth::user()->isJoin($course->id) && Auth::user()->isLearning($course->id))
-                                    <form action="{{ route('users-courses.update', $course->id) }}" method="POST">
-                                        @method('PUT')
-                                        @csrf
-                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
-                                        @if (Auth::check())
-                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                        @endif
-                                        <button type="submit" class="btn-join">Kết thúc khóa học</button>
-                                    </form>
-                                @elseif (Auth::check() && Auth::user()->isJoin($course->id) && !Auth::user()->isLearning($course->id))
-                                    <button type="submit" class="btn-join btn-join-learned" disabled>Đã hoàn thành</button>
-                                @else
-                                    <form action="{{ route('users-courses.store') }}" method="post">
-                                        @csrf
-                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
-                                        @if (Auth::check())
-                                            <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                        @endif
-                                        <button type="submit" class="btn-join">Tham gia khóa học</button>
-                                    </form>
-                                @endif
+                                @include('buttons.button_course')
                             </div>
                             <div class="lesson-content">
                                 @forelse ($lessons as $key => $lesson)
@@ -66,7 +45,7 @@
                                             <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-title">{{ $lesson->name }}</a>
                                         </div>
                                         <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}" class="lesson-btn">
-                                            {{ $lesson->checkLearned() == true ? 'Learned' : 'Learn' }}
+                                            {{ $lesson->isLearned() ? 'Learned' : 'Learn' }}
                                         </a>
                                     </div>
                                 @empty
@@ -168,7 +147,7 @@
                                     <div class="review-detail-item">
                                         <div class="review-detail-top">
                                             <div class="avata-user-review">
-                                                <img src="https://via.placeholder.com/640x480.png/00aa99?text=sed" alt="">
+                                                <img src="https://via.placeholder.com/640x480.png/00aa99?text=sed" alt="" class="w-100">
                                             </div>
                                             <div class="review-detail-star">
                                                 <i class="fa fa-star"></i>

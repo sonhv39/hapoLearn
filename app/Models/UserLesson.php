@@ -26,17 +26,12 @@ class UserLesson extends Model
 
     public function caculateProgress()
     {
-        $documentsGet = Auth::user()->documents;
-        $documents = Lesson::find($this['lesson_id'])->documents;
+        $learnedDocumentIds = Auth::user()->documents->pluck('id')->toArray();
+        $documentIds = Lesson::find($this['lesson_id'])->documents->pluck('id')->toArray();
         $count = 0;
-        foreach ($documents as $document) {
-            foreach ($documentsGet as $documentGet) {
-                if ($documentGet->id == $document->id) {
-                    $count++;
-                    break;
-                }
-            }
+        foreach ($learnedDocumentIds as $learnedDocumentId) {
+            if (in_array($learnedDocumentId, $documentIds)) $count++;
         }
-        return $this->progress = ($count) * Config::get('lesson.max_progress_lesson') / count($documents);
+        return $this->progress = ($count) * Config::get('lesson.max_progress_lesson') / count($documentIds);
     }
 }

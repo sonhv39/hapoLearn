@@ -60,38 +60,7 @@
                                             </div>
                                             <div class="d-flex">
                                                 <a href="{{ $document->link }}" class="doc-btn mr-1">Preview</a>
-                                                @if (Auth::check())
-                                                    @forelse (Auth::user()->documents as $key => $documentGet)
-                                                        @if ($documentGet->id == $document->id)
-                                                            <button class="doc-btn btn-learned">Learned</button>
-                                                            @break
-                                                        @endif
-                                                        @if ($key == count(Auth::user()->documents) - 1)
-                                                            <form action="{{ route('users-documents.store') }}" method="post">
-                                                                @csrf
-                                                                <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                                                                <input type="hidden" name="document_id" value="{{ $document->id }}">
-                                                                <button type="submit" class="doc-btn">Learn</button>
-                                                            </form>
-                                                        @endif 
-                                                    @empty
-                                                        <form action="{{ route('users-documents.store') }}" method="post">
-                                                            @csrf
-                                                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                                                            <input type="hidden" name="document_id" value="{{ $document->id }}">
-                                                            <button type="submit" class="doc-btn">Learn</button>
-                                                        </form>
-                                                    @endforelse
-                                                @else
-                                                    <form action="{{ route('users-documents.store') }}" method="post">
-                                                        @csrf
-                                                        <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                                                        <input type="hidden" name="document_id" value="{{ $document->id }}">
-                                                        <button type="submit" class="doc-btn">Learn</button>
-                                                    </form>
-                                                @endif
-                                                
-                                                {{-- <button class="doc-btn btn-learned">Learned</button> --}}
+                                                @include('buttons.button_document')
                                             </div>
                                         </div>
                                     @empty
@@ -147,28 +116,7 @@
                         @endif
                     </div>                
                     <div class="lesson-detail-btn text-center">
-                        @if (Auth::check() && Auth::user()->isJoin($course->id) && Auth::user()->isLearning($course->id))
-                            <form action="{{ route('users-courses.update', $course->id) }}" method="POST">
-                                @method('PUT')
-                                @csrf
-                                <input type="hidden" name="course_id" value="{{ $course->id }}">
-                                @if (Auth::check())
-                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                @endif
-                                <button type="submit" class="btn-join">Kết thúc khóa học</button>
-                            </form>
-                        @elseif (Auth::check() && Auth::user()->isJoin($course->id) && !Auth::user()->isLearning($course->id))
-                            <button type="submit" class="btn-join btn-join-learned" disabled>Đã hoàn thành</button>
-                        @else
-                            <form action="{{ route('users-courses.store') }}" method="post">
-                                @csrf
-                                <input type="hidden" name="course_id" value="{{ $course->id }}">
-                                @if (Auth::check())
-                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
-                                @endif
-                                <button type="submit" class="btn-join">Tham gia khóa học</button>
-                            </form>
-                        @endif
+                        @include('buttons.button_course')
                     </div>
                 </div>
                 @include('courses.course_other')

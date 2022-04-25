@@ -75,14 +75,15 @@ class User extends Authenticatable
         return $this->belongsToMany(Document::class, 'user_documents', 'user_id', 'document_id');
     }
 
-    public function isJoin($courseId)
+    public function isJoined($courseId)
     {
         return (is_null(UserCourse::where('user_id', Auth::id())->where('course_id', $courseId)->first()) ? false : true);
     }
 
     public function isLearning($courseId)
     {
-        return (UserCourse::where('user_id', Auth::id())->where('course_id', $courseId)->first()->status == Config::get('usercourse.learning_status') ? true : false);
+        $userCourse = UserCourse::where('user_id', Auth::id())->where('course_id', $courseId)->first();
+        return ($userCourse->status == Config::get('usercourse.learning_status') ? true : false);
     }
 
     public function scopeTeacher($query)

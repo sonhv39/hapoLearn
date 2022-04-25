@@ -11,7 +11,7 @@ class UserCourseController extends Controller
 {
     public function store(Request $request)
     {
-        UserCourse::create($request-> all());
+        UserCourse::create($request->all());
         return redirect()->route('courses.show', $request['course_id']);
     }
 

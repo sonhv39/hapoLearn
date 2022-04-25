@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Tag;
 use App\Models\User;
-use App\Models\UserCourse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Config;
 
 class CourseController extends Controller
