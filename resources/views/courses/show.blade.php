@@ -9,7 +9,7 @@
                     <img class="w-100 h-100" src="{{ $course->img_url }}" alt="img of {{ $course->title }}">
                 </div>
                 <div class="detail-left-content">
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <ul class="nav nav-tabs nav-tab-cus" id="myTab" role="tablist">
                         <li class="nav-item" role="presentation">
                           <a class="nav-link active" id="lesson-tab" data-toggle="tab" href="#lesson" role="tab" aria-controls="lesson" aria-selected="true">Lessons</a>
                         </li>
@@ -88,98 +88,138 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
+                            @if (Session::has('addReviewSuccess') || Session::has('data'))
+                                <div class="check active d-none"></div>
+                            @endif
                             <div class="review-content">
                                 <div class="review-total">
-                                    05 Reviews
+                                    {{ count($reviews) }} Reviews
                                 </div>
-                                <div class="review-mid">
-                                    <div class="review-left text-center">
-                                        <div class="rating-number">5</div>
-                                        <div class="rating-star">
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <div class="rating-total">2 Ratings</div>
-                                    </div>
-                                    <div class="review-right">
-                                        <div class="review-right-item d-flex align-items-center">
-                                            <span>5 stars</span>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 100%"></div>
+                                @if (!empty($reviews->toArray()))
+                                    <div class="review-mid d-flex align-items-center">
+                                        <div class="review-left text-center">
+                                            <div class="rating-number">{{ $course->caculateReview() }}</div>
+                                            <div class="rating-star">
+                                                @for ($i = 1; $i <= $course->caculateReview(); $i++)
+                                                    <i class="fa fa-star"></i>
+                                                @endfor
                                             </div>
-                                            <span class="total-cmt">2</span>
+                                            <div class="rating-total">{{ count($reviews) }} Ratings</div>
                                         </div>
-                                        <div class="review-right-item d-flex align-items-center">
-                                            <span>4 stars</span>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 0"></div>
+                                        <div class="review-right">
+                                            <div class="review-right-item d-flex align-items-center">
+                                                <span class="title-first-star">5 stars</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $course->caculateProgressReview($course->getReviewsFiveStar()) }}%"></div>
+                                                </div>
+                                                <span class="total-cmt">{{ $course->getReviewsFiveStar() }}</span>
                                             </div>
-                                            <span class="total-cmt">2</span>
-                                        </div>
-                                        <div class="review-right-item d-flex align-items-center">
-                                            <span>3 stars</span>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 0"></div>
+                                            <div class="review-right-item d-flex align-items-center">
+                                                <span class="title-first-star">4 stars</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $course->caculateProgressReview($course->getReviewsFourStar()) }}%"></div>
+                                                </div>
+                                                <span class="total-cmt">{{ $course->getReviewsFourStar() }}</span>
                                             </div>
-                                            <span class="total-cmt">2</span>
-                                        </div>
-                                        <div class="review-right-item d-flex align-items-center">
-                                            <span>2 stars</span>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 0"></div>
+                                            <div class="review-right-item d-flex align-items-center">
+                                                <span class="title-first-star">3 stars</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $course->caculateProgressReview($course->getReviewsThreeStar()) }}%"></div>
+                                                </div>
+                                                <span class="total-cmt">{{ $course->getReviewsThreeStar() }}</span>
                                             </div>
-                                            <span class="total-cmt">2</span>
-                                        </div>
-                                        <div class="review-right-item d-flex align-items-center">
-                                            <span>1 stars</span>
-                                            <div class="progress">
-                                                <div class="progress-bar bg-success" role="progressbar" style="width: 0"></div>
+                                            <div class="review-right-item d-flex align-items-center">
+                                                <span class="title-first-star">2 stars</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $course->caculateProgressReview($course->getReviewsTwoStar()) }}%"></div>
+                                                </div>
+                                                <span class="total-cmt">{{ $course->getReviewsTwoStar() }}</span>
                                             </div>
-                                            <span class="total-cmt">2</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="review-detail">
-                                    <a href="" class="show-review">Show all reviews <i class="fas fa-angle-down"></i></a>
-                                    <div class="review-detail-item">
-                                        <div class="review-detail-top">
-                                            <div class="avata-user-review">
-                                                <img src="https://via.placeholder.com/640x480.png/00aa99?text=sed" alt="" class="w-100">
+                                            <div class="review-right-item d-flex align-items-center">
+                                                <span class="title-first-star">1 stars</span>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $course->caculateProgressReview($course->getReviewsOneStar()) }}%"></div>
+                                                </div>
+                                                <span class="total-cmt">{{ $course->getReviewsOneStar() }}</span>
                                             </div>
-                                            <div class="review-detail-star">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                            </div>
-                                            <span>August 4, 2020 at 1:30 pm</span>
-                                        </div>
-                                        <div class="review-detail-text">
-                                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. At quos, excepturi velit quod saepe ipsum ipsam rerum quaerat, in sit, animi pariatur quo quas molestias modi eligendi qui vel aperiam!
                                         </div>
                                     </div>
-                                </div>
+                                    <div class="review-detail">
+                                        <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="show-review">Show all reviews <i class="fas fa-angle-down"></i></a>
+                                        <div class="collapse show" id="collapseExample">
+                                            @foreach ($reviews as $review)
+                                                <div class="review-detail-item">
+                                                    <div class="review-detail-top d-flex align-items-center">
+                                                        <div>
+                                                            <div class="avata-user-review">
+                                                                <img src="{{ $review->getUserReview()->make_avata_url }}" alt="imgof{{ $review->getUserReview()->username }}" class="w-100 h-100">
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-detail-name">
+                                                            {{ $review->getUserReview()->username }}
+                                                        </div>
+                                                            <div class="review-detail-star">
+                                                                @for ($i = 0; $i < $review->star_rating; $i++)
+                                                                    <i class="fa fa-star"></i>
+                                                                @endfor
+                                                            </div>
+                                                        <span>{{ $review->formatDateTime() }}</span>
+                                                    </div>
+                                                    <div class="review-detail-text">
+                                                        {{ $review->content }}
+                                                    </div>
+                                                </div> 
+                                            @endforeach
+                                        </div>
+                                    </div>
+                                @endif
                                 <div class="add-review">
                                     <div class="add-review-title">Leave a Review</div>
                                     <span>Message</span>
-                                    <form action="" method="post">
-                                        <textarea name="" id="" cols="30" rows="10"></textarea>
-                                        <div class="star-vote">
+                                    <form action="{{ in_array(Auth::id(), $reviews->pluck('user_id')->toArray()) ? route('reviews.update', $reviewId) : route('reviews.store') }}" method="post">
+                                        @csrf
+                                        @if (in_array(Auth::id(), $reviews->pluck('user_id')->toArray()))
+                                            @method('PUT')
+                                        @endif
+                                        @if (Auth::check())
+                                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                                        @endif
+                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                        <textarea name="content" cols="75" rows="5" @if (!is_null(session('data'))) value="{{ session('data')['content'] }}" @endif></textarea>
+                                        @if ($errors->first('star_rating'))
+                                            <div class="alert alert-warning alert-star" role="alert">
+                                                {{ $errors->first('star_rating') }}
+                                            </div>
+                                        @endif
+                                        <div class="star-vote d-flex align-items-center">
                                             <span class="star-vote-title">Vote</span>
                                             <div class="star-vote-rating">
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
-                                                <i class="fa fa-star"></i>
+                                                <label for="one-star" class="star-container">
+                                                    <i class="fa fa-star fa-star-cus" data-index="1"></i>
+                                                </label>
+                                                <input type="radio" id="one-star" name="star_rating" value="1">
+                                                <label for="two-star" class="star-container">
+                                                    <i class="fa fa-star fa-star-cus" data-index="2"></i>
+                                                </label>
+                                                <input type="radio" id="two-star" name="star_rating" value="2">
+                                                <label for="three-star" class="star-container">
+                                                    <i class="fa fa-star fa-star-cus" data-index="3"></i>
+                                                </label>
+                                                <input type="radio" id="three-star" name="star_rating" value="3">
+                                                <label for="four-star" class="star-container">
+                                                    <i class="fa fa-star fa-star-cus" data-index="4"></i>
+                                                </label>
+                                                <input type="radio" id="four-star" name="star_rating" value="4">
+                                                <label for="five-star" class="star-container">
+                                                    <i class="fa fa-star fa-star-cus" data-index="5"></i>
+                                                </label>
+                                                <input type="radio" id="five-star" name="star_rating" value="5">
                                             </div>
                                             <span>(stars)</span>
                                         </div>
-                                        <button type="submit" class="star-vote-btn">Send</button>
+                                        <div class="w-100 text-right">
+                                            <button type="submit" class="star-vote-btn">Send</button>
+                                        </div>
                                     </form>
                                 </div>
                             </div>

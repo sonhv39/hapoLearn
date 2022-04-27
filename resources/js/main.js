@@ -131,7 +131,7 @@ $(document).ready(function(){
     $('#loginRegisterModal').modal();
   }
 
-  $('.btn-listcourse-filter').click(function (){
+  $('.btn-listcourse-filter').click(function () {
     if ($('.ls-filter').hasClass('filter-active')) {
       $('.ls-filter').removeClass('filter-active');
     } else {
@@ -144,6 +144,37 @@ $(document).ready(function(){
   $('.custom-tag').select2({
     placeholder: 'Tags',
   })
+
+  function resetStarRating() {
+    $('.fa-star-cus').css('color', '#D8D8D8');
+  }
+  
+  var clickedStar = -1;
+
+  $('.fa-star-cus').mouseenter(function(){
+    resetStarRating();
+    var currentIndex = parseInt($(this).data('index'));
+    for (var i = 0; i < currentIndex; i++) {
+      $('.fa-star-cus:eq('+ i +')').css('color', '#F2C54F');
+    }
+  })
+
+  $('.fa-star-cus').click(function(){
+    clickedStar = parseInt($(this).data('index'));
+  })
+
+  $('.fa-star-cus').mouseleave(function(){
+    resetStarRating();
+    if (clickedStar != -1) {
+      for (var i = 0; i < clickedStar; i++) {
+        $('.fa-star-cus:eq('+ i +')').css('color', '#F2C54F');
+      }
+    }
+  })
+
+  if ($('.alert').hasClass('alert-star') || $('.check').hasClass('active')) {
+    $('.nav-tab-cus a[href="#review"]').tab('show');
+  }
 
   $('.feedback-content').slick({
     dots: false,
