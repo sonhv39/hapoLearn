@@ -107,6 +107,15 @@ $(document).ready(function(){
     $('.modal-backdrop').css({'display' : 'block'})
   })
 
+  $('.review-login').click(function() {
+    $('#loginRegisterModal').modal();
+    $('.body-cus').addClass('modal-open');
+    $('.body-cus').css({'padding-right' : '0'});
+    $('.modal').addClass('show');
+    $('.modal').css({'display' : 'block'});
+    $('.modal-backdrop').css({'display' : 'block'})
+  })
+
   if ($('.alert').hasClass('alert-danger')) {
     $('#loginRegisterModal').modal();
     if ($('.form-l').hasClass('form-l-err')) {

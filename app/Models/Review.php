@@ -17,7 +17,8 @@ class Review extends Model
         'course_id',
         'user_id',
         'content',
-        'star_rating'
+        'star_rating',
+        'content'
     ];
 
     public function user()
@@ -43,12 +44,12 @@ class Review extends Model
 
     public function getUserReview()
     {
-        return User::find($this->user_id);
+        return User::find($this['user_id']);
     }
 
     public function formatDateTime()
     {
-        $date = date_create($this->update_at);
-        return $this->updated_at = date_format($date, "F d, Y") . " at " . date_format($date, "g:i a");
+        $date = date_create($this['updated_at']);
+        return date_format($date, "F d, Y") . " at " . date_format($date, "g:i a");
     }
 }

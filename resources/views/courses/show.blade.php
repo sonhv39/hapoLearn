@@ -175,52 +175,61 @@
                                 @endif
                                 <div class="add-review">
                                     <div class="add-review-title">Leave a Review</div>
-                                    <span>Message</span>
-                                    <form action="{{ in_array(Auth::id(), $reviews->pluck('user_id')->toArray()) ? route('reviews.update', $reviewId) : route('reviews.store') }}" method="post">
-                                        @csrf
-                                        @if (in_array(Auth::id(), $reviews->pluck('user_id')->toArray()))
-                                            @method('PUT')
-                                        @endif
-                                        @if (Auth::check())
-                                            <input type="hidden" name="user_id" value="{{ Auth::id() }}">
-                                        @endif
-                                        <input type="hidden" name="course_id" value="{{ $course->id }}">
-                                        <textarea name="content" cols="75" rows="5" @if (!is_null(session('data'))) value="{{ session('data')['content'] }}" @endif></textarea>
-                                        @if ($errors->first('star_rating'))
-                                            <div class="alert alert-warning alert-star" role="alert">
-                                                {{ $errors->first('star_rating') }}
-                                            </div>
-                                        @endif
-                                        <div class="star-vote d-flex align-items-center">
-                                            <span class="star-vote-title">Vote</span>
-                                            <div class="star-vote-rating">
-                                                <label for="one-star" class="star-container">
-                                                    <i class="fa fa-star fa-star-cus" data-index="1"></i>
-                                                </label>
-                                                <input type="radio" id="one-star" name="star_rating" value="1">
-                                                <label for="two-star" class="star-container">
-                                                    <i class="fa fa-star fa-star-cus" data-index="2"></i>
-                                                </label>
-                                                <input type="radio" id="two-star" name="star_rating" value="2">
-                                                <label for="three-star" class="star-container">
-                                                    <i class="fa fa-star fa-star-cus" data-index="3"></i>
-                                                </label>
-                                                <input type="radio" id="three-star" name="star_rating" value="3">
-                                                <label for="four-star" class="star-container">
-                                                    <i class="fa fa-star fa-star-cus" data-index="4"></i>
-                                                </label>
-                                                <input type="radio" id="four-star" name="star_rating" value="4">
-                                                <label for="five-star" class="star-container">
-                                                    <i class="fa fa-star fa-star-cus" data-index="5"></i>
-                                                </label>
-                                                <input type="radio" id="five-star" name="star_rating" value="5">
-                                            </div>
-                                            <span>(stars)</span>
+                                    @if (Auth::check())
+                                        <div>
+                                            <span>Message</span>
+                                            <form action="{{ in_array(Auth::id(), $reviews->pluck('user_id')->toArray()) ? route('reviews.update', $reviewId) : route('reviews.store') }}" method="post">
+                                                @csrf
+                                                @if (in_array(Auth::id(), $reviews->pluck('user_id')->toArray()))
+                                                    @method('PUT')
+                                                @endif
+                                                @if (Auth::check())
+                                                    <input type="hidden" name="user_id" value="{{ Auth::id() }}">
+                                                @endif
+                                                <input type="hidden" name="course_id" value="{{ $course->id }}">
+                                                <textarea name="content" cols="75" rows="5" @if (!is_null(session('data'))) value="{{ session('data')['content'] }}" @endif></textarea>
+                                                @if ($errors->first('star_rating'))
+                                                    <div class="alert alert-warning alert-star" role="alert">
+                                                        {{ $errors->first('star_rating') }}
+                                                    </div>
+                                                @endif
+                                                <div class="star-vote d-flex align-items-center">
+                                                    <span class="star-vote-title">Vote</span>
+                                                    <div class="star-vote-rating">
+                                                        <label for="one-star" class="star-container">
+                                                            <i class="fa fa-star fa-star-cus" data-index="1"></i>
+                                                        </label>
+                                                        <input type="radio" id="one-star" name="star_rating" value="1">
+                                                        <label for="two-star" class="star-container">
+                                                            <i class="fa fa-star fa-star-cus" data-index="2"></i>
+                                                        </label>
+                                                        <input type="radio" id="two-star" name="star_rating" value="2">
+                                                        <label for="three-star" class="star-container">
+                                                            <i class="fa fa-star fa-star-cus" data-index="3"></i>
+                                                        </label>
+                                                        <input type="radio" id="three-star" name="star_rating" value="3">
+                                                        <label for="four-star" class="star-container">
+                                                            <i class="fa fa-star fa-star-cus" data-index="4"></i>
+                                                        </label>
+                                                        <input type="radio" id="four-star" name="star_rating" value="4">
+                                                        <label for="five-star" class="star-container">
+                                                            <i class="fa fa-star fa-star-cus" data-index="5"></i>
+                                                        </label>
+                                                        <input type="radio" id="five-star" name="star_rating" value="5">
+                                                    </div>
+                                                    <span>(stars)</span>
+                                                </div>
+                                                <div class="w-100 text-right">
+                                                    <button type="submit" class="star-vote-btn">Send</button>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="w-100 text-right">
-                                            <button type="submit" class="star-vote-btn">Send</button>
+                                    @else
+                                        <div class="alert alert-primary" role="alert">
+                                            Vui lòng đăng nhập để comment!
+                                            <span class="review-login">Here</span>
                                         </div>
-                                    </form>
+                                    @endif
                                 </div>
                             </div>
                         </div>

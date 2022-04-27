@@ -18,7 +18,6 @@ class LoginController extends Controller
 
     public function login(LoginRequest $request)
     {
-        dd($request->all());
         $data = [
             'username' => $request['login_username'],
             'password' => $request['login_password']
