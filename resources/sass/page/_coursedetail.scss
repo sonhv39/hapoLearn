@@ -5,10 +5,18 @@
 .detail-link {
   padding: 10px 147px 10px 155px;
   background-color: #E9E7E7;
-  font-size: 16px;
-  line-height: calc(20 / 16);
-  letter-spacing: -0.02em;
-  color: $color-black-0;
+
+  a {
+    font-size: 16px;
+    line-height: calc(20 / 16);
+    letter-spacing: -0.02em;
+    color: $color-black-0;
+
+    &:hover {
+      text-decoration: none;
+      color: $color-black-0;
+    }
+  }
 }
 
 .detail-content {

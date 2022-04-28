@@ -51,7 +51,7 @@
                         </div>
                     @endforeach
                 </div>
-                <a href="#" class="courses-view-courses">View All Our Courses <i
+                <a href="{{ route('courses.index') }}" class="courses-view-courses">View All Our Courses <i
                         class="fa fa-long-arrow-alt-right"></i></a>
             </div>
         </section>

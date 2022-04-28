@@ -6,6 +6,7 @@ use \App\Http\Controllers\HomeController;
 use \App\Http\Controllers\CourseController;
 use \App\Http\Controllers\LessonController;
 use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserCourseController;
 use App\Http\Controllers\UserDocumentController;
 
@@ -19,6 +20,10 @@ Route::resource('courses.lessons', LessonController::class)->only([
 ]);
 
 Route::middleware(['auth'])->group(function () {
+    Route::resource('users', UserController::class)->only([
+        'show', 'update'
+    ]);
+    
     Route::resource('users-courses', UserCourseController::class)->only([
         'store', 'update'
     ]);

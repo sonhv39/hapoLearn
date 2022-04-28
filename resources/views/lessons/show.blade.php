@@ -2,14 +2,16 @@
 
 @section('content')
     <div class="lesson-detail">
-        <div class="detail-link">Home > All courses > Course detail > Lesson detail</div>
+        <div class="detail-link">
+            <a href="{{ route('home') }}">Home</a> > <a href="{{ route('courses.index') }}">All courses</a> > <a href="{{ route('courses.show', $course->id) }}">Course detail</a> > <a href="{{ route('courses.lessons.show', [$course->id, $lesson->id]) }}">Lesson detail</a>
+        </div>
         <div class="detail-content d-flex">
             <div class="detail-left">
                 <div class="detail-img">
                     <img class="w-100 h-100" src="{{ $course->img_url }}" alt="img of {{ $course->title }}">
                 </div>
                 <div class="progress mt-4">
-                    <p class="number-progress">@if (is_null($userLesson)) 0 @else {{ $userLesson->progress }} @endif%</p>
+                    <p class="number-progress">@if (is_null($userLesson)) 0 @else {{ round( $userLesson->progress, PHP_ROUND_HALF_EVEN) }} @endif%</p>
                     <div class="progress-bar" role="progressbar" style="width:@if (is_null($userLesson)) 0% @else {{ $userLesson->progress }}% @endif;"></div>
                 </div>
                 <div class="detail-left-content">
@@ -20,9 +22,6 @@
                         <li class="nav-item" role="presentation">
                           <a class="nav-link" id="doc-tab" data-toggle="tab" href="#doc" role="tab" aria-controls="doc" aria-selected="false">Documents</a>
                         </li>
-                        <li class="nav-item" role="presentation">
-                            <a class="nav-link" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review" aria-selected="false">Reviews</a>
-                          </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
@@ -68,9 +67,6 @@
                                     @endforelse
                                 </div>
                             </div>
-                        </div>
-                        <div class="tab-pane fade" id="review" role="tabpanel" aria-labelledby="review-tab">
-                            ....
                         </div>
                     </div>
                 </div>  

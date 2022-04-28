@@ -185,6 +185,31 @@ $(document).ready(function(){
     $('.nav-tab-cus a[href="#review"]').tab('show');
   }
 
+  $('.profile-file').change(function () {
+    console.log('okea');
+    if (this.files && this.files[0]) {
+      var reader = new FileReader();
+
+      reader.onload = function(e) {
+        $('.profile-img-avata').attr('src', e.target.result);
+      }
+
+      reader.readAsDataURL(this.files[0]);
+    }
+  });
+
+  $('.nav-link-profile').click(function() {
+    if ($(this).hasClass('require-login')) {
+      console.log('okela');
+      $('#loginRegisterModal').modal();
+      $('.body-cus').addClass('modal-open');
+      $('.body-cus').css({'padding-right' : '0'});
+      $('.modal').addClass('show');
+      $('.modal').css({'display' : 'block'});
+      $('.modal-backdrop').css({'display' : 'block'})
+    }
+  })
+
   $('.feedback-content').slick({
     dots: false,
     infinite: true,

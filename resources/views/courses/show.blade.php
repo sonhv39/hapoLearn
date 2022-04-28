@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="course-detail">
-        <div class="detail-link">Home > All courses > Course detail</div>
+        <div class="detail-link">
+            <a href="{{ route('home') }}">Home</a> > <a href="{{ route('courses.index') }}">All courses</a> > <a href="{{ route('courses.show', $course->id) }}">Course detail</a>
+        </div>
         <div class="detail-content d-flex">
             <div class="detail-left">
                 <div class="detail-img">
