@@ -82,8 +82,7 @@ class User extends Authenticatable
         if (empty($this['date_of_birth'])) {
             $date = date_create($this['created_at']);
             return date_format($date, $stringFormat);
-        }
-        else {
+        } else {
             $date = date_create($this['date_of_birth']);
             return date_format($date, $stringFormat);
         }
