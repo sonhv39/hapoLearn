@@ -21,7 +21,6 @@ class PasswordReset extends Model
 
     public static function getPasswordResetByToken($token)
     {
-        $passwordReset = PasswordReset::where('token', $token)->first();
         return PasswordReset::where('token', $token)->first();
     }
 

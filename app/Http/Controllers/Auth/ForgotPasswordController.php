@@ -41,7 +41,7 @@ class ForgotPasswordController extends Controller
             ]
         );
 
-        $test = $user->notify(new ResetPassword($passwordReset->token));
+        $user->notify(new ResetPassword($passwordReset->token));
 
         $notifySuccess = 'Hệ thống đã gửi mail đến bạn, vui lòng kiểm tra';
         return view('auth.email_reset', compact('notifySuccess'));
