@@ -36,6 +36,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public static function getUserByEmail($email)
+    {
+        return User::where('email', $email)->first();
+    }
+
     public function getNameAttribute($name)
     {
         return empty($name) ? $this->username : strtoupper($name);

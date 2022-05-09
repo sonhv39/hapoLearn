@@ -27,7 +27,7 @@ class LoginController extends Controller
         if (Auth::attempt($data, isset($request['remember_token']) ? true : false)) {
             return redirect(url()->previous());
         } else {
-            return redirect()->back()->withError('sai username hoặc password!!!');
+            return redirect()->back()->withError('sai username hoặc password!!!')->with('dataError', $data);
         }
     }
 

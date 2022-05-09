@@ -1,5 +1,5 @@
 <header>
-    <nav class="navbar navbar-expand-sm header-navbar">
+    <nav class="navbar navbar-expand-sm navbar-light header-navbar">
         <div class="header-navbar-brand">
             <div class="navbar-brand">
                 <a href="{{ route('home') }}"><img src="{{ asset('images/hapo_learn.png') }}" alt="hapo_learn" class="w-100"></a>
@@ -22,13 +22,11 @@
                         <a class="nav-link" href="#">LOGIN/REGISTER</a>
                     </li>
                 @endif
-                <li class="nav-item header-nav-item @if(Request::route()->getName() == 'users.show') header-active @endif">
-                    @if (Auth::check())
+                @if (Auth::check())
+                    <li class="nav-item header-nav-item @if(Request::route()->getName() == 'users.show') header-active @endif">
                         <a class="nav-link" href="{{ route('users.show', Auth::id()) }}">PROFILE</a>
-                    @else
-                        <a class="nav-link nav-link-profile require-login" href="#">PROFILE</a>
-                    @endif
-                </li>
+                    </li>
+                @endif
             </ul>
         </div>
         @if(Auth::user())

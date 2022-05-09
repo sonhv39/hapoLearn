@@ -116,6 +116,15 @@ $(document).ready(function(){
     $('.modal-backdrop').css({'display' : 'block'})
   })
 
+  $('.btn-click').click(function() {
+    $('#loginRegisterModal').modal();
+    $('.body-cus').addClass('modal-open');
+    $('.body-cus').css({'padding-right' : '0'});
+    $('.modal').addClass('show');
+    $('.modal').css({'display' : 'block'});
+    $('.modal-backdrop').css({'display' : 'block'})
+  })
+
   if ($('.alert').hasClass('alert-danger')) {
     $('#loginRegisterModal').modal();
     if ($('.form-l').hasClass('form-l-err')) {
@@ -186,7 +195,6 @@ $(document).ready(function(){
   }
 
   $('.profile-file').change(function () {
-    console.log('okea');
     if (this.files && this.files[0]) {
       var reader = new FileReader();
 
@@ -198,17 +206,17 @@ $(document).ready(function(){
     }
   });
 
-  $('.nav-link-profile').click(function() {
-    if ($(this).hasClass('require-login')) {
-      console.log('okela');
-      $('#loginRegisterModal').modal();
-      $('.body-cus').addClass('modal-open');
-      $('.body-cus').css({'padding-right' : '0'});
-      $('.modal').addClass('show');
-      $('.modal').css({'display' : 'block'});
-      $('.modal-backdrop').css({'display' : 'block'})
-    }
-  })
+  if ($('.error').hasClass('error-joincourse')) {
+    alert("Tham Gia Không Thành Công");
+  }
+
+  if ($('.error').hasClass('error-endcourse')) {
+    alert("Kết Thúc Khóa Học Không Thành Công");
+  }
+
+  if ($('.timeoutToken').hasClass('active')) {
+    alert('Không thể đổi mật khẩu do đã quá thời gian');
+  }
 
   $('.feedback-content').slick({
     dots: false,

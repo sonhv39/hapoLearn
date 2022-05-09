@@ -12,7 +12,13 @@
                     </div>
                     <p class="banner-tagp">Interactive lessons, "on-the-go" <br>
                         practice, peer support</p>
-                    <button class="banner-btn">Start Learning Now!</button>
+                    @if (Auth::check())
+                        <form action="{{ route('courses.index') }}" method="get">
+                            <button type="submit" class="banner-btn">Start Learning Now!</button>
+                        </form>
+                    @else
+                        <button class="banner-btn btn-click">Start Learning Now!</button>
+                    @endif
                 </div>
             </div>
         </section>
@@ -26,9 +32,9 @@
                         <div class="card-body courses-card-body">
                             <div class="card-title">{{ $c->title }}</div>
                             <p class="card-text">
-                                {{ limitString($c->description, 100)}}
+                                {{ limitString($c->description, 70)}}
                             </p>
-                            <a href="#" class="btn courses-btn">Take This Course</a>
+                            <a href="{{ route('courses.show', $c->id) }}" class="btn courses-btn">Take This Course</a>
                         </div>
                     </div>
                 @endforeach
@@ -44,9 +50,9 @@
                             <div class="card-body courses-card-body">
                                 <div class="card-title">{{ $c->title }}</div>
                                 <p class="card-text">
-                                    {{ limitString($c->description, 100)}}
+                                    {{ limitString($c->description, 70)}}
                                 </p>
-                                <a href="#" class="btn courses-btn">Take This Course</a>
+                                <a href="{{ route('courses.show', $c->id) }}" class="btn courses-btn">Take This Course</a>
                             </div>
                         </div>
                     @endforeach
@@ -145,7 +151,13 @@
                     <br>
                     growing community!
                 </p>
-                <button class="slogan-btn">Start Learning Now!</button>
+                @if (Auth::check())
+                    <form action="{{ route('courses.index') }}" method="get">
+                        <button type="submit" class="slogan-btn">Start Learning Now!</button>
+                    </form>
+                @else
+                    <button class="slogan-btn btn-click">Start Learning Now!</button>
+                @endif
             </div>
         </section>
         <section class="statistic">

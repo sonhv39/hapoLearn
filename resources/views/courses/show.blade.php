@@ -1,6 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (session('error-join-course'))
+        <div class="error error-joincourse">
+        </div>
+    @elseif (session('error-end-course'))
+        <div class="error error-endcourse">
+        </div>
+    @endif
     <div class="course-detail">
         <div class="detail-link">
             <a href="{{ route('home') }}">Home</a> > <a href="{{ route('courses.index') }}">All courses</a> > <a href="{{ route('courses.show', $course->id) }}">Course detail</a>
