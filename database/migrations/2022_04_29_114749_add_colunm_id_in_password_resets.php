@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColunmProgressInLessons extends Migration
+class AddColunmIdInPasswordResets extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class AddColunmProgressInLessons extends Migration
      */
     public function up()
     {
-        Schema::table('lessons', function (Blueprint $table) {
-            $table->float('progress')->default(0);
+        Schema::table('password_resets', function (Blueprint $table) {
+            $table->id();
         });
     }
 
@@ -25,8 +25,8 @@ class AddColunmProgressInLessons extends Migration
      */
     public function down()
     {
-        Schema::table('lessons', function (Blueprint $table) {
-            $table->dropColumn('progress');
+        Schema::table('password_resets', function (Blueprint $table) {
+            $table->dropColumn('id');
         });
     }
 }

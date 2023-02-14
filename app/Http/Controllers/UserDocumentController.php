@@ -17,6 +17,7 @@ class UserDocumentController extends Controller
         $document = Document::find($request['document_id']);
         $lesson = Lesson::find($document['lesson_id']);
         $userLesson = UserLesson::getUserLesson(Auth::id(), $document['lesson_id']);
+
         if (is_null($userLesson)) {
             $data = [
                 'user_id' => Auth::id(),
@@ -25,6 +26,7 @@ class UserDocumentController extends Controller
             $userLessonId = UserLesson::create($data)->id;
             $userLesson = UserLesson::find($userLessonId);
         }
+
         $userLesson->caculateProgress();
         $userLesson->update();
         return redirect()->route('courses.lessons.show', [$lesson['course_id'], $document['lesson_id']]);

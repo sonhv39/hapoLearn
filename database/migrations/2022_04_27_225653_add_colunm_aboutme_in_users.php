@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class EditColunmProgressInUserLessons extends Migration
+class AddColunmAboutmeInUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,8 @@ class EditColunmProgressInUserLessons extends Migration
      */
     public function up()
     {
-        Schema::table('user_lessons', function (Blueprint $table) {
-            $table->float('progress')->default(0)->change();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('aboutme')->nullable();
         });
     }
 
@@ -25,8 +25,8 @@ class EditColunmProgressInUserLessons extends Migration
      */
     public function down()
     {
-        Schema::table('user_lessons', function (Blueprint $table) {
-            $table->dropColumn('progress');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('aboutme');
         });
     }
 }

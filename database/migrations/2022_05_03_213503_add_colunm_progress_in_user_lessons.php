@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddColumnProgressInUserLessons extends Migration
+class AddColunmProgressInUserLessons extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class AddColumnProgressInUserLessons extends Migration
     public function up()
     {
         Schema::table('user_lessons', function (Blueprint $table) {
-            $table->float('progress')->default('0');
+            $table->float('progress')->default(0);
         });
     }
 
