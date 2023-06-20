@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-sm navbar-light header-navbar">
         <div class="header-navbar-brand">
             <div class="navbar-brand">
-                <a href="{{ route('home') }}"><img src="{{ asset('images/hapo_learn.png') }}" alt="hapo_learn" class="w-100"></a>
+                <a href="{{ route('home') }}"><img src="{{ asset('images/Hapo_Learn.png') }}" alt="Hapo_Learn" class="w-100"></a>
             </div>
         </div>
         <button class="navbar-toggler header-tonggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="headerBtnIcon">
@@ -11,6 +11,9 @@
         </button>
         <div class="collapse navbar-collapse header-content" id="navbarSupportedContent">
             <ul class="navbar-nav header-ul">
+                <li class="nav-item header-nav-item @if(Request::route()->getName() == 'live-teaching.index') header-active @endif">
+                    <a class="nav-link" href="{{ route('live-teaching.index') }}">LIVE TEACHING</a>
+                </li>
                 <li class="nav-item header-nav-item @if(Request::route()->getName() == 'home') header-active @endif">
                     <a class="nav-link" href="{{ route('home') }}">HOME</a>
                 </li>

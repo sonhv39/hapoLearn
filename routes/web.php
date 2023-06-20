@@ -9,6 +9,7 @@ use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserCourseController;
 use App\Http\Controllers\UserDocumentController;
+use \App\Http\Controllers\LiveTeachingController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource('courses', CourseController::class)->only([
@@ -18,6 +19,8 @@ Route::resource('courses', CourseController::class)->only([
 Route::resource('courses.lessons', LessonController::class)->only([
     'show'
 ]);
+
+Route::get('live-teaching', [LiveTeachingController::class, 'index'])->name('live-teaching.index');
 
 Route::middleware(['auth'])->group(function () {
     Route::resource('users', UserController::class)->only([

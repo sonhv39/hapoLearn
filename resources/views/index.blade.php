@@ -8,7 +8,7 @@
             <div class="banner-content">
                 <div>
                     <p class="">Learn Anytime, Anywhere</p>
-                    <div class="banner-content-imgsmall">at HapoLearn <img src="{{ asset('images/imghaposmall.png') }}" alt="imghaposmall"> !
+                    <div class="banner-content-imgsmall">at HapoLearn <img src="{{ asset('images/imgHaposmall.png') }}" alt="imgHaposmall"> !
                     </div>
                     <p class="banner-tagp">Interactive lessons, "on-the-go" <br>
                         practice, peer support</p>
