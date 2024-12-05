@@ -1,5 +1,6 @@
 FROM php:8.0.28-fpm
 
+WORKDIR /var/www/html
 # Install dependencies for the operating system software
 RUN apt-get update && apt-get install -y \
     build-essential \
@@ -28,6 +29,8 @@ RUN docker-php-ext-install gd
 
 # Install composer (php package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+# Copy existing application directory contents to the working directory
+COPY . /var/www/html
 
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
