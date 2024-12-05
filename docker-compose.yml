@@ -11,7 +11,7 @@ services:
       - "8081:80"
     volumes:
       - ./:/var/www/html
-      - ./.deployment/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./.deployment/nginx/:/etc/nginx/conf.d/
     networks:
       - hapo-network
   php:
@@ -25,7 +25,7 @@ services:
       - hapo-network
   mysql:
     image: mysql:8.0.32
-    restart: always
+    restart: unless-stopped
     container_name: hp_mysql
     tty: true
     ports:
@@ -34,12 +34,7 @@ services:
       - ./.deployment/mysql:/var/lib/mysql
     command: --innodb-use-native-aio=0
     environment:
-      MYSQL_DATABASE: hapo_db
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: 12341234a
-      MYSQL_ROOT_PASSWORD: root
-      SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
+      MYSQL_ROOT_PASSWORD: xI2GVJn6qfzeNMm
     networks:
       - hapo-network
 
