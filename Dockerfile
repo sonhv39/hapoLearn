@@ -30,7 +30,7 @@ RUN docker-php-ext-install gd
 # Install composer (php package manager)
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 # Copy existing application directory contents to the working directory
-COPY . /var/www/html
+COPY --chown=www-data:www-data . /var/www/html
 
 RUN chown -R www-data:www-data \
    /var/www/html/storage \
