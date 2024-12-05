@@ -33,8 +33,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY . /var/www/html
 
 RUN chown -R www-data:www-data \
-   /var/www/backend_location/storage \
-   /var/www/backend_location/bootstrap/cache
+   /var/www/html/storage \
+   /var/www/html/bootstrap/cache
 
 EXPOSE 9000
 CMD ["php-fpm"]
