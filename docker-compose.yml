@@ -37,6 +37,20 @@ services:
       MYSQL_ROOT_PASSWORD: xI2GVJn6qfzeNMm
     networks:
       - hapo-network
+  postgres:
+    image: postgres:16.3
+    restart: unless-stopped
+    container_name: hp_postgres
+    tty: true
+    ports:
+      - "4949:5432"
+    volumes:
+      - ./.deployment/postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: xI2GVJn6qfzeNMm
+    networks:
+      - hapo-network
 
 networks:
   hapo-network:

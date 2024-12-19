@@ -5,6 +5,7 @@ WORKDIR /var/www/html
 RUN apt-get update && apt-get install -y \
     build-essential \
     libpng-dev \
+    libpq-dev \
     libjpeg62-turbo-dev \
     libfreetype6-dev \
     locales \
@@ -23,6 +24,7 @@ RUN apt-get update && apt-get install -y \
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Install extensions for php
+RUN docker-php-ext-install pdo_pgsql
 RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg
 RUN docker-php-ext-install gd
