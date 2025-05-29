@@ -1,42 +1,49 @@
+# Stage 1: Composer dependencies
+FROM composer:2 AS composer
+WORKDIR /app
+COPY composer.json composer.lock ./
+RUN composer install --no-scripts --no-autoloader --no-dev
+
+# Stage 2: Application
 FROM php:8.0.28-fpm
 
-WORKDIR /var/www/html
-# Install dependencies for the operating system software
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    libpng-dev \
-    libpq-dev \
-    libjpeg62-turbo-dev \
-    libfreetype6-dev \
-    locales \
-    zip \
-    jpegoptim optipng pngquant gifsicle \
-    vim \
-    libzip-dev \
-    unzip \
     git \
-    libonig-dev \
     curl \
-    supervisor \
-    mariadb-client \
-    nodejs npm
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Install extensions for php
-RUN docker-php-ext-install pdo_pgsql
-RUN docker-php-ext-install pdo_mysql mbstring zip exif pcntl
-RUN docker-php-ext-configure gd --with-freetype --with-jpeg
-RUN docker-php-ext-install gd
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
 
-# Install composer (php package manager)
-RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-# Copy existing application directory contents to the working directory
-COPY --chown=www-data:www-data . /var/www/html
+# Get latest Composer
+COPY --from=composer /usr/bin/composer /usr/bin/composer
 
-RUN chown -R www-data:www-data \
-   /var/www/html/storage \
-   /var/www/html/bootstrap/cache
+# Set working directory
+WORKDIR /var/www/html
 
+# Copy vendor from composer stage
+COPY --from=composer /app/vendor ./vendor
+
+# Copy application files
+COPY . .
+
+# Generate autoload files
+RUN composer dump-autoload --optimize
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html/storage
+
+# Expose port 9000
 EXPOSE 9000
+
+# Start PHP-FPM
 CMD ["php-fpm"]
