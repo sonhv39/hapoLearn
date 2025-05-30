@@ -1,8 +1,8 @@
-version: '3'
+version: '3.8'
 
 services:
   nginx:
-    image: nginx:stable-alpine
+    image: nginx:alpine
     container_name: hp_nginx
     depends_on:
       - php
@@ -11,47 +11,55 @@ services:
       - "8081:80"
     volumes:
       - ./:/var/www/html
-      - ./.deployment/nginx/:/etc/nginx/conf.d/
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d
     networks:
-      - hapo-network
+      - app-network
   php:
-    build: 
-      context: ./
-      dockerfile: Dockerfile
+    build: .
     volumes:
       - ./:/var/www/html
+      - vendor:/var/www/html/vendor
+      - storage:/var/www/html/storage
     container_name: hp_app
     networks:
-      - hapo-network
+      - app-network
   mysql:
-    image: mysql:8.0.32
+    image: mysql:8.0
     restart: unless-stopped
     container_name: hp_mysql
     tty: true
     ports:
       - "3939:3306"
     volumes:
-      - ./.deployment/mysql:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
     command: --innodb-use-native-aio=0
     environment:
-      MYSQL_ROOT_PASSWORD: xI2GVJn6qfzeNMm
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_USER: ${DB_USERNAME}
     networks:
-      - hapo-network
-  postgres:
-    image: postgres:16.3
-    restart: unless-stopped
-    container_name: hp_postgres
-    tty: true
-    ports:
-      - "4949:5432"
-    volumes:
-      - ./.deployment/postgres:/var/lib/postgresql/data
-    environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: xI2GVJn6qfzeNMm
-    networks:
-      - hapo-network
+      - app-network
+  # postgres:
+  #   image: postgres:16.3
+  #   restart: unless-stopped
+  #   container_name: hp_postgres
+  #   tty: true
+  #   ports:
+  #     - "4949:5432"
+  #   volumes:
+  #     - ./.deployment/postgres:/var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: xI2GVJn6qfzeNMm
+  #   networks:
+  #     - hapo-network
+
+volumes:
+  vendor:
+  storage:
+  mysql-data:
 
 networks:
-  hapo-network:
+  app-network:
     driver: bridge
