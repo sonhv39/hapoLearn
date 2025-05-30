@@ -6,19 +6,19 @@ use Tests\TestCase;
 
 class BasicPagesTest extends TestCase
 {
-    public function test_home_page_loads()
+    public function testHomePageLoads()
     {
         $response = $this->get('/');
         $response->assertStatus(200);
     }
 
-    public function test_login_page_loads()
+    public function testLoginPageLoads()
     {
         $response = $this->get('/login');
         $response->assertStatus(200);
     }
 
-    public function test_register_page_loads()
+    public function testRegisterPageLoads()
     {
         $response = $this->get('/register');
         $response->assertStatus(200);
