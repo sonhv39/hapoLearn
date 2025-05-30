@@ -23,4 +23,4 @@ class ApiTest extends TestCase
         $response = $this->get('/api/invalid-endpoint');
         $response->assertStatus(404);
     }
-} 
+}

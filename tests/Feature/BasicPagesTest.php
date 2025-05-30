@@ -23,4 +23,4 @@ class BasicPagesTest extends TestCase
         $response = $this->get('/register');
         $response->assertStatus(200);
     }
-} 
+}
